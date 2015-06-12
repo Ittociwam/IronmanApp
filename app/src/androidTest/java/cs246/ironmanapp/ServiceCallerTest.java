@@ -7,5 +7,13 @@ import android.test.InstrumentationTestCase;
  */
 
 public class ServiceCallerTest extends InstrumentationTestCase {
-    
+
+    public void testURL(){
+
+        ServiceCaller sCContestants = new ServiceCaller("http://localhost/webengii/webengII/ironman/getContestants.php","semester='SPRING2015'");
+        assertTrue(sCContestants.connect());
+
+
+    }
+
 }
