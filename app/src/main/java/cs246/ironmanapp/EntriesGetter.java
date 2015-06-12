@@ -5,20 +5,23 @@ package cs246.ironmanapp;
  */
 public class EntriesGetter extends ServiceCaller {
 
+    public EntriesGetter(String url, String parameters) {
+        super(url, parameters);
+    }
 
-        double swim = 1.2;
-        double bike = 112;
-        double run  = 1;
+    double swim = 1.2;
+    double bike = 112;
+    double run = 1;
 
-        double swimP;
-        double bikeP;
-        double runP;
+    double swimP;
+    double bikeP;
+    double runP;
 
     public void run() {
         double generalPercent =
-            (((swim * 46.66) / 336) * 100) +
-                    (((bike) / 336) * 100) +
-                    (((run * 4.274809) / 336) * 100);
+                (((swim * 46.66) / 336) * 100) +
+                        (((bike) / 336) * 100) +
+                        (((run * 4.274809) / 336) * 100);
 
         double swimP = (swim / 2.4) * 100;
         double bikeP = (bike / 112) * 100;
@@ -55,5 +58,6 @@ public class EntriesGetter extends ServiceCaller {
 
     public double getRunP() {
         return runP;
+
     }
 }
