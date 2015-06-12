@@ -16,4 +16,11 @@ public class ServiceCallerTest extends InstrumentationTestCase {
 
     }
 
+    public void isJson() {
+        //boolean json = true;
+        ServiceCaller json = new ServiceCaller("http://localhost/webengii/webengII/ironman/getContestants.php","semester='SPRING2015'");
+
+        assertTrue(json.isJson());
+    }
+
 }

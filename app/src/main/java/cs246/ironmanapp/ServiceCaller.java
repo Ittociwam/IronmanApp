@@ -18,4 +18,8 @@ public class ServiceCaller implements Runnable {
         // connect to url
         return false;
     }
+
+    public boolean isJson() {
+        return false;
+    }
 }
