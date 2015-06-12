@@ -13,7 +13,6 @@ public class ServiceCallerTest extends InstrumentationTestCase {
         ServiceCaller sCContestants = new ServiceCaller("http://localhost/webengii/webengII/ironman/getContestants.php","semester='SPRING2015'");
         assertTrue(sCContestants.connect());
 
-
     }
 
     public void isJson() {
