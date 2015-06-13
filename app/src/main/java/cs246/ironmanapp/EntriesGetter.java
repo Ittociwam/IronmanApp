@@ -9,10 +9,12 @@ public class EntriesGetter extends ServiceCaller {
         super(url, parameters);
     }
 
+    double percent = 100;
     double swim = 1.2;
     double bike = 112;
     double run = 1;
 
+    double percentP;
     double swimP;
     double bikeP;
     double runP;
@@ -35,6 +37,11 @@ public class EntriesGetter extends ServiceCaller {
 
     }
 
+    public double getPercent() {
+
+        return percent;
+    }
+
     public double getSwim() {
         return swim;
     }
@@ -48,6 +55,10 @@ public class EntriesGetter extends ServiceCaller {
     }
 
 
+    public double getPercentP() {
+
+        return percentP;
+    }
     public double getSwimP() {
         return swimP;
     }
