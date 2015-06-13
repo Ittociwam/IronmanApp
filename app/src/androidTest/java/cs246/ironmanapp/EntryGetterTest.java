@@ -7,11 +7,8 @@ import android.test.InstrumentationTestCase;
  */
 public class EntryGetterTest extends InstrumentationTestCase {
 
-<<<<<<< HEAD
     EntriesGetter e = new EntriesGetter("someurl", "some parameters");
-=======
-    EntriesGetter e = new EntriesGetter("url", "");
->>>>>>> 88cb69a5c780fea3612823f0e4794fb890b70bcc
+
     public void testNumbers() {
 
         boolean test = true;
