@@ -7,7 +7,8 @@ import android.test.InstrumentationTestCase;
  */
 public class EntryGetterTest extends InstrumentationTestCase {
 
-    EntriesGetter e = new EntriesGetter("1","1");
+    EntriesGetter e = new EntriesGetter("someurl", "some parameters");
+
     public void testNumbers() {
 
         boolean test = true;
@@ -39,5 +40,14 @@ public class EntryGetterTest extends InstrumentationTestCase {
         assertTrue(test);
     }
 
+    public void testOverallPercentage() {
+
+        boolean testP = true;
+
+        if(e.getPercentP() > 100) {
+            testP = false;
+        }
+        assertTrue(testP);
+    }
 
 }
