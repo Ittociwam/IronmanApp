@@ -7,7 +7,7 @@ import android.test.InstrumentationTestCase;
  */
 public class EntryGetterTest extends InstrumentationTestCase {
 
-    EntriesGetter e = new EntriesGetter("someurl", "some parameters");
+    EntriesGetter e = new EntriesGetter("blah", "blah2");
 
     public void testNumbers() {
 

@@ -5,7 +5,12 @@ package cs246.ironmanapp;
  */
 public class ServiceCaller implements Runnable {
 
-    public ServiceCaller(String url, String parameters){
+    String url;
+    String parameters;
+
+    public ServiceCaller(String u, String p){
+        this.url = u;
+        this.parameters = p;
 
     }
 
@@ -22,4 +27,5 @@ public class ServiceCaller implements Runnable {
     public boolean isJson() {
         return false;
     }
+
 }
