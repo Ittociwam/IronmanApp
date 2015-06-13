@@ -7,7 +7,7 @@ import android.test.InstrumentationTestCase;
  */
 public class EntryGetterTest extends InstrumentationTestCase {
 
-    EntriesGetter e = new EntriesGetter();
+    EntriesGetter e = new EntriesGetter("1","1");
     public void testNumbers() {
 
         boolean test = true;

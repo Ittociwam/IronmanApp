@@ -5,7 +5,7 @@ package cs246.ironmanapp;
  */
 public class EntriesGetter extends ServiceCaller {
 
-    public EntriesGetter(String url, String parameters) {
+    public EntriesGetter() {
         super(url, parameters);
     }
 
