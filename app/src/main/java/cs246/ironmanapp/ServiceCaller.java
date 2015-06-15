@@ -27,4 +27,5 @@ public class ServiceCaller implements Runnable {
     public boolean isJson() {
         return false;
     }
+
 }

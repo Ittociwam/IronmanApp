@@ -7,7 +7,7 @@ import android.test.InstrumentationTestCase;
  */
 public class EntryGetterTest extends InstrumentationTestCase {
 
-    EntriesGetter e = new EntriesGetter("someurl", "some parameters");
+    EntriesGetter e = new EntriesGetter("blah", "blah2");
 
     public void testNumbers() {
 
@@ -48,6 +48,19 @@ public class EntryGetterTest extends InstrumentationTestCase {
             testP = false;
         }
         assertTrue(testP);
+    }
+
+    public void testURL() {
+
+        ServiceCaller sCContestants = new ServiceCaller("http://localhost/webengii/webengII/ironman/getContestants.php","semester='SPRING2015'");
+        assertTrue(sCContestants.connect());
+
+    }
+
+    public void isJsonTest() {
+        ServiceCaller json = new ServiceCaller("http://localhost/webengii/webengII/ironman/getContestants.php","semester='SPRING2015'");
+
+        assertTrue(json.isJson());
     }
 
 }
