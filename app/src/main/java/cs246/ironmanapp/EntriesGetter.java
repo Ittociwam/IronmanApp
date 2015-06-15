@@ -5,9 +5,7 @@ package cs246.ironmanapp;
  */
 public class EntriesGetter extends ServiceCaller {
 
-    public EntriesGetter() {
-        super(url, parameters);
-    }
+    public EntriesGetter(String url, String parameters) { super(url, parameters);}
 
     double percent = 100;
     double swim = 1.2;

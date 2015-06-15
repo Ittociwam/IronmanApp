@@ -50,4 +50,17 @@ public class EntryGetterTest extends InstrumentationTestCase {
         assertTrue(testP);
     }
 
+    public void testURL() {
+
+        ServiceCaller sCContestants = new ServiceCaller("http://localhost/webengii/webengII/ironman/getContestants.php","semester='SPRING2015'");
+        assertTrue(sCContestants.connect());
+
+    }
+
+    public void isJsonTest() {
+        ServiceCaller json = new ServiceCaller("http://localhost/webengii/webengII/ironman/getContestants.php","semester='SPRING2015'");
+
+        assertTrue(json.isJson());
+    }
+
 }
