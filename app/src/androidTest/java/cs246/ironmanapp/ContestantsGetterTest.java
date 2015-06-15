@@ -7,12 +7,9 @@ import java.util.List;
 /**
  * Created by Robbie on 6/13/2015.
  */
-public class ContestantsGetterTest extends InstrumentationTestCase {
+public class ContestantsGetterTest extends InstrumentationTestCase{
 
-
-
-
-    public void validatePercentages(List<Contestant> contestants){
+    public void testPercentages(List<Contestant> contestants){
         ContestantsGetter cG = new ContestantsGetter("url", "params");
         for (Contestant c : contestants)
         {
