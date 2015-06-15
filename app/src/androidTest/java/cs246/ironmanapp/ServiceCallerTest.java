@@ -15,7 +15,7 @@ public class ServiceCallerTest extends InstrumentationTestCase {
 
     }
 
-    public void isJsonTest() {
+    public void testJson() {
         ServiceCaller json = new ServiceCaller("http://localhost/webengii/webengII/ironman/getContestants.php","semester='SPRING2015'");
 
         assertTrue(json.isJson());
