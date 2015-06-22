@@ -1,6 +1,7 @@
 package cs246.ironmanapp;
 
 import java.sql.Date;
+import java.util.List;
 
 /**
  * Created by Robbie on 6/22/2015.
@@ -11,6 +12,10 @@ public class Structs {
         String u_name;
         double percentage;
         // register_date
+    }
+
+    static class Contestants{
+        List<Contestant> contestantList;
     }
 
     static class Entry{
@@ -31,10 +36,18 @@ public class Structs {
         String units;
     }
 
-    static class Progress{
+    static class Entries{
+        List<Entry> entryList;
+    }
+
+    static class Total{
         String user;
         String mode;
         double distance;
+    }
+
+    static class Totals{
+        List<Total> totalList;
     }
 
     static class NewEntryMessage{
