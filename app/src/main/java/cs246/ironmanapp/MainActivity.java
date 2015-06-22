@@ -14,6 +14,12 @@ public class MainActivity extends ActionBarActivity {
         setContentView(R.layout.activity_main);
     }
 
+public void urlDriver(){
+
+        //String json = readUrl("http://robbise.no-ip.info/ironman/");
+        //System.out.println();
+    }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
