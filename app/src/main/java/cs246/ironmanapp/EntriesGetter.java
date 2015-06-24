@@ -52,11 +52,8 @@ public class EntriesGetter extends ServiceCaller {
         return run;
     }
 
-
-    public double getPercentP() {
-
-        return percentP;
-    }
+    public double getPercentP() { return percentP; }
+    
     public double getSwimP() {
         return swimP;
     }
