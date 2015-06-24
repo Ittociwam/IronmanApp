@@ -5,19 +5,59 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.google.gson.Gson;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.ProtocolException;
+import java.net.URL;
+
 
 public class MainActivity extends ActionBarActivity {
-
+    private final String USER_AGENT = "Mozilla/5.0";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        urlDriver();
     }
 
-public void urlDriver(){
+    public void urlDriver() {
 
-        //String json = readUrl("http://robbise.no-ip.info/ironman/");
-        //System.out.println();
+
+    System.out.println("about to do the  run thing");
+        System.out.println("Here in urlDriver()");
+
+        URLReader urlReader = new URLReader();
+
+        //getContestants
+        String semester = "FALL2015";
+        String json = "";
+
+        try {
+            json = urlReader.sendGet("http://robbise.no-ip.info/ironman?semester=" + semester);
+
+        } catch (Exception e) {
+            System.out.println("an error of sorts: ");
+            e.toString();
+            e.printStackTrace();
+        }
+
+        System.out.print("HELLO!!!!!!!!!!!!!!!!!!!!! HERE IS SOME JSON FOR YOUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU");
+
+        System.out.print(json);
+
+        Gson gson = new Gson();
+        Structs.Contestants contestants = gson.fromJson(json, Structs.Contestants.class);
+
+
+        for (Structs.Contestant contestant : contestants.contestantList) {
+            System.out.println(contestant.u_name + " " + contestant.percentage + "%");
+
+        }
     }
 
     @Override

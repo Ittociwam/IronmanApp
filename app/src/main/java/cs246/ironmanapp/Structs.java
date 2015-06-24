@@ -1,6 +1,7 @@
 package cs246.ironmanapp;
 
 import java.sql.Date;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -15,6 +16,9 @@ public class Structs {
     }
 
     static class Contestants{
+        public Contestants() {
+            contestantList = new ArrayList<>();
+        }
         List<Contestant> contestantList;
     }
 
