@@ -1,9 +1,16 @@
 package cs246.ironmanapp;
 
+import android.util.Log;
+
 /**
  * Created by John on 6/10/15.
  */
 public class EntriesGetter extends ServiceCaller {
+
+    private static final String ENTRIES_GETTER_METHOD = "In EntriesGetter class";
+
+
+
 
     public EntriesGetter(String url, String parameters) { super(url, parameters);}
 
@@ -18,6 +25,8 @@ public class EntriesGetter extends ServiceCaller {
     double runP;
 
     public void run() {
+
+        Log.i(ENTRIES_GETTER_METHOD, "Starting run method");
         double generalPercent =
                 (((swim * 46.66) / 336) * 100) +
                         (((bike) / 336) * 100) +
@@ -53,7 +62,7 @@ public class EntriesGetter extends ServiceCaller {
     }
 
     public double getPercentP() { return percentP; }
-    
+
     public double getSwimP() {
         return swimP;
     }

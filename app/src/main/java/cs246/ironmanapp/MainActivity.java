@@ -17,12 +17,15 @@ import java.net.URL;
 
 
 public class MainActivity extends ActionBarActivity {
+    //EntriesGetter e;
     private final String USER_AGENT = "Mozilla/5.0";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         urlDriver();
+
+        //e.run();
     }
 
     public void urlDriver() {
