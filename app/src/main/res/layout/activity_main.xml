@@ -1,7 +1,3 @@
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    >
 
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
@@ -12,17 +8,32 @@
     android:background="#2c2c2c"
     android:nestedScrollingEnabled="true">
 
+
+    <ImageView
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:id="@+id/imageView3"
+
+        android:layout_marginTop="66dp"
+        android:src="@drawable/plus"
+        android:clickable="true"
+        android:layout_below="@+id/progressBar3"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
     <TextView
         android:layout_width="wrap_content"
-        android:layout_height="50dp"
+        android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Days Remaining"
-        android:id="@+id/textView"
+        android:text="28"
+        android:id="@+id/textView2"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
+        android:gravity="center_horizontal"
         android:textColor="#d3d3d3"
-        android:textSize="32sp"
-        android:layout_marginTop="90dp" />
+        android:textSize="42pt"
+        android:layout_alignParentLeft="false"
+        android:layout_marginTop="0dp" />
 
     <ProgressBar
         style="@android:style/Widget.ProgressBar.Horizontal"
@@ -93,5 +104,5 @@
         android:layout_marginTop="331dp"
         android:src="@drawable/run" />
 
+
 </RelativeLayout>
-</ScrollView>
