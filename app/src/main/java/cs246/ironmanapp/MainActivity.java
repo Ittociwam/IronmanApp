@@ -5,6 +5,8 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.ProgressBar;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
@@ -22,16 +24,33 @@ import java.util.List;
 
 
 public class MainActivity extends ActionBarActivity {
+    int progressStatus = 0;
+    ProgressBar gprogress;
+    ProgressBar bprogress;
+    ProgressBar pprogress;
     //EntriesGetter e;
     private final String USER_AGENT = "Mozilla/5.0";
     private final String TAG_MAIN_ACTIVITY = "Main Activity";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         urlDriver();
 
         //e.run();
+    }
+
+    public void testProgress(View view) {
+
+        gprogress = (ProgressBar) findViewById(R.id.progressBar2);
+        bprogress = (ProgressBar) findViewById(R.id.progressBar);
+        pprogress = (ProgressBar) findViewById(R.id.progressBar3);
+        progressStatus += 5;
+        progressStatus = progressStatus % 105;
+        gprogress.setProgress(progressStatus);
+
     }
 
     public void urlDriver() {

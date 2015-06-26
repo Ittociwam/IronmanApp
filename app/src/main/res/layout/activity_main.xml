@@ -75,7 +75,9 @@
 
         android:indeterminate="false"
 
-        android:progressDrawable="@drawable/progress" />
+        android:progressDrawable="@drawable/progress"
+        android:clickable="true"
+        android:onClick="testProgress" />
 
     <ProgressBar
         style="@android:style/Widget.ProgressBar.Horizontal"
@@ -139,7 +141,7 @@
         android:layout_marginTop="450dp"
         android:src="@drawable/plus"
         android:clickable="true"
-
+        android:onClick="testProgress"
 
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true" />
