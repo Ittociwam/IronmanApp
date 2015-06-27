@@ -1,5 +1,12 @@
 package cs246.ironmanapp;
 
+import android.os.AsyncTask;
+import android.util.Log;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.io.BufferedReader;
 import java.io.DataOutputStream;
 import java.io.InputStreamReader;
@@ -12,8 +19,12 @@ import javax.net.ssl.HttpsURLConnection;
  * Created by John on 6/22/15.
  */
 
-public class URLReader{
+
+
+public class URLReader {
     private final String USER_AGENT = "Mozilla/5.0";
+
+    private static final String TAG_URL_READER = "Url Reader";
 
     public String sendGet(String url) throws Exception {
 
@@ -28,8 +39,8 @@ public class URLReader{
         con.setRequestProperty("User-Agent", USER_AGENT);
 
         int responseCode = con.getResponseCode();
-        System.out.println("\nSending 'GET' request to URL : " + url);
-        System.out.println("Response Code : " + responseCode);
+        Log.i(TAG_URL_READER, "\nSending 'GET' request to URL : " + url);
+        Log.i(TAG_URL_READER, "Response Code : " + responseCode);
 
         BufferedReader in = new BufferedReader(
                 new InputStreamReader(con.getInputStream()));
@@ -42,7 +53,12 @@ public class URLReader{
         in.close();
 
         //return result
-       return response.toString();
+        String jsonResponse = response.toString();
+        if(isJSONValid(jsonResponse))
+            return response.toString();
+        else
+            Log.e(TAG_URL_READER, jsonResponse + " is not valid JSON");
+        return "{}";
 
     }
 
@@ -52,7 +68,7 @@ public class URLReader{
         URL obj = new URL(url);
         HttpsURLConnection con = (HttpsURLConnection) obj.openConnection();
 
-        //add reuqest header
+        //add request header
         con.setRequestMethod("POST");
         con.setRequestProperty("User-Agent", USER_AGENT);
         con.setRequestProperty("Accept-Language", "en-US,en;q=0.5");
@@ -66,9 +82,9 @@ public class URLReader{
         wr.close();
 
         int responseCode = con.getResponseCode();
-        System.out.println("\nSending 'POST' request to URL : " + url);
-        System.out.println("Post parameters : " + urlParameters);
-        System.out.println("Response Code : " + responseCode);
+        Log.i(TAG_URL_READER, "\nSending 'POST' request to URL : " + url);
+        Log.i(TAG_URL_READER, "Post parameters : " + urlParameters);
+        Log.i(TAG_URL_READER, "Response Code : " + responseCode);
 
         BufferedReader in = new BufferedReader(
                 new InputStreamReader(con.getInputStream()));
@@ -81,7 +97,28 @@ public class URLReader{
         in.close();
 
         //return result
-        return response.toString();
+        String jsonResponse = response.toString();
+        if(isJSONValid(jsonResponse))
+            return response.toString();
+        else
+            Log.e(TAG_URL_READER, jsonResponse + " is not valid JSON");
+        return "{}";
 
+    }
+
+    public boolean isJSONValid(String test) {
+        try {
+            new JSONObject(test);
+        } catch (JSONException ex) {
+            // edited, to include @Arthur's comment
+            // e.g. in case JSONArray is valid as well...
+            try {
+                new JSONArray(test);
+            } catch (JSONException ex1) {
+                Log.e(TAG_URL_READER, test + "is not json");
+                return false;
+            }
+        }
+        return true;
     }
 }
