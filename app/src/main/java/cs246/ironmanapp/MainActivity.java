@@ -1,32 +1,26 @@
 package cs246.ironmanapp;
 
 import android.os.Bundle;
-
 import android.support.v7.app.ActionBarActivity;
-
 import android.util.Log;
-
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.ProgressBar;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
-
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
 import java.lang.reflect.Type;
-import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
-import java.net.ProtocolException;
-import java.net.URL;
-import java.sql.Struct;
 import java.util.List;
 
 
 
 public class MainActivity extends ActionBarActivity {
+    int progressStatus = 0;
+    ProgressBar gprogress;
+    ProgressBar bprogress;
+    ProgressBar pprogress;
     //EntriesGetter e;
     private final String USER_AGENT = "Mozilla/5.0";
 
@@ -35,11 +29,24 @@ public class MainActivity extends ActionBarActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         urlDriver();
 
         //e.run();
+
+    }
+
+    public void testProgress(View view) {
+
+        gprogress = (ProgressBar) findViewById(R.id.progressBar2);
+        bprogress = (ProgressBar) findViewById(R.id.progressBar);
+        pprogress = (ProgressBar) findViewById(R.id.progressBar3);
+        progressStatus += 5;
+        progressStatus = progressStatus % 105;
+        gprogress.setProgress(progressStatus);
 
     }
 
