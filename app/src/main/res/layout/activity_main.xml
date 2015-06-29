@@ -65,5 +65,12 @@
         android:progress="40"
         android:progressTint="#9e43d8" />
 
+    <ListView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/rankings"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/progressBar3" />
+
 </RelativeLayout>
 </ScrollView>
