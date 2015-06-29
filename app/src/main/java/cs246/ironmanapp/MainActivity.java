@@ -1,10 +1,14 @@
 package cs246.ironmanapp;
 
+import android.content.Context;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
+import android.widget.RelativeLayout;
 import android.view.View;
 import android.widget.ProgressBar;
 
@@ -21,25 +25,39 @@ import java.net.ProtocolException;
 import java.net.URL;
 import java.sql.Struct;
 import java.util.List;
+import java.util.concurrent.ExecutionException;
+import java.util.logging.Handler;
 
 
 public class MainActivity extends ActionBarActivity {
+    private static final String GET_CONTESTANTS_URL = "http://robbise.no-ip.info/ironman/getContestants.php?semester=";
+    private static final String GET_EENTRIES_URL = "http://robbise.no-ip.info/ironman/getEntries.php";
+    public static List<Structs.Contestant> contestants;
+    public List<Structs.Entry> entries;
+    private android.os.Handler handler;
+    public static String json;
+    public ListView lView;
+    private static Context context;
+    public ArrayAdapter<String> adapter;
+
     int progressStatus = 0;
     ProgressBar gprogress;
     ProgressBar bprogress;
     ProgressBar pprogress;
     //EntriesGetter e;
     private final String USER_AGENT = "Mozilla/5.0";
-    private final String TAG_MAIN_ACTIVITY = "Main Activity";
+    private static final String TAG_MAIN_ACTIVITY = "Main Activity";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
-
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        urlDriver();
+        handler = new android.os.Handler();
+        getContestants();
+        MainActivity.context = MainActivity.this.getApplicationContext();
+        //lView = (ListView) findViewById(R.id.rankings);
+        adapter = new ArrayAdapter(context, android.R.layout.simple_list_item_1, contestants);
 
-        //e.run();
+
     }
 
     public void testProgress(View view) {
@@ -53,51 +71,81 @@ public class MainActivity extends ActionBarActivity {
 
     }
 
-    public void urlDriver() {
+    public void getContestants() {
 
-        Log.v(TAG_MAIN_ACTIVITY, "About to do this runnable thing");
+        new Thread(new Task(GET_CONTESTANTS_URL + getSelectedSemester())).start();
+    }
 
-        Runnable runnable = new Runnable() {
+
+        class Task implements Runnable {
+            private String url;
+            private String params;
+            /**
+             * Constructor for a GET request takes only a url ex. "http://robbise.no-ip.info/ironman/getContestants.php?semester=FALL2015"
+             * @param url
+             */
+            public Task(String url) {
+                this.url = url;
+                this.params = "";
+            }
+
+            /**
+             * CONstructor for a POST request takes a url string and parameters
+             * ex. url = "http://robbise.no-ip.info/ironman/newUser.php"
+             * params = username=batman
+             * @param url
+             * @param params
+             */
+            public Task(String url, String params) {
+                this.url = url;
+                this.params = params;
+            }
             @Override
             public void run() {
-                Log.v(TAG_MAIN_ACTIVITY, "In runnable inline class");
-                URLReader urlReader = new URLReader();
-
-                //getContestants
-                String semester = "FALL2015";
-                String myURL = "http://robbise.no-ip.info/ironman/getContestants.php?semester=" + semester;
-                String json = "";
-
+                URLReader urlReader = new URLReader(url, params);
                 try {
-                    Log.i(TAG_MAIN_ACTIVITY, "The URL is: " + myURL);
-                    json = urlReader.sendGet(myURL);
-                    Log.i(TAG_MAIN_ACTIVITY, "Returned Json: " + json);
-
+                    //String json = "";
+                    json = urlReader.sendGet(GET_CONTESTANTS_URL + getSelectedSemester());
                 } catch (Exception e) {
-                    Log.e(TAG_MAIN_ACTIVITY, "Problem sending Get", e);
+                    Log.e(TAG_MAIN_ACTIVITY, "Error trying to send a GET request with: ", e);
+                    e.printStackTrace();
                 }
-                try {
-
-                    Gson gson = new Gson();
-                    Type listType = new TypeToken<List<Structs.Contestant>>(){}.getType();
-                    //List<Structs.Contestant> contestList = (List<Structs.Contestant>) gson.fromJson(json, Structs.Contestant.class);
-                    //Structs.Contestant[] contestList = gson.fromJson(json, Structs.Contestant[].class);
-                    //Structs.Contestants contestants = gson.fromJson(json, Structs.Contestants.class);
-                    List<Structs.Contestant> contestList = gson.fromJson(json, listType);
-                    String output = "";
-                    for (Structs.Contestant contestant : contestList) {
-                        output += contestant.u_name + " " + contestant.percentage + "%\n";
-
+                handler.post(new Runnable() {
+                    @Override
+                    public void run() {
+                        populateContestantsList(json);
                     }
-                    Log.v(TAG_MAIN_ACTIVITY, output);
-                }
-                catch (Exception e){
-                    Log.e(TAG_MAIN_ACTIVITY, "Error with gson or outputting or something", e);
-                }
+                });
+            }
+        }
+
+    /**
+     * Takes a json string and turns it into a
+     * @param json
+     */
+    public static void populateContestantsList(String json) {
+        List<Structs.Contestant> contestList = null;
+        try {
+            Gson gson = new Gson();
+            Type listType = new TypeToken<List<Structs.Contestant>>() {
+            }.getType();
+            contestants = gson.fromJson(json, listType);
+            String output = "";
+            for (Structs.Contestant contestant : contestants) {
+                output += contestant.u_name + " " + contestant.percentage + "%\n";
 
             }
-        };
-        new Thread(runnable).start();
+            Log.v(TAG_MAIN_ACTIVITY, output);
+        } catch (Exception e) {
+            Log.e(TAG_MAIN_ACTIVITY, "Error with gson or outputting or something", e);
+        }
+
+    }
+
+    private String getSelectedSemester() {
+        // this method will need to get the semester from a select drop down menu on activity_main.xml
+        // and return it.
+        return "FALL2015";
     }
 
     @Override
@@ -121,4 +169,6 @@ public class MainActivity extends ActionBarActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
+
 }
