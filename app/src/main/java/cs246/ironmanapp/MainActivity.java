@@ -9,6 +9,8 @@ import android.view.MenuItem;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
+import android.view.View;
+import android.widget.ProgressBar;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
@@ -28,7 +30,6 @@ import java.util.logging.Handler;
 
 
 public class MainActivity extends ActionBarActivity {
-    private static final String TAG_MAIN_ACTIVITY = "Main Activity";
     private static final String GET_CONTESTANTS_URL = "http://robbise.no-ip.info/ironman/getContestants.php?semester=";
     private static final String GET_EENTRIES_URL = "http://robbise.no-ip.info/ironman/getEntries.php";
     public static List<Structs.Contestant> contestants;
@@ -39,6 +40,13 @@ public class MainActivity extends ActionBarActivity {
     private static Context context;
     public ArrayAdapter<String> adapter;
 
+    int progressStatus = 0;
+    ProgressBar gprogress;
+    ProgressBar bprogress;
+    ProgressBar pprogress;
+    //EntriesGetter e;
+    private final String USER_AGENT = "Mozilla/5.0";
+    private static final String TAG_MAIN_ACTIVITY = "Main Activity";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,9 +54,20 @@ public class MainActivity extends ActionBarActivity {
         handler = new android.os.Handler();
         getContestants();
         MainActivity.context = MainActivity.this.getApplicationContext();
-        lView = (ListView) findViewById(R.id.rankings);
+        //lView = (ListView) findViewById(R.id.rankings);
         adapter = new ArrayAdapter(context, android.R.layout.simple_list_item_1, contestants);
 
+
+    }
+
+    public void testProgress(View view) {
+
+        gprogress = (ProgressBar) findViewById(R.id.progressBar2);
+        bprogress = (ProgressBar) findViewById(R.id.progressBar);
+        pprogress = (ProgressBar) findViewById(R.id.progressBar3);
+        progressStatus += 5;
+        progressStatus = progressStatus % 105;
+        gprogress.setProgress(progressStatus);
 
     }
 
