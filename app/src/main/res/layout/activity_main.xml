@@ -46,7 +46,7 @@
                 android:progressBackgroundTint="#000000"
                 android:layout_marginTop="140dp"
                 android:progressDrawable="@drawable/progressblu"
-                />
+                android:secondaryProgress="100" />
 
     <ProgressBar
         style="@android:style/Widget.ProgressBar.Horizontal"
@@ -94,7 +94,8 @@
 
                 android:progressDrawable="@drawable/progress"
                 android:clickable="true"
-                android:onClick="testProgress" />
+                android:onClick="testProgress"
+                android:secondaryProgress="100" />
 
             <ProgressBar
                 style="@android:style/Widget.ProgressBar.Horizontal"
@@ -110,7 +111,7 @@
                 android:progress="40"
 
                 android:progressDrawable="@drawable/progresspurp"
-                />
+                android:secondaryProgress="100" />
 
             <ImageView
                 android:layout_width="50dp"
@@ -155,7 +156,7 @@
         android:layout_height="80dp"
         android:id="@+id/imageView3"
 
-        android:layout_marginTop="450dp"
+        android:layout_marginTop="400dp"
         android:src="@drawable/plus"
         android:clickable="true"
         android:onClick="testProgress"

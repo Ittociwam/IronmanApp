@@ -33,7 +33,7 @@ public class MainActivity extends ActionBarActivity {
     public static List<Structs.Contestant> contestants;
     public List<Structs.Entry> entries;
     private android.os.Handler handler;
-    public static String json;
+    //public static String json;
     public ListView lView;
     private static Context context;
     public ArrayAdapter<String> adapter;
@@ -186,6 +186,7 @@ public class MainActivity extends ActionBarActivity {
 
 
         class Task implements Runnable {
+            public String json;
             private String url;
             private String params;
             /**
