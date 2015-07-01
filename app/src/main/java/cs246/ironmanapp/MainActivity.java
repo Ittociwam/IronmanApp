@@ -47,6 +47,7 @@ public class MainActivity extends ActionBarActivity {
     //EntriesGetter e;
     private final String USER_AGENT = "Mozilla/5.0";
     private static final String TAG_MAIN_ACTIVITY = "Main Activity";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -77,51 +78,56 @@ public class MainActivity extends ActionBarActivity {
     }
 
 
-        class Task implements Runnable {
-            public String json;
-            private String url;
-            private String params;
-            /**
-             * Constructor for a GET request takes only a url ex. "http://robbise.no-ip.info/ironman/getContestants.php?semester=FALL2015"
-             * @param url
-             */
-            public Task(String url) {
-                this.url = url;
-                this.params = "";
-            }
+    class Task implements Runnable {
+        public String json;
+        private String url;
+        private String params;
 
-            /**
-             * CONstructor for a POST request takes a url string and parameters
-             * ex. url = "http://robbise.no-ip.info/ironman/newUser.php"
-             * params = username=batman
-             * @param url
-             * @param params
-             */
-            public Task(String url, String params) {
-                this.url = url;
-                this.params = params;
-            }
-            @Override
-            public void run() {
-                URLReader urlReader = new URLReader(url, params);
-                try {
-                    //String json = "";
-                    json = urlReader.sendGet(GET_CONTESTANTS_URL + getSelectedSemester());
-                } catch (Exception e) {
-                    Log.e(TAG_MAIN_ACTIVITY, "Error trying to send a GET request with: ", e);
-                    e.printStackTrace();
-                }
-                handler.post(new Runnable() {
-                    @Override
-                    public void run() {
-                        populateContestantsList(json);
-                    }
-                });
-            }
+        /**
+         * Constructor for a GET request takes only a url ex. "http://robbise.no-ip.info/ironman/getContestants.php?semester=FALL2015"
+         *
+         * @param url
+         */
+        public Task(String url) {
+            this.url = url;
+            this.params = "";
         }
+
+        /**
+         * CONstructor for a POST request takes a url string and parameters
+         * ex. url = "http://robbise.no-ip.info/ironman/newUser.php"
+         * params = username=batman
+         *
+         * @param url
+         * @param params
+         */
+        public Task(String url, String params) {
+            this.url = url;
+            this.params = params;
+        }
+
+        @Override
+        public void run() {
+            URLReader urlReader = new URLReader(url, params);
+            try {
+                //String json = "";
+                json = urlReader.sendGet(GET_CONTESTANTS_URL + getSelectedSemester());
+            } catch (Exception e) {
+                Log.e(TAG_MAIN_ACTIVITY, "Error trying to send a GET request with: ", e);
+                e.printStackTrace();
+            }
+            handler.post(new Runnable() {
+                @Override
+                public void run() {
+                    populateContestantsList(json);
+                }
+            });
+        }
+    }
 
     /**
      * Takes a json string and turns it into a
+     *
      * @param json
      */
     public static void populateContestantsList(String json) {
