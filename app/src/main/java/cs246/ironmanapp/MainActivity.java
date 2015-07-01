@@ -185,6 +185,7 @@ public class MainActivity extends ActionBarActivity {
 
 
 
+
         class Task implements Runnable {
             public String json;
             private String url;
@@ -198,38 +199,41 @@ public class MainActivity extends ActionBarActivity {
                 this.params = "";
             }
 
-            /**
-             * CONstructor for a POST request takes a url string and parameters
-             * ex. url = "http://robbise.no-ip.info/ironman/newUser.php"
-             * params = username=batman
-             * @param url
-             * @param params
-             */
-            public Task(String url, String params) {
-                this.url = url;
-                this.params = params;
-            }
-            @Override
-            public void run() {
-                URLReader urlReader = new URLReader(url, params);
-                try {
-                    //String json = "";
-                    json = urlReader.sendGet(GET_CONTESTANTS_URL + getSelectedSemester());
-                } catch (Exception e) {
-                    Log.e(TAG_MAIN_ACTIVITY, "Error trying to send a GET request with: ", e);
-                    e.printStackTrace();
-                }
-                handler.post(new Runnable() {
-                    @Override
-                    public void run() {
-                        populateContestantsList(json);
-                    }
-                });
-            }
+        /**
+         * CONstructor for a POST request takes a url string and parameters
+         * ex. url = "http://robbise.no-ip.info/ironman/newUser.php"
+         * params = username=batman
+         *
+         * @param url
+         * @param params
+         */
+        public Task(String url, String params) {
+            this.url = url;
+            this.params = params;
         }
+
+        @Override
+        public void run() {
+            URLReader urlReader = new URLReader(url, params);
+            try {
+                //String json = "";
+                json = urlReader.sendGet(GET_CONTESTANTS_URL + getSelectedSemester());
+            } catch (Exception e) {
+                Log.e(TAG_MAIN_ACTIVITY, "Error trying to send a GET request with: ", e);
+                e.printStackTrace();
+            }
+            handler.post(new Runnable() {
+                @Override
+                public void run() {
+                    populateContestantsList(json);
+                }
+            });
+        }
+    }
 
     /**
      * Takes a json string and turns it into a
+     *
      * @param json
      */
     public static List populateContestantsList(String json) {
