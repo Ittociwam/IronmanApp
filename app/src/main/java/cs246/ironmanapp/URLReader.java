@@ -1,5 +1,6 @@
 package cs246.ironmanapp;
 
+import android.nfc.Tag;
 import android.os.AsyncTask;
 import android.util.Log;
 
@@ -19,12 +20,57 @@ import javax.net.ssl.HttpsURLConnection;
  * Created by John on 6/22/15.
  */
 
-
-
 public class URLReader {
-    private final String USER_AGENT = "Mozilla/5.0";
 
+
+    private final String USER_AGENT = "Mozilla/5.0";
+    private String url;
+    private String params;
     private static final String TAG_URL_READER = "Url Reader";
+
+    /**
+     * Constructor for a GET request takes only a url ex. "http://robbise.no-ip.info/ironman/getContestants.php?semester=FALL2015"
+     * @param url
+     */
+    public URLReader(String url) {
+        this.url = url;
+        this.params = "";
+    }
+
+    /**
+     * CONstructor for a POST request takes a url string and parameters
+     * ex. url = "http://robbise.no-ip.info/ironman/newUser.php"
+     * params = username=batman
+     * @param url
+     * @param params
+     */
+    public URLReader(String url, String params) {
+        this.url = url;
+        this.params = params;
+    }
+
+
+   // @Override
+    public void run() {
+        if (this.params.isEmpty()) {
+            try {
+                sendGet(this.url);
+            } catch (Exception e) {
+                Log.e(TAG_URL_READER, "Error trying to send a GET request with: " + url, e);
+                e.printStackTrace();
+            }
+        } else {
+            if (this.url.contains("?")) {
+                Log.w(TAG_URL_READER, "Your url contains a '?' you may be trying to send a POST request with a GET url string.");
+            }
+            try {
+               sendPost(this.url, this.params);
+            } catch (Exception e) {
+                Log.e(TAG_URL_READER, "Error trying to send a POST request with: " + this.url + " as url and: " + this.params + " as params.", e);
+            }
+        }
+    }
+
 
     public String sendGet(String url) throws Exception {
 
@@ -54,7 +100,7 @@ public class URLReader {
 
         //return result
         String jsonResponse = response.toString();
-        if(isJSONValid(jsonResponse))
+        if (isJSONValid(jsonResponse))
             return response.toString();
         else
             Log.e(TAG_URL_READER, jsonResponse + " is not valid JSON");
@@ -98,7 +144,7 @@ public class URLReader {
 
         //return result
         String jsonResponse = response.toString();
-        if(isJSONValid(jsonResponse))
+        if (isJSONValid(jsonResponse))
             return response.toString();
         else
             Log.e(TAG_URL_READER, jsonResponse + " is not valid JSON");
