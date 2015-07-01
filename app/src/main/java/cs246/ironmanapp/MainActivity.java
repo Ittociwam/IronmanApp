@@ -72,6 +72,9 @@ public class MainActivity extends ActionBarActivity {
 
     }
 
+    /**
+     * This method simply starts a Task thread with the getcontestants url
+     */
     public void getContestants() {
 
         new Thread(new Task(GET_CONTESTANTS_URL + getSelectedSemester())).start();
@@ -106,6 +109,13 @@ public class MainActivity extends ActionBarActivity {
             this.params = params;
         }
 
+
+        /**
+         * This is the overridden run method for Task which is a runnable class. It creates a
+         * new urlReader with the url that was passed in and then sends a get request and assigns the
+         * returned data to a static json object.
+         * THIS METHOD IS UNDER CONSTRUCTION AND WILL NOT LOOK LIKE THIS LATER
+         */
         @Override
         public void run() {
             URLReader urlReader = new URLReader(url, params);
@@ -126,9 +136,9 @@ public class MainActivity extends ActionBarActivity {
     }
 
     /**
-     * Takes a json string and turns it into a
+     * Takes a json string and turns it into a list so that we can then place it in a list view
      *
-     * @param json
+     * @param json - a json string
      */
     public static void populateContestantsList(String json) {
         List<Structs.Contestant> contestList = null;
@@ -149,10 +159,15 @@ public class MainActivity extends ActionBarActivity {
 
     }
 
+    /**
+     * this method will need to get the semester from a select
+     * drop down menu on activity_main.xml and return it.
+     *
+     * @return a string that is the selected semester
+     */
     private String getSelectedSemester() {
-        // this method will need to get the semester from a select drop down menu on activity_main.xml
-        // and return it.
-        return "FALL2015";
+
+        return "FALL2015"; // a default value for testing
     }
 
     @Override
