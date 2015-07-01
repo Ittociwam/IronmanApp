@@ -5,14 +5,14 @@ import android.util.Log;
 /**
  * Created by John on 6/10/15.
  */
-public class EntriesGetter extends ServiceCaller {
+public class EntriesGetter {
 
     private static final String ENTRIES_GETTER_METHOD = "In EntriesGetter class";
 
 
 
 
-    public EntriesGetter(String url, String parameters) { super(url, parameters);}
+    public EntriesGetter(String url, String parameters) { }
 
     double percent = 100;
     double swim = 1.2;
