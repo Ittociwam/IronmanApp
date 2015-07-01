@@ -138,12 +138,15 @@
         android:layout_height="80dp"
         android:id="@+id/imageView3"
 
-        android:layout_marginTop="450dp"
         android:src="@drawable/plus"
         android:clickable="true"
         android:onClick="testProgress"
 
         android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignParentEnd="false"
+        android:layout_marginBottom="0dp"
+        android:layout_alignParentStart="false"
+        android:layout_alignParentBottom="true"
+        android:layout_marginRight="5dp" />
 
 </RelativeLayout>

@@ -24,6 +24,9 @@ public class EntriesGetter extends ServiceCaller {
     double bikeP;
     double runP;
 
+    /**
+     *
+     */
     public void run() {
 
         Log.i(ENTRIES_GETTER_METHOD, "Starting run method");
