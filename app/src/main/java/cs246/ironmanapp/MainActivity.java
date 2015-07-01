@@ -30,12 +30,9 @@ import java.util.logging.Handler;
 
 
 public class MainActivity extends ActionBarActivity {
-    private static final String GET_CONTESTANTS_URL = "http://robbise.no-ip.info/ironman/getContestants.php?semester=";
-    private static final String GET_EENTRIES_URL = "http://robbise.no-ip.info/ironman/getEntries.php";
-    public static List<Structs.Contestant> contestants;
-    public List<Structs.Entry> entries;
+    private static final String GET_CONTESTANTS_URL = "http://robbise.no-ip.info/ironman/getContestants.php?";
+    private static final String GET_ENTRIES_URL = "http://robbise.no-ip.info/ironman/getEntries.php?";
     private android.os.Handler handler;
-    //public static String json;
     public ListView lView;
     private static Context context;
     public ArrayAdapter<String> adapter;
@@ -53,12 +50,11 @@ public class MainActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         handler = new android.os.Handler();
+
         getContestants();
+        getEntries();
+
         MainActivity.context = MainActivity.this.getApplicationContext();
-        //lView = (ListView) findViewById(R.id.rankings);
-        adapter = new ArrayAdapter(context, android.R.layout.simple_list_item_1, contestants);
-
-
     }
 
     public void testProgress(View view) {
@@ -76,8 +72,19 @@ public class MainActivity extends ActionBarActivity {
      * This method simply starts a Task thread with the getcontestants url
      */
     public void getContestants() {
+        Task t = new Task(GET_CONTESTANTS_URL + "semester=" + getSelectedSemester());
 
-        new Thread(new Task(GET_CONTESTANTS_URL + getSelectedSemester())).start();
+        t.setTaskCompletion(new ContestantFinisher());
+
+        new Thread(t).start();
+    }
+
+    public void getEntries() {
+        Task t = new Task(GET_ENTRIES_URL + "semester=" + getSelectedSemester() + "&id=" + getContestantID());
+
+        t.setTaskCompletion(new EntryFinisher());
+
+        new Thread(t).start();
     }
 
 
@@ -85,6 +92,12 @@ public class MainActivity extends ActionBarActivity {
         public String json;
         private String url;
         private String params;
+        private boolean isPost;
+        private TaskCompletion taskCompletion;
+
+        public void setTaskCompletion(TaskCompletion t) {
+            taskCompletion = t;
+        }
 
         /**
          * Constructor for a GET request takes only a url ex. "http://robbise.no-ip.info/ironman/getContestants.php?semester=FALL2015"
@@ -94,10 +107,12 @@ public class MainActivity extends ActionBarActivity {
         public Task(String url) {
             this.url = url;
             this.params = "";
+            isPost = false;
+
         }
 
         /**
-         * CONstructor for a POST request takes a url string and parameters
+         * Constructor for a POST request takes a url string and parameters
          * ex. url = "http://robbise.no-ip.info/ironman/newUser.php"
          * params = username=batman
          *
@@ -107,8 +122,11 @@ public class MainActivity extends ActionBarActivity {
         public Task(String url, String params) {
             this.url = url;
             this.params = params;
+            if (!params.isEmpty()) {
+                isPost = true;
+            } else
+                isPost = false;
         }
-
 
         /**
          * This is the overridden run method for Task which is a runnable class. It creates a
@@ -120,8 +138,12 @@ public class MainActivity extends ActionBarActivity {
         public void run() {
             URLReader urlReader = new URLReader(url, params);
             try {
-                //String json = "";
-                json = urlReader.sendGet(GET_CONTESTANTS_URL + getSelectedSemester());
+                Log.i(TAG_MAIN_ACTIVITY, url);
+                if (isPost == true) {
+                    json = urlReader.sendPost(url, params);
+                } else {
+                    json = urlReader.sendGet(url);
+                }
             } catch (Exception e) {
                 Log.e(TAG_MAIN_ACTIVITY, "Error trying to send a GET request with: ", e);
                 e.printStackTrace();
@@ -129,35 +151,12 @@ public class MainActivity extends ActionBarActivity {
             handler.post(new Runnable() {
                 @Override
                 public void run() {
-                    populateContestantsList(json);
+                    taskCompletion.finish(json);
                 }
             });
         }
     }
 
-    /**
-     * Takes a json string and turns it into a list so that we can then place it in a list view
-     *
-     * @param json - a json string
-     */
-    public static void populateContestantsList(String json) {
-        List<Structs.Contestant> contestList = null;
-        try {
-            Gson gson = new Gson();
-            Type listType = new TypeToken<List<Structs.Contestant>>() {
-            }.getType();
-            contestants = gson.fromJson(json, listType);
-            String output = "";
-            for (Structs.Contestant contestant : contestants) {
-                output += contestant.u_name + " " + contestant.percentage + "%\n";
-
-            }
-            Log.v(TAG_MAIN_ACTIVITY, output);
-        } catch (Exception e) {
-            Log.e(TAG_MAIN_ACTIVITY, "Error with gson or outputting or something", e);
-        }
-
-    }
 
     /**
      * this method will need to get the semester from a select
@@ -168,6 +167,17 @@ public class MainActivity extends ActionBarActivity {
     private String getSelectedSemester() {
 
         return "FALL2015"; // a default value for testing
+    }
+
+    /**
+     * this method will need to get the ID from a locally stored ID number
+     * and return it.
+     *
+     * @return a string that is the ID of the current user
+     */
+    private String getContestantID() {
+
+        return "55943eb52b381"; // id for Scooby Doo
     }
 
     @Override
