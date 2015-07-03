@@ -36,7 +36,7 @@ public class URLReader implements Runnable {
     }
 
     /**
-     * CONstructor for a POST request takes a url string and parameters
+     * Constructor for a POST request takes a url string and parameters
      * ex. url = "http://robbise.no-ip.info/ironman/newUser.php"
      * params = username=batman
      * @param url
