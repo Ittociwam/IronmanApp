@@ -66,6 +66,10 @@ public class MainActivity extends ActionBarActivity {
         setContentView(R.layout.activity_main);
         handler = new android.os.Handler();
 
+
+        /*we want to do both of these when the app first loads to initialize
+         contestants and entries list
+         */
         getContestants();
         getEntries();
 
@@ -102,6 +106,82 @@ public class MainActivity extends ActionBarActivity {
         new Thread(t).start();
     }
 
+    /**
+     * This function will be called when a user pushes submit on the newEntry form.
+     * It will call 2 additional functions, createNewUser and sendNewEntry. createNewUser will only be
+     * called if there is no userid storred in the system. Insert info will handle any error messages returned
+     * from these 2 functions
+     *
+     *
+     */
+    public void insertInfo(){
+
+        String username = null;
+        //if(the users id is not stored){
+        Structs.ReturnMessage newUserMessage = null;
+            // prompt user if they want to have a display name or not and call
+            newUserMessage = createNewUser(username);
+
+            // as long as the return code in the new user message was equal to 0
+            // store the message value (the 13 digit code) locally for future reference
+            // otherwise handle the error and kick out of this function
+        //}
+
+        Structs.ReturnMessage newEntryMessage = null;
+
+        // take the users id and call
+         newEntryMessage = sendNewEntry(newUserMessage.message);
+
+
+    }
+
+    /**
+     *
+     * This function will take a unique identifier for the current user and then send it, along with
+     * the mode, distance, and date from a form in the app that the user will fill out with this
+     * information. It will return a message object that contains a code and a message. If everythign succeded
+     * the code will be 0
+     *
+     * See newEntry.php in the Ironman web services google doc for other message possibilities
+     * @see <a href="https://docs.google.com/document/d/1tAoB8SyYUl-wQ2T6NnoV7d-_Y1-sQZ6a9S2OFklqa7A/edit#bookmark=id.3azfvv3x9lua">NewEntry.php Documentation</a>
+     *
+     * @param uuid - this is a 13 digit unique identifier that we will send to the web service so
+     *             it knows what user we are trying to insert for
+     * @return - this will return a ReturnMessage object for insertID to handle
+     */
+    private Structs.ReturnMessage sendNewEntry(String uuid) {
+
+        String mode = null; // get a 1 2 or 3 from form values bike, swim run respectively
+        String distance = null; // get the distance 2.34 from the form
+        String date = null; // in SQL format please! 2015-07-03 get from the form
+
+
+
+
+        return null;
+    }
+
+    /**
+     *
+     * This function will take a display name or null and try to insert the user into the database.
+     * If this function is successful it will return a code 0 with a message that is a 13 digit uuid
+     * that can then be stored locally on the device.
+     *
+     * See newUser.php in the Ironman web services google doc for other message possibilities
+     * @see <a href="https://docs.google.com/document/d/1tAoB8SyYUl-wQ2T6NnoV7d-_Y1-sQZ6a9S2OFklqa7A/edit#bookmark=id.wwyex9oo7k64">NewUser.php Documentatoin</a>
+     *
+     * @param username - either the username the user wants as a display name or null if the user wants
+     *                 to be identified as a number
+     * @return - a new user message that contains a code as to what kind of message it is and the
+     * message itself
+     */
+    private Structs.ReturnMessage createNewUser(String username){
+
+
+        return null;
+
+    }
+
 
     class Task implements Runnable {
         public String json;
@@ -123,7 +203,6 @@ public class MainActivity extends ActionBarActivity {
             this.url = url;
             this.params = "";
             isPost = false;
-
         }
 
         /**

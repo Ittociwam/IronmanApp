@@ -40,14 +40,7 @@ public class Structs {
         double distance;
     }
 
-
-    static class NewEntryMessage{
-        int code;
-        String message;
-
-    }
-
-    static class NewUserMessage{
+    static class ReturnMessage{
         int code;
         String message;
 
