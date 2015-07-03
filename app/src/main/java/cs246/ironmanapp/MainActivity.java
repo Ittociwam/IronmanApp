@@ -1,6 +1,8 @@
 package cs246.ironmanapp;
 
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -50,6 +52,19 @@ public class MainActivity extends ActionBarActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        CharSequence textMain = "Fire Ze Missles?";
+        builder.setMessage(textMain);
+        java.lang.CharSequence text = "yes";
+        CharSequence text2 = "no";
+        DialogInterface.OnClickListener listener = null;
+        builder.setPositiveButton(text, listener);
+        builder.setNegativeButton(text2, listener);
+
+        AlertDialog alertDialog = builder.create();
+        alertDialog.show();
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         handler = new android.os.Handler();
@@ -57,6 +72,8 @@ public class MainActivity extends ActionBarActivity {
         MainActivity.context = MainActivity.this.getApplicationContext();
         //lView = (ListView) findViewById(R.id.rankings);
         adapter = new ArrayAdapter(context, android.R.layout.simple_list_item_1, contestants);
+
+
 
 
     }
@@ -69,6 +86,11 @@ public class MainActivity extends ActionBarActivity {
         progressStatus += 5;
         progressStatus = progressStatus % 105;
         gprogress.setProgress(progressStatus);
+
+    }
+
+    public void add(View view){
+
 
     }
 
@@ -105,6 +127,8 @@ public class MainActivity extends ActionBarActivity {
             this.url = url;
             this.params = params;
         }
+
+
 
         @Override
         public void run() {
@@ -176,6 +200,8 @@ public class MainActivity extends ActionBarActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
+
 
 
 }

@@ -142,7 +142,7 @@
 
         android:src="@drawable/plus"
         android:clickable="true"
-        android:onClick="testProgress"
+        android:onClick="add"
 
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="false"

@@ -36,7 +36,7 @@ public class URLReader implements Runnable {
     }
 
     /**
-     * CONstructor for a POST request takes a url string and parameters
+     * Constructor for a POST request takes a url string and parameters
      * ex. url = "http://robbise.no-ip.info/ironman/newUser.php"
      * params = username=batman
      * @param url
@@ -47,7 +47,9 @@ public class URLReader implements Runnable {
         this.params = params;
     }
 
-
+    /**
+     *
+     */
     @Override
     public void run() {
         if (this.params.isEmpty()) {
@@ -69,7 +71,13 @@ public class URLReader implements Runnable {
         }
     }
 
-
+    /**
+     *
+     * @param url The url is a string that holds all of the information used to generate race
+     *            percentages and contestant names.
+     * @return returns a response of the given string, otherwise sends a blank '{}'
+     * @throws Exception
+     */
     public String sendGet(String url) throws Exception {
 
 
@@ -107,6 +115,14 @@ public class URLReader implements Runnable {
     }
 
     // HTTP POST request
+
+    /**
+     *
+     * @param url
+     * @param urlParameters
+     * @return
+     * @throws Exception
+     */
     public String sendPost(String url, String urlParameters) throws Exception {
 
         URL obj = new URL(url);
@@ -150,6 +166,11 @@ public class URLReader implements Runnable {
 
     }
 
+    /**
+     *
+     * @param test
+     * @return
+     */
     public boolean isJSONValid(String test) {
         try {
             new JSONObject(test);
