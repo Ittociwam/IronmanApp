@@ -1,6 +1,8 @@
 package cs246.ironmanapp;
 
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -47,6 +49,19 @@ public class MainActivity extends ActionBarActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        CharSequence textMain = "Fire Ze Missles?";
+        builder.setMessage(textMain);
+        java.lang.CharSequence text = "yes";
+        CharSequence text2 = "no";
+        DialogInterface.OnClickListener listener = null;
+        builder.setPositiveButton(text, listener);
+        builder.setNegativeButton(text2, listener);
+
+        AlertDialog alertDialog = builder.create();
+        alertDialog.show();
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         handler = new android.os.Handler();
@@ -54,7 +69,9 @@ public class MainActivity extends ActionBarActivity {
         getContestants();
         getEntries();
 
+
         MainActivity.context = MainActivity.this.getApplicationContext();
+
     }
 
     public void testProgress(View view) {
@@ -68,9 +85,7 @@ public class MainActivity extends ActionBarActivity {
 
     }
 
-    /**
-     * This method simply starts a Task thread with the getcontestants url
-     */
+
     public void getContestants() {
         Task t = new Task(GET_CONTESTANTS_URL + "semester=" + getSelectedSemester());
 
@@ -128,12 +143,14 @@ public class MainActivity extends ActionBarActivity {
                 isPost = false;
         }
 
+
         /**
          * This is the overridden run method for Task which is a runnable class. It creates a
          * new urlReader with the url that was passed in and then sends a get request and assigns the
          * returned data to a static json object.
          * THIS METHOD IS UNDER CONSTRUCTION AND WILL NOT LOOK LIKE THIS LATER
          */
+
         @Override
         public void run() {
             URLReader urlReader = new URLReader(url, params);
@@ -201,6 +218,8 @@ public class MainActivity extends ActionBarActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
+
 
 
 }
