@@ -3,6 +3,7 @@ package cs246.ironmanapp;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.SharedPreferences;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -34,6 +35,7 @@ import java.util.logging.Handler;
 public class MainActivity extends ActionBarActivity {
     private static final String GET_CONTESTANTS_URL = "http://robbise.no-ip.info/ironman/getContestants.php?";
     private static final String GET_ENTRIES_URL = "http://robbise.no-ip.info/ironman/getEntries.php?";
+    private static final String NEW_USER_URL = "http://robbise.no-ip.info/ironman/newUser.php";
     private android.os.Handler handler;
     public ListView lView;
     private static Context context;
@@ -46,6 +48,7 @@ public class MainActivity extends ActionBarActivity {
     //EntriesGetter e;
     private final String USER_AGENT = "Mozilla/5.0";
     private static final String TAG_MAIN_ACTIVITY = "Main Activity";
+    private static String user;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,6 +68,9 @@ public class MainActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         handler = new android.os.Handler();
+        SharedPreferences sharedPreferences = getSharedPreferences("prefs", Context.MODE_PRIVATE);
+        user = sharedPreferences.getString("user_id", "");
+
 
 
         /*we want to do both of these when the app first loads to initialize
@@ -116,21 +122,50 @@ public class MainActivity extends ActionBarActivity {
      */
     public void insertInfo(){
 
-        String username = null;
-        //if(the users id is not stored){
+        if(user.isEmpty()){
         Structs.ReturnMessage newUserMessage = null;
             // prompt user if they want to have a display name or not and call
-            newUserMessage = createNewUser(username);
+            newUserMessage = createNewUser(user);
 
             // as long as the return code in the new user message was equal to 0
             // store the message value (the 13 digit code) locally for future reference
             // otherwise handle the error and kick out of this function
-        //}
+            switch(newUserMessage.code) {
+                case 0:
+                    SharedPreferences sharedPreferences = getSharedPreferences("preferences", Context.MODE_PRIVATE);
+                    SharedPreferences.Editor editor = sharedPreferences.edit();
+                    editor.putString("user_id", newUserMessage.message);
+                    editor.commit();
+                    break;
+
+                case -1:
+                    Log.e(TAG_MAIN_ACTIVITY, "An error from the database in insert info: " + newUserMessage.message);
+                    break;
+                case 1:
+                    Log.w(TAG_MAIN_ACTIVITY, "this name was a " + newUserMessage.message);
+                    break;
+                case 2:
+                    Log.w(TAG_MAIN_ACTIVITY, newUserMessage.message);
+                    break;
+                default:
+                    Log.wtf(TAG_MAIN_ACTIVITY, "Got a strange code back from PHP");
+            }
+
+        }
 
         Structs.ReturnMessage newEntryMessage = null;
 
         // take the users id and call
-         newEntryMessage = sendNewEntry(newUserMessage.message);
+         newEntryMessage = sendNewEntry(user);
+
+        if(newEntryMessage.code == 0)
+        {
+            Log.v(TAG_MAIN_ACTIVITY, "newEntry good! " + newEntryMessage.message);
+
+        }
+        else{
+            Log.e(TAG_MAIN_ACTIVITY, "There was an issue sending new entry" + newEntryMessage.message);
+        }
 
 
     }
@@ -176,10 +211,25 @@ public class MainActivity extends ActionBarActivity {
      * message itself
      */
     private Structs.ReturnMessage createNewUser(String username){
+        Task t = new Task(NEW_USER_URL, "username=" + getUsername());
 
+        t.setTaskCompletion(new NewUserFinisher());
+
+        new Thread(t).start();
 
         return null;
 
+    }
+
+    /**
+     * This function will display a textbox overlay prompting the user to either enter in a new user name
+     * or be saved in the database as a random number.
+     *
+     * @return - Returns whatever the user enters into the new username overlay
+     */
+    private String getUsername() {
+
+        return "TestUser";
     }
 
 
