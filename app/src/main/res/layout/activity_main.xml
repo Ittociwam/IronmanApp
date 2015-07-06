@@ -7,6 +7,7 @@
     android:background="#2c2c2c"
     >
 
+
     <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
@@ -148,6 +149,24 @@
                 android:layout_marginTop="10dp" />
 
 
+            <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:orientation="vertical"
+                android:layout_below="@+id/progressBar3"
+                android:layout_alignLeft="@+id/imageView2"
+                android:layout_alignStart="@+id/imageView2"
+                android:layout_marginTop="39dp">
+
+
+
+                <ListView
+                    android:id="@+id/custom_list"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:dividerHeight="1dp" />
+
+            </LinearLayout>
         </RelativeLayout>
     </ScrollView>
 
@@ -156,51 +175,16 @@
         android:layout_height="80dp"
         android:id="@+id/imageView3"
 
-        android:layout_marginTop="400dp"
+
         android:src="@drawable/plus"
         android:clickable="true"
         android:onClick="testProgress"
 
         android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
-
-
-    <RelativeLayout xmlns:android="http://schemas ANDROID.com/apk/res/android"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:padding="5dip" >
-
-        <TextView
-            android:id="@+id/u_name"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textStyle="bold"
-            android:typeface="sans" />
-
-        <TextView
-            android:id="@+id percentage"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/title"
-            android:layout_marginTop="5dip"
-            android:textColor="#343434"
-            android:textSize="12sp" />
-
-
-    </RelativeLayout>
-
-    <LinearLayout xmlns android="http://schemas.android.com/apk/res/android"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        androidorientation="vertical" >
-
-        <ListView
-            android:id="@+id/custom_list"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:dividerHeight="1dp" />
-
-    </LinearLayout>
+        android:layout_alignParentEnd="false"
+        android:layout_marginBottom="0dp"
+        android:layout_alignParentStart="false"
+        android:layout_alignParentBottom="true"
+        android:layout_marginRight="5dp" />
 
 </RelativeLayout>

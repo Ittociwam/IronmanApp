@@ -7,14 +7,17 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.ProgressBar;
+import android.widget.Toast;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
 import java.lang.reflect.Type;
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -42,13 +45,44 @@ public class MainActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         handler = new android.os.Handler();
+
         getContestants();
         MainActivity.context = MainActivity.this.getApplicationContext();
-        //lView = (ListView) findViewById(R.id.rankings);
-        adapter = new ArrayAdapter(context, android.R.layout.simple_list_item_1, contestants);
 
+
+        ArrayList image_details = getListData();
+        final ListView lv1 = (ListView) findViewById(R.id.custom_list);
+        lv1.setAdapter(new contestantListAdapter.CustomListAdapter(this, image_details));
+        lv1.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+
+            @Override
+            public void onItemClick(AdapterView<?> a, View v, int POSITION, long id) {
+                int position = 0;
+                Object o = lv1.getItemAtPosition(position);
+                Structs.Contestant listContestants = (Structs.Contestant) o;
+                Toast.makeText(MainActivity.this, "Selected :" + " " + listContestants, Toast.LENGTH_LONG).show();
+            }
+        });
+
+
+        private ArrayList getListData() {
+        ArrayList<Structs.Contestant> results = new ArrayList<Structs.Contestant>();
+        Structs.Contestant arrayContestants = new Structs.Contestant();
+        //newsData.setHeadline("Dance of Democracy");
+        arrayContestants.u_name = "Pankaj Gupta";
+
+            arrayContestants.percentage = 20;
+        //newsData.setDate("May 26, 2013, 13:35");
+        results.add(arrayContestants);
+
+            return results;
+        }
 
     }
+
+
+
+
 
     public void testProgress(View view) {
 
@@ -61,10 +95,14 @@ public class MainActivity extends ActionBarActivity {
 
     }
 
+    /**
+     * This method simply starts a Task thread with the getcontestants url
+     */
     public void getContestants() {
 
         new Thread(new Task(GET_CONTESTANTS_URL + getSelectedSemester())).start();
     }
+
 
 
     class Task implements Runnable {
@@ -95,6 +133,13 @@ public class MainActivity extends ActionBarActivity {
             this.params = params;
         }
 
+
+        /**
+         * This is the overridden run method for Task which is a runnable class. It creates a
+         * new urlReader with the url that was passed in and then sends a get request and assigns the
+         * returned data to a static json object.
+         * THIS METHOD IS UNDER CONSTRUCTION AND WILL NOT LOOK LIKE THIS LATER
+         */
         @Override
         public void run() {
             URLReader urlReader = new URLReader(url, params);
@@ -115,9 +160,9 @@ public class MainActivity extends ActionBarActivity {
     }
 
     /**
-     * Takes a json string and turns it into a
+     * Takes a json string and turns it into a list so that we can then place it in a list view
      *
-     * @param json
+     * @param json - a json string
      */
     public static void populateContestantsList(String json) {
         List<Structs.Contestant> contestList = null;
@@ -138,10 +183,15 @@ public class MainActivity extends ActionBarActivity {
 
     }
 
+    /**
+     * this method will need to get the semester from a select
+     * drop down menu on activity_main.xml and return it.
+     *
+     * @return a string that is the selected semester
+     */
     private String getSelectedSemester() {
-        // this method will need to get the semester from a select drop down menu on activity_main.xml
-        // and return it.
-        return "FALL2015";
+
+        return "FALL2015"; // a default value for testing
     }
 
     @Override
@@ -165,5 +215,6 @@ public class MainActivity extends ActionBarActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
 
 }
