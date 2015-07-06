@@ -56,32 +56,28 @@ public class MainActivity extends ActionBarActivity {
         lv1.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
             @Override
-            public void onItemClick(AdapterView<?> a, View v, int POSITION, long id) {
-                int position = 0;
+            public void onItemClick(AdapterView<?> a, View v, int position, long id) {
+                position = 0;
                 Object o = lv1.getItemAtPosition(position);
                 Structs.Contestant listContestants = (Structs.Contestant) o;
                 Toast.makeText(MainActivity.this, "Selected :" + " " + listContestants, Toast.LENGTH_LONG).show();
             }
         });
-
-
-        private ArrayList getListData() {
-        ArrayList<Structs.Contestant> results = new ArrayList<Structs.Contestant>();
-        Structs.Contestant arrayContestants = new Structs.Contestant();
-        //newsData.setHeadline("Dance of Democracy");
-        arrayContestants.u_name = "Pankaj Gupta";
-
-            arrayContestants.percentage = 20;
-        //newsData.setDate("May 26, 2013, 13:35");
-        results.add(arrayContestants);
-
-            return results;
-        }
-
     }
 
 
+    private ArrayList getListData() {
+        ArrayList<Structs.Contestant> results = new ArrayList<Structs.Contestant>();
+        Structs.Contestant arrayContestants = new Structs.Contestant();
+        //newsData.setHeadline("Dance of Democracy");
+        arrayContestants.u_name = "Jared Mackie";
 
+        arrayContestants.percentage = 20;
+        //newsData.setDate("May 26, 2013, 13:35");
+        results.add(arrayContestants);
+
+        return results;
+    }
 
 
     public void testProgress(View view) {
@@ -104,7 +100,6 @@ public class MainActivity extends ActionBarActivity {
     }
 
 
-
     class Task implements Runnable {
         public String json;
         private String url;
@@ -121,7 +116,7 @@ public class MainActivity extends ActionBarActivity {
         }
 
         /**
-         * CONstructor for a POST request takes a url string and parameters
+         * Constructor for a POST request takes a url string and parameters
          * ex. url = "http://robbise.no-ip.info/ironman/newUser.php"
          * params = username=batman
          *
@@ -157,30 +152,31 @@ public class MainActivity extends ActionBarActivity {
                 }
             });
         }
-    }
 
-    /**
-     * Takes a json string and turns it into a list so that we can then place it in a list view
-     *
-     * @param json - a json string
-     */
-    public static void populateContestantsList(String json) {
-        List<Structs.Contestant> contestList = null;
-        try {
-            Gson gson = new Gson();
-            Type listType = new TypeToken<List<Structs.Contestant>>() {
-            }.getType();
-            contestants = gson.fromJson(json, listType);
-            String output = "";
-            for (Structs.Contestant contestant : contestants) {
-                output += contestant.u_name + " " + contestant.percentage + "%\n";
 
+        /**
+         * Takes a json string and turns it into a list so that we can then place it in a list view
+         *
+         * @param json - a json string
+         */
+        public void populateContestantsList(String json) {
+            List<Structs.Contestant> contestList = null;
+            try {
+                Gson gson = new Gson();
+                Type listType = new TypeToken<List<Structs.Contestant>>() {
+                }.getType();
+                contestants = gson.fromJson(json, listType);
+                String output = "";
+                for (Structs.Contestant contestant : contestants) {
+                    output += contestant.u_name + " " + contestant.percentage + "%\n";
+
+                }
+                Log.v(TAG_MAIN_ACTIVITY, output);
+            } catch (Exception e) {
+                Log.e(TAG_MAIN_ACTIVITY, "Error with gson or outputting or something", e);
             }
-            Log.v(TAG_MAIN_ACTIVITY, output);
-        } catch (Exception e) {
-            Log.e(TAG_MAIN_ACTIVITY, "Error with gson or outputting or something", e);
-        }
 
+        }
     }
 
     /**
@@ -215,6 +211,6 @@ public class MainActivity extends ActionBarActivity {
 
         return super.onOptionsItemSelected(item);
     }
-
-
 }
+
+
