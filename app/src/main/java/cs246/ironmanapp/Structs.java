@@ -21,12 +21,6 @@ public class Structs {
         // register_date
     }
 
-    static class Contestants{
-        public Contestants() {
-            contestantList = new ArrayList<>();
-        }
-        List<Contestant> contestantList;
-    }
 
     static class Entry{
         int pk_entries_id;
@@ -46,27 +40,13 @@ public class Structs {
         String units;
     }
 
-    static class Entries{
-        List<Entry> entryList;
-    }
-
     static class Total{
         String user;
         String mode;
         double distance;
     }
 
-    static class Totals{
-        List<Total> totalList;
-    }
-
-    static class NewEntryMessage{
-        int code;
-        String message;
-
-    }
-
-    static class NewUserMessage{
+    static class ReturnMessage{
         int code;
         String message;
 
