@@ -5,6 +5,7 @@ import android.app.AlertDialog;
 import android.content.Context;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 
 import android.os.Bundle;
@@ -15,7 +16,12 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+<<<<<<< HEAD
 import android.widget.ListAdapter;
+=======
+import android.widget.Button;
+import android.widget.ImageView;
+>>>>>>> ef01052e9df24c711eba7810f325e8496f84b2cb
 import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.Toast;
@@ -47,21 +53,23 @@ public class MainActivity extends ActionBarActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        //String message = intent.getStringExtra(MainActivity.EXTRA_MESSAGE);
+       // System.out.println(message);
 
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        CharSequence textMain = "Fire Ze Missles?";
-        builder.setMessage(textMain);
-        java.lang.CharSequence text = "yes";
-        CharSequence text2 = "no";
-        DialogInterface.OnClickListener listener = null;
-        builder.setPositiveButton(text, listener);
-        builder.setNegativeButton(text2, listener);
 
-        AlertDialog alertDialog = builder.create();
-        alertDialog.show();
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        ImageView add = (ImageView) findViewById(R.id.imageView3);
+
+        add.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, Pop.class));
+            }
+        });
+
         handler = new android.os.Handler();
 
         //List<Structs.Contestant> listContestant = getContestants();
