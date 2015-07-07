@@ -1,7 +1,5 @@
 package cs246.ironmanapp;
 
-import android.nfc.Tag;
-import android.os.AsyncTask;
 import android.util.Log;
 
 import org.json.JSONArray;
@@ -13,14 +11,16 @@ import java.io.DataOutputStream;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
-import java.nio.charset.StandardCharsets;
 
 import javax.net.ssl.HttpsURLConnection;
 
 /**
  * Created by John on 6/22/15.
  */
-public class URLReader implements Runnable {
+
+public class URLReader {
+
+
     private final String USER_AGENT = "Mozilla/5.0";
     private String url;
     private String params;
@@ -47,10 +47,11 @@ public class URLReader implements Runnable {
         this.params = params;
     }
 
+
     /**
      *
      */
-    @Override
+    //@Override
     public void run() {
         if (this.params.isEmpty()) {
             try {
