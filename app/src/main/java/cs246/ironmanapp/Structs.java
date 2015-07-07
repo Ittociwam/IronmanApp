@@ -7,6 +7,12 @@ import java.util.List;
 /**
  * Created by Robbie on 6/22/2015.
  */
+
+/**
+ * This structs class contains the Contestant, Contestants, entry, entries, total,
+ * new entry message and new user message variables which will be used for all the info
+ * @return
+ */
 public class Structs {
     static class Contestant{
         String pk_contestants_id;

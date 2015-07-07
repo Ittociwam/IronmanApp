@@ -1,7 +1,5 @@
 package cs246.ironmanapp;
 
-import android.nfc.Tag;
-import android.os.AsyncTask;
 import android.util.Log;
 
 import org.json.JSONArray;
@@ -13,22 +11,24 @@ import java.io.DataOutputStream;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
-import java.nio.charset.StandardCharsets;
 
 import javax.net.ssl.HttpsURLConnection;
 
 /**
  * Created by John on 6/22/15.
  */
-public class URLReader implements Runnable {
+
+public class URLReader {
+
+
     private final String USER_AGENT = "Mozilla/5.0";
     private String url;
     private String params;
     private static final String TAG_URL_READER = "Url Reader";
 
     /**
-     * Constructor for a GET request takes only a url ex. "http://robbise.no-ip.info/ironman/getContestants.php?semester=FALL2015"
-     * @param url
+     * Constructor for a GET request takes only a url
+     * @param url url ex. "http://robbise.no-ip.info/ironman/getContestants.php?semester=FALL2015"
      */
     public URLReader(String url) {
         this.url = url;
@@ -37,41 +37,17 @@ public class URLReader implements Runnable {
 
     /**
      * Constructor for a POST request takes a url string and parameters
-     * ex. url = "http://robbise.no-ip.info/ironman/newUser.php"
-     * params = username=batman
-     * @param url
-     * @param params
+     * @param url ex. url = "http://robbise.no-ip.info/ironman/newUser.php"
+     * @param params params = username=batman
      */
     public URLReader(String url, String params) {
         this.url = url;
         this.params = params;
     }
 
-    /**
-     *
-     */
-    @Override
-    public void run() {
-        if (this.params.isEmpty()) {
-            try {
-                sendGet(this.url);
-            } catch (Exception e) {
-                Log.e(TAG_URL_READER, "Error trying to send a GET request with: " + url, e);
-                e.printStackTrace();
-            }
-        } else {
-            if (this.url.contains("?")) {
-                Log.w(TAG_URL_READER, "Your url contains a '?' you may be trying to send a POST request with a GET url string.");
-            }
-            try {
-               sendPost(this.url, this.params);
-            } catch (Exception e) {
-                Log.e(TAG_URL_READER, "Error trying to send a POST request with: " + this.url + " as url and: " + this.params + " as params.", e);
-            }
-        }
-    }
 
     /**
+     * Executes an HTTP POST request
      *
      * @param url The url is a string that holds all of the information used to generate race
      *            percentages and contestant names.
@@ -117,6 +93,7 @@ public class URLReader implements Runnable {
     // HTTP POST request
 
     /**
+     * Executes an HTTP post request
      *
      * @param url
      * @param urlParameters
@@ -168,8 +145,10 @@ public class URLReader implements Runnable {
 
     /**
      *
-     * @param test
-     * @return
+     * This function determines if a string is valid json or not
+     *
+     * @param test - A string to validate
+     * @return - true(Is valid json) false(is not valid json)
      */
     public boolean isJSONValid(String test) {
         try {

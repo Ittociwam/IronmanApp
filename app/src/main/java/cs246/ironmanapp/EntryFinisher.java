@@ -1,5 +1,6 @@
 package cs246.ironmanapp;
 
+import android.app.Activity;
 import android.util.Log;
 
 import com.google.gson.Gson;
@@ -16,7 +17,7 @@ public class EntryFinisher implements TaskCompletion {
     private static final String TAG_ENTRY_FINISHER = "Entry Finisher";
     public static List<Structs.Entry> entries;
     @Override
-    public void finish(String json) {
+    public void finish(Activity activity, String json) {
         try {
             Gson gson = new GsonBuilder().setDateFormat("yyyy-MM-dd").create();
 

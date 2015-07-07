@@ -1,5 +1,6 @@
 package cs246.ironmanapp;
 
+import android.app.Activity;
 import android.util.Log;
 
 import com.google.gson.Gson;
@@ -15,7 +16,7 @@ public class NewUserFinisher implements TaskCompletion {
     private static final String TAG_NEW_USER_FINISHER = "New User Finisher";
 
     @Override
-    public void finish(String json) {
+    public void finish(Activity activity, String json) {
         Structs.ReturnMessage newUserMessage = null;
         try {
             Gson gson = new Gson();
