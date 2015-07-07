@@ -3,12 +3,15 @@ package cs246.ironmanapp;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.view.View;
@@ -49,21 +52,23 @@ public class MainActivity extends ActionBarActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        //String message = intent.getStringExtra(MainActivity.EXTRA_MESSAGE);
+       // System.out.println(message);
 
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        CharSequence textMain = "Fire Ze Missles?";
-        builder.setMessage(textMain);
-        java.lang.CharSequence text = "yes";
-        CharSequence text2 = "no";
-        DialogInterface.OnClickListener listener = null;
-        builder.setPositiveButton(text, listener);
-        builder.setNegativeButton(text2, listener);
 
-        AlertDialog alertDialog = builder.create();
-        alertDialog.show();
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        ImageView add = (ImageView) findViewById(R.id.imageView3);
+
+        add.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, Pop.class));
+            }
+        });
+
         handler = new android.os.Handler();
 
         getContestants();
