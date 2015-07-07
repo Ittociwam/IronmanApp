@@ -118,7 +118,6 @@ public class MainActivity extends ActionBarActivity {
      * called if there is no userid storred in the system. Insert info will handle any error messages returned
      * from these 2 functions
      *
-     *
      */
     public void insertInfo(){
 
@@ -150,7 +149,6 @@ public class MainActivity extends ActionBarActivity {
                 default:
                     Log.wtf(TAG_MAIN_ACTIVITY, "Got a strange code back from PHP");
             }
-
         }
 
         Structs.ReturnMessage newEntryMessage = null;
@@ -161,13 +159,10 @@ public class MainActivity extends ActionBarActivity {
         if(newEntryMessage.code == 0)
         {
             Log.v(TAG_MAIN_ACTIVITY, "newEntry good! " + newEntryMessage.message);
-
         }
         else{
             Log.e(TAG_MAIN_ACTIVITY, "There was an issue sending new entry" + newEntryMessage.message);
         }
-
-
     }
 
     /**
@@ -189,9 +184,6 @@ public class MainActivity extends ActionBarActivity {
         String mode = null; // get a 1 2 or 3 from form values bike, swim run respectively
         String distance = null; // get the distance 2.34 from the form
         String date = null; // in SQL format please! 2015-07-03 get from the form
-
-
-
 
         return null;
     }
