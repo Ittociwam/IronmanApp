@@ -1,5 +1,7 @@
 package cs246.ironmanapp;
 
+import android.app.Activity;
+
 import java.util.List;
 
 /**
@@ -8,7 +10,8 @@ import java.util.List;
 public class SubmitEntryFinisher implements TaskCompletion {
 
     @Override
-    public void finish(String json) {
+    public List<Structs.Contestant> finish(Activity activity, String json) {
 
+        return null;
     }
 }

@@ -1,5 +1,6 @@
 package cs246.ironmanapp;
 
+import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
 
@@ -15,8 +16,12 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+<<<<<<< HEAD
+import android.widget.ListAdapter;
+=======
 import android.widget.Button;
 import android.widget.ImageView;
+>>>>>>> ef01052e9df24c711eba7810f325e8496f84b2cb
 import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.Toast;
@@ -35,6 +40,7 @@ public class MainActivity extends ActionBarActivity {
     private android.os.Handler handler;
     public ListView lView;
     private static Context context;
+    public static Activity activity;
     public ArrayAdapter<String> adapter;
 
     int progressStatus = 0;
@@ -66,24 +72,35 @@ public class MainActivity extends ActionBarActivity {
 
         handler = new android.os.Handler();
 
+        //List<Structs.Contestant> listContestant = getContestants();
         getContestants();
         getEntries();
+
+
+        //ListAdapter theAdpater = new ArrayAdapter<Structs.Contestant>(this, android.R.layout.simple_list_item_1, );
+
+
+
+        //ArrayList image_details = getListData();
+        //final ListView lv1 = (ListView) findViewById(R.id.custom_list);
+        //lv1.setAdapter(new contestantListAdapter.CustomListAdapter(this, image_details));
+
         MainActivity.context = MainActivity.this.getApplicationContext();
 
+        activity = this;
 
-        ArrayList image_details = getListData();
-        final ListView lv1 = (ListView) findViewById(R.id.custom_list);
-        lv1.setAdapter(new contestantListAdapter.CustomListAdapter(this, image_details));
-        lv1.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
-            @Override
-            public void onItemClick(AdapterView<?> a, View v, int position, long id) {
-                position = 0;
-                Object o = lv1.getItemAtPosition(position);
-                Structs.Contestant listContestants = (Structs.Contestant) o;
-                Toast.makeText(MainActivity.this, "Selected :" + " " + listContestants, Toast.LENGTH_LONG).show();
-            }
-        });
+        //lv1.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+
+            //@Override
+            //public void onItemClick(AdapterView<?> a, View v, int position, long id) {
+            //    position = 0;
+            //    Object o = lv1.getItemAtPosition(position);
+            //    Structs.Contestant listContestants = (Structs.Contestant) o;
+            //    Toast.makeText(MainActivity.this, "Selected :" + " " + listContestants, Toast.LENGTH_LONG).show();
+            //}
+       // }
+        //);
     }
 
 
@@ -120,6 +137,7 @@ public class MainActivity extends ActionBarActivity {
         t.setTaskCompletion(new ContestantFinisher());
 
         new Thread(t).start();
+
     }
 
     public void getEntries() {
@@ -265,7 +283,7 @@ public class MainActivity extends ActionBarActivity {
             handler.post(new Runnable() {
                 @Override
                 public void run() {
-                    taskCompletion.finish(json);
+                    taskCompletion.finish(activity,json);
                 }
             });
         }
