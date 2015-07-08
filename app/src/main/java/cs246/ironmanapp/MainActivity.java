@@ -16,12 +16,9 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-<<<<<<< HEAD
 import android.widget.ListAdapter;
-=======
 import android.widget.Button;
 import android.widget.ImageView;
->>>>>>> ef01052e9df24c711eba7810f325e8496f84b2cb
 import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.Toast;

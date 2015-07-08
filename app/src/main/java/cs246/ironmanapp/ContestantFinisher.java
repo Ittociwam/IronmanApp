@@ -27,7 +27,7 @@ public class ContestantFinisher implements  TaskCompletion {
             }.getType();
             contestants = gson.fromJson(json, listType);
 
-            ListAdapter theAdapater = new ArrayAdapter<Structs.Contestant>(activity, R.layout.contestant_layout, contestants);
+            ListAdapter theAdapater = new ArrayAdapter<Structs.Contestant>(activity, android.R.layout.simple_list_item_1, contestants);
 
             ListView contestantView = (ListView) activity.findViewById(R.id.custom_list);
 
