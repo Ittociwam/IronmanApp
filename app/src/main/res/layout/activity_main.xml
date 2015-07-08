@@ -1,39 +1,45 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-    android:layout_height="fill_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="fill_parent"
+    android:background="#2c2c2c"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".MainActivity"
-    android:background="#2c2c2c"
-    >
+    tools:context=".MainActivity">
 
 
     <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        >
+        android:layout_height="fill_parent">
+
         <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-            xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-            android:layout_height="2050dp" android:paddingLeft="@dimen/activity_horizontal_margin"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:id="@+id/asdf"
+            android:layout_width="match_parent"
+            android:layout_height="2050dp"
+            android:background="#2c2c2c"
+            android:nestedScrollingEnabled="true"
+            android:paddingBottom="@dimen/activity_vertical_margin"
+            android:paddingLeft="@dimen/activity_horizontal_margin"
             android:paddingRight="@dimen/activity_horizontal_margin"
             android:paddingTop="@dimen/activity_vertical_margin"
-            android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".MainActivity"
-            android:background="#2c2c2c"
-            android:nestedScrollingEnabled="true">
-
+            tools:context=".MainActivity">
 
 
             <TextView
+                android:id="@+id/textView2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:text="28"
-                android:id="@+id/textView2"
-                android:gravity="center_horizontal"
-                android:textColor="#d3d3d3"
-                android:textSize="42pt"
                 android:layout_alignParentTop="true"
-                android:layout_centerHorizontal="true" />
+                android:layout_centerHorizontal="true"
+                android:gravity="center_horizontal"
+                android:text="28"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="#d3d3d3"
+                android:textSize="42pt" />
+
 
 
 
@@ -48,130 +54,147 @@
         android:progressBackgroundTint="#000000"
         android:progressDrawable="@drawable/progressblu"
         android:layout_marginTop="140dp"
-
-
-        android:indeterminate="false"
-        android:indeterminateOnly="false"/>
-
-
-            <ImageView
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:id="@+id/imageView"
-                android:src="@drawable/swim"
-                android:layout_alignParentLeft="false"
-                android:layout_alignParentStart="false"
-                android:layout_alignStart="@+id/progressBar"
-                android:layout_alignParentBottom="false"
-                android:layout_alignLeft="@+id/progressBar"
-                android:layout_marginLeft="15dp"
-                android:layout_marginTop="150dp" />
-
-
-            <ProgressBar
-                style="@android:style/Widget.ProgressBar.Horizontal"
-                android:layout_width="fill_parent"
-                android:layout_height="70dp"
-                android:id="@+id/progressBar2"
-                android:layout_marginTop="20dp"
-                android:layout_below="@+id/progressBar"
-                android:layout_centerHorizontal="true"
-                android:progressBackgroundTint="#000000"
-
-                android:progress="80"
-
-                android:indeterminate="false"
-
-                android:progressDrawable="@drawable/progress"
-                android:clickable="true"
-                android:onClick="testProgress"
                 android:secondaryProgress="100" />
 
             <ProgressBar
+                android:id="@+id/progressBar"
                 style="@android:style/Widget.ProgressBar.Horizontal"
                 android:layout_width="fill_parent"
                 android:layout_height="70dp"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="140dp"
+                android:indeterminate="false"
+                android:indeterminateOnly="false"
+>
+
+                android:progress="10"
+                android:progressBackgroundTint="#000000" />
+
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_alignLeft="@+id/progressBar"
+                android:layout_alignParentBottom="false"
+                android:layout_alignParentLeft="false"
+                android:layout_alignParentStart="false"
+                android:layout_alignStart="@+id/progressBar"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="150dp"
+                android:src="@drawable/swim" />
+
+
+            <ProgressBar
+                android:id="@+id/progressBar2"
+                style="@android:style/Widget.ProgressBar.Horizontal"
+                android:layout_width="fill_parent"
+                android:layout_height="70dp"
+                android:layout_below="@+id/progressBar"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"
+                android:clickable="true"
+
+                android:indeterminate="false"
+
+                android:onClick="testProgress"
+
+                android:progress="80"
+                android:progressBackgroundTint="#000000"
+                android:progressDrawable="@drawable/progress"
+                android:secondaryProgress="100" />
+
+            <ProgressBar
                 android:id="@+id/progressBar3"
+                style="@android:style/Widget.ProgressBar.Horizontal"
+                android:layout_width="fill_parent"
+                android:layout_height="70dp"
                 android:layout_below="@+id/progressBar2"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="20dp"
-                android:progressBackgroundTint="#000000"
-
-
                 android:progress="40"
+
+
+                android:progressBackgroundTint="#000000"
 
                 android:progressDrawable="@drawable/progresspurp"
                 android:secondaryProgress="100" />
 
             <ImageView
+                android:id="@+id/imageView2"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
-                android:id="@+id/imageView2"
+                android:layout_alignLeft="@+id/progressBar3"
                 android:layout_alignParentTop="false"
                 android:layout_alignStart="@+id/progressBar3"
-                android:layout_alignLeft="@+id/progressBar3"
                 android:layout_marginLeft="15dp"
                 android:layout_marginTop="331dp"
                 android:src="@drawable/run" />
 
             <TextView
+                android:id="@+id/textView"
                 android:layout_width="wrap_content"
                 android:layout_height="50dp"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:text="Days Remaining"
-                android:id="@+id/textView"
-                android:textColor="#d3d3d3"
-                android:textSize="32sp"
-                android:layout_marginBottom="55dp"
                 android:layout_alignBottom="@+id/imageView"
-                android:layout_centerHorizontal="true" />
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="55dp"
+                android:text="Days Remaining"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="#d3d3d3"
+                android:textSize="32sp" />
 
             <ImageView
+                android:id="@+id/imageView4"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
-                android:id="@+id/imageView4"
-                android:layout_alignTop="@+id/progressBar2"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"
-                android:src="@drawable/bike"
+                android:layout_alignTop="@+id/progressBar2"
                 android:layout_marginLeft="15dp"
-                android:layout_marginTop="10dp" />
+                android:layout_marginTop="10dp"
+                android:src="@drawable/bike" />
 
-        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_below="@+id/progressBar3"
-            android:layout_alignLeft="@+id/imageView2"
-            android:layout_alignStart="@+id/imageView2"
-            android:layout_marginTop="39dp">
+            <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/imageView2"
+                android:layout_alignStart="@+id/imageView2"
+                android:layout_below="@+id/progressBar3"
+                android:layout_marginTop="39dp"
+                android:orientation="vertical">
+
+
+            </LinearLayout>
 
             <ListView
                 android:id="@+id/custom_list"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/progressBar3" />
 
-        </LinearLayout>
+
         </RelativeLayout>
     </ScrollView>
 
 
-
     <ImageView
+        android:id="@+id/imageView3"
         android:layout_width="80dp"
         android:layout_height="80dp"
-        android:id="@+id/imageView3"
 
 
-        android:src="@drawable/plus"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="false"
+        android:layout_alignParentRight="true"
+
+        android:layout_alignParentStart="false"
+        android:layout_marginBottom="0dp"
+        android:layout_marginRight="5dp"
         android:clickable="true"
         android:onClick="add"
-
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="false"
-        android:layout_marginBottom="0dp"
-        android:layout_alignParentStart="false"
-        android:layout_alignParentBottom="true"
-        android:layout_marginRight="5dp" />
+        android:src="@drawable/plus" />
 
 </RelativeLayout>
