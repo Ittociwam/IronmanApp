@@ -58,16 +58,14 @@ public class AdapterContestant extends ArrayAdapter<Structs.Contestant> {
                 vi = inflater.inflate(android.R.layout.simple_list_item_1, null);
                 holder = new ViewHolder();
 
-                holder.display_name = (TextView) vi.findViewById(R.id.display_name);
-                holder.percentage = (TextView) vi.findViewById(R.id.percentage);
+                //holder.display_name = (TextView) vi.findViewById(R.id.display_name);
+                //holder.percentage = (TextView) vi.findViewById(R.id.percentage);
 
 
                 vi.setTag(holder);
             } else {
                 holder = (ViewHolder) vi.getTag();
             }
-
-
 
             holder.display_name.setText(lContestant.get(position).u_name);
             holder.percentage.setText(Double.toString(lContestant.get(position).percentage));
