@@ -80,11 +80,19 @@ public class MainActivity extends ActionBarActivity {
 
 
         ImageView add = (ImageView) findViewById(R.id.imageView3);
+        ImageView rank = (ImageView) findViewById(R.id.imageView5);
 
         add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(MainActivity.this, Pop.class));
+            }
+        });
+
+        rank.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, Rank.class));
             }
         });
 
