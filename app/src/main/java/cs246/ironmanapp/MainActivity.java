@@ -77,7 +77,7 @@ public class MainActivity extends ActionBarActivity {
         Log.v(TAG_OUTPUT_ALL_THE_THINGS, "Shared preference stuff");
         SharedPreferences sharedPreferences = getSharedPreferences("prefs", Context.MODE_PRIVATE);
         user = sharedPreferences.getString("user_id", "");
-
+ContestantFinisher contestant;
 
         ImageView add = (ImageView) findViewById(R.id.imageView3);
         ImageView rank = (ImageView) findViewById(R.id.imageView5);
@@ -94,6 +94,8 @@ public class MainActivity extends ActionBarActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(MainActivity.this, Rank.class));
+
+
             }
         });
 

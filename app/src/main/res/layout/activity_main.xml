@@ -150,30 +150,6 @@
                 android:layout_marginTop="10dp"
                 android:src="@drawable/bike" />
 
-            <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                android:id="@+id/rankings"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true"
-                android:layout_below="@+id/progressBar3"
-                android:layout_marginTop="39dp"
-                android:orientation="vertical"
-               >
-
-                <TextView
-                    android:id="@+id/textView1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Rankings: "
-                    android:textSize="25dp"
-                    android:textStyle="bold" />
-
-
-
-
-            </LinearLayout>
-
 
         </RelativeLayout>
     </LinearLayout>
@@ -206,7 +182,7 @@
 
         android:clickable="true"
 
-        android:src="@drawable/plus"
+        android:src="@drawable/rankings"
         android:layout_below="@+id/linearLayout"
         android:layout_alignLeft="@+id/custom_list"
         android:layout_alignStart="@+id/custom_list"
