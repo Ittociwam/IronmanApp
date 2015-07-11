@@ -15,8 +15,6 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.ProgressBar;
 
-import java.util.ArrayList;
-
 
 public class MainActivity extends ActionBarActivity {
     private static final String GET_CONTESTANTS_URL = "http://robbise.no-ip.info/ironman/getContestants.php?";
@@ -59,6 +57,7 @@ public class MainActivity extends ActionBarActivity {
         add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 startActivity(new Intent(MainActivity.this, Pop.class));
             }
         });
@@ -94,22 +93,6 @@ public class MainActivity extends ActionBarActivity {
        // }
         //);
     }
-
-
-    private ArrayList getListData() {
-        ArrayList<Structs.Contestant> results = new ArrayList<Structs.Contestant>();
-        Structs.Contestant arrayContestants = new Structs.Contestant();
-        //newsData.setHeadline("Dance of Democracy");
-        arrayContestants.u_name = "Jared Mackie";
-
-        arrayContestants.percentage = 20;
-        //newsData.setDate("May 26, 2013, 13:35");
-        results.add(arrayContestants);
-
-        return results;
-
-    }
-
 
     public void testProgress(View view) {
 
