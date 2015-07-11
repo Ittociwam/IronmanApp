@@ -46,25 +46,7 @@
                 android:textColor="#d3d3d3"
                 android:textSize="42pt" />
 
-<<<<<<< HEAD
 
-
-
-    <ProgressBar
-        style="@android:style/Widget.ProgressBar.Horizontal"
-        android:layout_width="fill_parent"
-        android:layout_height="70dp"
-        android:id="@+id/progressBar"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:progress="10"
-        android:progressBackgroundTint="#000000"
-        android:progressDrawable="@drawable/progressblu"
-        android:layout_marginTop="140dp"
-                android:secondaryProgress="100" />
-
-
-=======
 
             <ProgressBar
                 android:id="@+id/progressBar"
@@ -82,7 +64,7 @@
 
                 android:progressDrawable="@drawable/progressblu"
                 android:secondaryProgress="100" />
->>>>>>> c7bc217e764d36a21c1d7f3d930ec02d5560cb60
+
 
 
             <ImageView
