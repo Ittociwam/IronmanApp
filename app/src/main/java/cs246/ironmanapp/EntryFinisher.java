@@ -17,7 +17,7 @@ public class EntryFinisher implements TaskCompletion {
     private static final String TAG_ENTRY_FINISHER = "Entry Finisher";
     public static List<Structs.Entry> entries;
     @Override
-    public List<Structs.Contestant> finish(Activity activity, String json) {
+    public void finish(Activity activity, String json) {
         try {
             Gson gson = new GsonBuilder().setDateFormat("yyyy-MM-dd").create();
 
@@ -35,6 +35,5 @@ public class EntryFinisher implements TaskCompletion {
         } catch (Exception e) {
             Log.e(TAG_ENTRY_FINISHER, "Error with gson or outputting or something", e);
         }
-        return null;
     }
 }

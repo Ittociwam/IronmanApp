@@ -10,8 +10,8 @@ import java.util.List;
 public class SubmitEntryFinisher implements TaskCompletion {
 
     @Override
-    public List<Structs.Contestant> finish(Activity activity, String json) {
+    public void finish(Activity activity, String json) {
 
-        return null;
+
     }
 }
