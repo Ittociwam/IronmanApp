@@ -60,6 +60,8 @@ public class MainActivity extends ActionBarActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
+
+
         Log.v(TAG_OUTPUT_ALL_THE_THINGS, "We have started!");
         super.onCreate(savedInstanceState);
         Log.v(TAG_OUTPUT_ALL_THE_THINGS, "setContentView!");
@@ -321,6 +323,7 @@ public class MainActivity extends ActionBarActivity {
                 @Override
                 public void run() {
                     taskCompletion.finish(activity,json);
+
                 }
             });
         }
