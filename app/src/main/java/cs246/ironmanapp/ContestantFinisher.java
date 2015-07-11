@@ -31,7 +31,6 @@ public class ContestantFinisher implements  TaskCompletion {
             }.getType();
             contestants = gson.fromJson(json, listType);
 
-            //SharedPreferences sharedPreferences =  activity.getSharedPreferences("contestants", Context.MODE_PRIVATE);
             SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(activity.getApplicationContext());
             SharedPreferences.Editor editor = sharedPreferences.edit();
             editor.putString("contestants", json);
@@ -53,6 +52,5 @@ public class ContestantFinisher implements  TaskCompletion {
         }
 
     }
-
-
+    
 }

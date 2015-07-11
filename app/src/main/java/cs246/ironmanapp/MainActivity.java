@@ -21,9 +21,15 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 
 import android.widget.ListAdapter;
+import android.widget.Button;
+import android.widget.ImageView;
+
+
+import android.widget.ListAdapter;
 
 import android.widget.Button;
 import android.widget.ImageView;
+
 
 import android.widget.ListView;
 import android.widget.ProgressBar;
@@ -73,15 +79,25 @@ public class MainActivity extends ActionBarActivity {
         Log.v(TAG_OUTPUT_ALL_THE_THINGS, "Shared preference stuff");
         SharedPreferences sharedPreferences = getSharedPreferences("prefs", Context.MODE_PRIVATE);
         user = sharedPreferences.getString("user_id", "");
-
+ContestantFinisher contestant;
 
         ImageView add = (ImageView) findViewById(R.id.imageView3);
+        ImageView rank = (ImageView) findViewById(R.id.imageView5);
 
         add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 startActivity(new Intent(MainActivity.this, Pop.class));
+            }
+        });
+
+        rank.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, Rank.class));
+
+
             }
         });
 
