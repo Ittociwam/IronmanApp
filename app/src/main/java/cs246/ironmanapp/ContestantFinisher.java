@@ -2,17 +2,7 @@ package cs246.ironmanapp;
 
 import android.app.Activity;
 import android.util.Log;
-<<<<<<< HEAD
-import android.widget.ArrayAdapter;
-=======
-import android.view.LayoutInflater;
-import android.view.MotionEvent;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.LinearLayout;
-import android.widget.ListAdapter;
->>>>>>> c7bc217e764d36a21c1d7f3d930ec02d5560cb60
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -41,25 +31,6 @@ public class ContestantFinisher implements  TaskCompletion {
             contestants = gson.fromJson(json, listType);
 
 
-            //ListAdapter theAdapater = new ArrayAdapter<Structs.Contestant>(activity, android.R.layout.simple_list_item_1, contestants);
-
-            //ListView contestantView = (ListView) activity.findViewById(R.id.custom_list);
-
-            //contestantView.setAdapter(theAdapater);
-
-//            AdapterContestant adbContestant;
-//            adbContestant = new AdapterContestant(activity, 0, contestants);
-//
-//
-//            ListView contestantView = (ListView) activity.findViewById(R.id.custom_list);
-//
-//          // ListView v = (ListView) adbContestant.getView(1,contestantView, contestantView );
-//
-//            contestantView.setAdapter(adbContestant);
-//            Log.i(TAG_CONTESTANT_FINISHER, contestantView.toString());
-//
-//            Log.i(TAG_CONTESTANT_FINISHER, adbContestant.toString());
-//
             ListView contestantView;
             List<String> names = new ArrayList<String>();
             String output = "";
@@ -96,13 +67,6 @@ public class ContestantFinisher implements  TaskCompletion {
              //contestantView = (ListView) activity.findViewById(R.id.custom_list);
 
 
-//            ListAdapter namesAdapter = new ArrayAdapter<String>(activity,
-//                    android.R.layout.simple_list_item_1,
-//                    android.R.id.text1,
-//                    names);
-
-
-           // contestantView.setAdapter(namesAdapter);
 
 
             Log.v(TAG_CONTESTANT_FINISHER, "The output after conversion to a list: " + output);
