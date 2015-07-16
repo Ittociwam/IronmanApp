@@ -38,13 +38,13 @@
                 android:id="@+id/textView2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignParentTop="true"
-                android:layout_centerHorizontal="true"
                 android:gravity="center_horizontal"
                 android:text="28"
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:textColor="#d3d3d3"
-                android:textSize="42pt" />
+                android:textSize="42pt"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true" />
 
 
 
@@ -88,7 +88,7 @@
                 android:layout_height="70dp"
                 android:layout_below="@+id/progressBar"
                 android:layout_centerHorizontal="true"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="15dp"
                 android:clickable="true"
 
                 android:indeterminate="false"
@@ -107,7 +107,7 @@
                 android:layout_height="70dp"
                 android:layout_below="@+id/progressBar2"
                 android:layout_centerHorizontal="true"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="15dp"
                 android:progress="40"
 
 
@@ -124,7 +124,7 @@
                 android:layout_alignParentTop="false"
                 android:layout_alignStart="@+id/progressBar3"
                 android:layout_marginLeft="15dp"
-                android:layout_marginTop="331dp"
+                android:layout_marginTop="320dp"
                 android:src="@drawable/run" />
 
             <TextView
