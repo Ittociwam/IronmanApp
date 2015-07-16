@@ -52,5 +52,5 @@ public class ContestantFinisher implements  TaskCompletion {
         }
 
     }
-    
+
 }

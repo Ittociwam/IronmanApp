@@ -9,6 +9,7 @@ import android.content.SharedPreferences;
 
 import android.content.Intent;
 
+import android.preference.PreferenceManager;
 import android.support.v7.app.ActionBarActivity;
 
 import android.os.Bundle;
@@ -47,6 +48,7 @@ public class MainActivity extends ActionBarActivity {
     private static final String GET_CONTESTANTS_URL = "http://robbise.no-ip.info/ironman/getContestants.php?";
     private static final String GET_ENTRIES_URL = "http://robbise.no-ip.info/ironman/getEntries.php?";
     private static final String NEW_USER_URL = "http://robbise.no-ip.info/ironman/newUser.php";
+    private static final String NEW_ENTRY_URL = "http://robbise.no-ip.info/ironman/newEntry.php";
     private android.os.Handler handler;
     public ListView lView;
     private static Context context;
@@ -67,6 +69,10 @@ public class MainActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
 
 
+        MainActivity.context = MainActivity.this.getApplicationContext();
+
+        activity = this;
+
 
         Log.v(TAG_OUTPUT_ALL_THE_THINGS, "We have started!");
         super.onCreate(savedInstanceState);
@@ -77,9 +83,9 @@ public class MainActivity extends ActionBarActivity {
         handler = new android.os.Handler();
 
         Log.v(TAG_OUTPUT_ALL_THE_THINGS, "Shared preference stuff");
-        SharedPreferences sharedPreferences = getSharedPreferences("prefs", Context.MODE_PRIVATE);
+       SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(context);
+        Log.v(TAG_OUTPUT_ALL_THE_THINGS, "Shared preference getting user");
         user = sharedPreferences.getString("user_id", "");
-ContestantFinisher contestant;
 
         ImageView add = (ImageView) findViewById(R.id.imageView3);
         ImageView rank = (ImageView) findViewById(R.id.imageView5);
@@ -103,34 +109,14 @@ ContestantFinisher contestant;
 
         handler = new android.os.Handler();
         Log.v(TAG_OUTPUT_ALL_THE_THINGS, "About to get contestants!");
-
         getContestants();
+
         Log.v(TAG_OUTPUT_ALL_THE_THINGS, "About to get entries!");
         getEntries();
 
+        Log.v(TAG_OUTPUT_ALL_THE_THINGS, "about to insert info");
+        insertInfo();
 
-
-
-        //ArrayList image_details = getListData();
-        //final ListView lv1 = (ListView) findViewById(R.id.custom_list);
-        //lv1.setAdapter(new contestantListAdapter.CustomListAdapter(this, image_details));
-
-        MainActivity.context = MainActivity.this.getApplicationContext();
-
-        activity = this;
-
-
-        //lv1.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-
-            //@Override
-            //public void onItemClick(AdapterView<?> a, View v, int position, long id) {
-            //    position = 0;
-            //    Object o = lv1.getItemAtPosition(position);
-            //    Structs.Contestant listContestants = (Structs.Contestant) o;
-            //    Toast.makeText(MainActivity.this, "Selected :" + " " + listContestants, Toast.LENGTH_LONG).show();
-            //}
-       // }
-        //);
     }
 
     public void testProgress(View view) {
@@ -169,51 +155,35 @@ ContestantFinisher contestant;
      * from these 2 functions
      */
     public void insertInfo() {
+        Log.v(TAG_OUTPUT_ALL_THE_THINGS, "doing shared preferences stuff");
+        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(context);
+        Log.v(TAG_OUTPUT_ALL_THE_THINGS, "about to get string");
+        user = sharedPreferences.getString("user_id", "");
 
         if(user.isEmpty()){
         Structs.ReturnMessage newUserMessage = null;
             // prompt user if they want to have a display name or not and call
-            newUserMessage = createNewUser(user);
+            Log.v(TAG_OUTPUT_ALL_THE_THINGS, "user is empty");
+            user = getUsername();
+            createNewUser(user);
 
-            // as long as the return code in the new user message was equal to 0
-            // store the message value (the 13 digit code) locally for future reference
-            // otherwise handle the error and kick out of this function
-            switch(newUserMessage.code) {
-                case 0:
-                    SharedPreferences sharedPreferences = getSharedPreferences("preferences", Context.MODE_PRIVATE);
-                    SharedPreferences.Editor editor = sharedPreferences.edit();
-                    editor.putString("user_id", newUserMessage.message);
-                    editor.commit();
-                    break;
 
-                case -1:
-                    Log.e(TAG_MAIN_ACTIVITY, "An error from the database in insert info: " + newUserMessage.message);
-                    break;
-                case 1:
-                    Log.w(TAG_MAIN_ACTIVITY, "this name was a " + newUserMessage.message);
-                    break;
-                case 2:
-                    Log.w(TAG_MAIN_ACTIVITY, newUserMessage.message);
-                    break;
-                default:
-                    Log.wtf(TAG_MAIN_ACTIVITY, "Got a strange code back from PHP");
-            }
         }
 
 
         Structs.ReturnMessage newEntryMessage = null;
 
         // take the users id and call
-         newEntryMessage = sendNewEntry(user);
+         //newEntryMessage = sendNewEntry(user);
 
 
-        if(newEntryMessage.code == 0)
-        {
-            Log.v(TAG_MAIN_ACTIVITY, "newEntry good! " + newEntryMessage.message);
-        }
-        else{
-            Log.e(TAG_MAIN_ACTIVITY, "There was an issue sending new entry" + newEntryMessage.message);
-        }
+//        if(newEntryMessage.code == 0)
+//        {
+//            Log.v(TAG_MAIN_ACTIVITY, "newEntry good! " + newEntryMessage.message);
+//        }
+//        else{
+//            Log.e(TAG_MAIN_ACTIVITY, "There was an issue sending new entry" + newEntryMessage.message);
+//        }
     }
 
     /**
@@ -251,26 +221,12 @@ ContestantFinisher contestant;
      * message itself
      * @see <a href="https://docs.google.com/document/d/1tAoB8SyYUl-wQ2T6NnoV7d-_Y1-sQZ6a9S2OFklqa7A/edit#bookmark=id.wwyex9oo7k64">NewUser.php Documentatoin</a>
      */
-    private Structs.ReturnMessage createNewUser(String username){
-        Task t = new Task(NEW_USER_URL, "username=" + getUsername());
+    private void createNewUser(String username){
+        Task t = new Task(NEW_USER_URL, "username=" + username); // two parameters here because it's a post http request
 
         t.setTaskCompletion(new NewUserFinisher());
 
         new Thread(t).start();
-
-        return null;
-
-    }
-
-    /**
-     * This function will display a textbox overlay prompting the user to either enter in a new user name
-     * or be saved in the database as a random number.
-     *
-     * @return - Returns whatever the user enters into the new username overlay
-     */
-    private String getUsername() {
-
-        return "TestUser";
     }
 
 
@@ -343,6 +299,18 @@ ContestantFinisher contestant;
                 }
             });
         }
+    }
+
+
+    /**
+     * This function will display a textbox overlay prompting the user to either enter in a new user name
+     * or be saved in the database as a random number.
+     *
+     * @return - Returns whatever the user enters into the new username overlay
+     */
+    private String getUsername() {
+        //TODO john, we need an overlay here to prompt user for a username
+        return "TestUser";
     }
 
 
