@@ -19,8 +19,11 @@ public class NewUserFinisher implements TaskCompletion {
 
     @Override
     public void finish(Activity activity, String json) {
+
+        MainActivity mainActivity = (MainActivity) activity;
         Structs.ReturnMessage newUserMessage = null;
         try {
+            Log.v(TAG_NEW_USER_FINISHER, "Json in new user finisher: " + json);
             Gson gson = new Gson();
             newUserMessage = gson.fromJson(json, Structs.ReturnMessage.class);
             String output = "";
@@ -31,10 +34,11 @@ public class NewUserFinisher implements TaskCompletion {
             // otherwise handle the error and kick out of this function
             switch(newUserMessage.code) {
                 case 0:
-                    SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(activity.getApplicationContext());
+                    SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(mainActivity.getContext());
                     SharedPreferences.Editor editor = sharedPreferences.edit();
                     editor.putString("user_id", newUserMessage.message);
                     editor.commit();
+                    Log.v(TAG_NEW_USER_FINISHER, "saved user_id: " + newUserMessage.message);
                     break;
 
                 case -1:

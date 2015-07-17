@@ -54,7 +54,7 @@ public class URLReader {
      * @return returns a response of the given string, otherwise sends a blank '{}'
      * @throws Exception
      */
-    public String sendGet(String url) throws Exception {
+    public static String sendGet(String url) throws Exception {
 
 
         URL obj = new URL(url);
@@ -64,7 +64,7 @@ public class URLReader {
         con.setRequestMethod("GET");
 
         //add request header
-        con.setRequestProperty("User-Agent", USER_AGENT);
+        con.setRequestProperty("User-Agent", "Mozilla/5.0");
 
         int responseCode = con.getResponseCode();
         Log.i(TAG_URL_READER, "\nSending 'GET' request to URL : " + url);
@@ -100,15 +100,19 @@ public class URLReader {
      * @return
      * @throws Exception
      */
-    public String sendPost(String url, String urlParameters) throws Exception {
+    public static String sendPost(String url, String urlParameters) throws Exception {
+
+        Log.i(TAG_URL_READER, "Sending a post in url reader");
 
         URL obj = new URL(url);
-        HttpsURLConnection con = (HttpsURLConnection) obj.openConnection();
+        HttpURLConnection con = (HttpURLConnection) obj.openConnection();
 
         //add request header
         con.setRequestMethod("POST");
-        con.setRequestProperty("User-Agent", USER_AGENT);
+        con.setRequestProperty("User-Agent", "Mozilla/5.0");
         con.setRequestProperty("Accept-Language", "en-US,en;q=0.5");
+
+        Log.i(TAG_URL_READER, "headers set OK");
 
 
         // Send post request
@@ -117,6 +121,8 @@ public class URLReader {
         wr.writeBytes(urlParameters);
         wr.flush();
         wr.close();
+
+        Log.i(TAG_URL_READER, "REquest actually sent!");
 
         int responseCode = con.getResponseCode();
         Log.i(TAG_URL_READER, "\nSending 'POST' request to URL : " + url);
@@ -150,7 +156,7 @@ public class URLReader {
      * @param test - A string to validate
      * @return - true(Is valid json) false(is not valid json)
      */
-    public boolean isJSONValid(String test) {
+    public static boolean isJSONValid(String test) {
         try {
             new JSONObject(test);
         } catch (JSONException ex) {

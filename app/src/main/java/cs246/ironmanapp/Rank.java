@@ -26,6 +26,7 @@ import java.util.List;
  * Created by John on 7/8/15.
  */
 public class Rank extends Activity {
+    public final static String TAG_RANK = "Rank";
     public final static String EXTRA_MESSAGE = "com.mycompany.myfirstapp.MESSAGE";
     @Override
     protected void onCreate (Bundle savedInstanceState) {
@@ -50,12 +51,14 @@ public class Rank extends Activity {
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(context);
 
         String json = preferences.getString("contestants", "Nothing found");
-        Log.i("tag Rank", "the JSON is: " + json);
+        Log.i(TAG_RANK, "the JSON is: " + json);
 
         Gson gson = new Gson();
         Type listType = new TypeToken<List<Structs.Contestant>>() {
         }.getType();
         contestants = gson.fromJson(json, listType);
+
+       // contestants = new ArrayList<>();
 
         //ArrayList<Structs.Contestant> contestants = new ArrayList<>();
         ArrayList<String> userList = new ArrayList<String>();
