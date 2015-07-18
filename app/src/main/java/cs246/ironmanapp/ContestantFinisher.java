@@ -1,6 +1,10 @@
 package cs246.ironmanapp;
 
 import android.app.Activity;
+import android.content.Context;
+import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
+import android.text.Layout;
 import android.util.Log;
 import android.widget.LinearLayout;
 import android.widget.ListView;
@@ -33,46 +37,32 @@ public class ContestantFinisher implements  TaskCompletion {
 
             ListView contestantView;
             List<String> names = new ArrayList<String>();
-            String output = "";
-            LinearLayout rankings = (LinearLayout)activity.findViewById(R.id.rankings);
+            //String output = "";
+            //LinearLayout rankings = (LinearLayout)activity.findViewById(R.id.rankings);
+
+
+            SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(activity.getApplicationContext());
+            SharedPreferences.Editor editor = sharedPreferences.edit();
+            editor.putString("contestants", json);
+            editor.commit();
+
 
             for (Structs.Contestant contestant : contestants) {
-
-                //names.add(contestant.u_name);
-
-                LinearLayout contestantDisplay = (LinearLayout) activity.findViewById(R.id.contestantDisplay);
-
-               // View contestantDisplay = activity.getLayoutInflater().inflate(R.layout.contestantdisplay, null);
-
-                TextView contestantName = (TextView) activity.getLayoutInflater().inflate(R.layout.contestantdisplay, null);
-
-                TextView percentage = (TextView) activity.getLayoutInflater().inflate(R.layout.contestantdisplay, null);
-
-                contestantName.setText(contestant.u_name);
-                percentage.setText((int) contestant.percentage);
-
-                contestantDisplay.addView(contestantName);
-                contestantDisplay.addView(percentage);
-
-                rankings.addView(contestantDisplay);
-
-
-               // LayoutInflater inflater = LayoutInflater.from(activity.getBaseContext());
-
-               // output += contestant.u_name + " " + contestant.percentage + "%\n";
+                //output += contestant.u_name;
                 Toast.makeText(activity.getApplicationContext(), contestant.u_name, Toast.LENGTH_LONG ).show();
 
             }
 
-             //contestantView = (ListView) activity.findViewById(R.id.custom_list);
 
-
-
-
-            Log.v(TAG_CONTESTANT_FINISHER, "The output after conversion to a list: " + output);
+            Log.v(TAG_CONTESTANT_FINISHER, "The output after conversion to a list: ");
         } catch (Exception e) {
             Log.e(TAG_CONTESTANT_FINISHER, "Error with gson or outputting or something", e);
         }
+
+    }
+
+    public void createContestantList() {
+
 
     }
 

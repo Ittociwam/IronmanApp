@@ -8,12 +8,10 @@ import android.test.InstrumentationTestCase;
 
 public class ServiceCallerTest extends InstrumentationTestCase {
 
-<<<<<<< HEAD
 
-    public void testURL(){
-=======
+    public void testURL() {
+
    /* public void testURL() {
->>>>>>> 1b13e0b0534f62a1296cdc5bac589e81d81f7cf8
 
         ServiceCaller sCContestants = new ServiceCaller("http://localhost/webengii/webengII/ironman/getContestants.php","semester='SPRING2015'");
         assertTrue(sCContestants.connect());
@@ -26,4 +24,5 @@ public class ServiceCallerTest extends InstrumentationTestCase {
         assertTrue(json.isJson());
     }
 */
+    }
 }

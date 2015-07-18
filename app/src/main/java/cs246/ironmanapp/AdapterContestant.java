@@ -1,80 +1,116 @@
 package cs246.ironmanapp;
 
 import android.app.Activity;
-import android.content.Context;
+import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
+
+import java.lang.reflect.Type;
 import java.util.ArrayList;
 
 /**
  * Created by Robbie on 7/6/2015.
  */
 public class AdapterContestant extends ArrayAdapter<Structs.Contestant> {
+//public class AdapterContestant extends BaseAdapter {
     private Activity activity;
-    private ArrayList<Structs.Contestant> lContestant;
+    ArrayList<Structs.Contestant> arrayContestant;
+    //private ArrayList<String> arrayContestant;
     private static LayoutInflater inflater = null;
+    private int layoutResourceId;
 
-    public AdapterContestant (Activity activity, int textViewResourceId,ArrayList<Structs.Contestant> _lContestant) {
-        super(activity, textViewResourceId, _lContestant);
-        try {
+
+
+
+    public AdapterContestant (Activity activity, int textViewResourceId, ArrayList<Structs.Contestant> arrayContestant) {
+    //public AdapterContestant (Activity activity, int textViewResourceId, ArrayList<String> arrayContestant) {
+
+        super(activity, textViewResourceId, arrayContestant);
+        //super(activity, lContestant);
+        //try {
+
+        arrayContestant = new ArrayList<Structs.Contestant>();
+        SharedPreferences conPreferences = PreferenceManager.getDefaultSharedPreferences(activity);
+
+        String contJson = conPreferences.getString("contestants", "Nothing found");
+        //Log.i("tag Rank", "the JSON is: " + json);
+
+        Gson contGson = new Gson();
+        Type listCont = new TypeToken<ArrayList<Structs.Contestant>>() {
+        }.getType();
+        //
+        arrayContestant = contGson.fromJson(contJson, listCont);
+
             this.activity = activity;
-            this.lContestant = _lContestant;
+            //contestants = arrayContestant;
+            //this.arrayContestants = arrayContestants;
+            layoutResourceId = textViewResourceId;
 
-            inflater = (LayoutInflater) activity.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
-        } catch (Exception e) {
+            //inflater = (LayoutInflater) activity.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+            inflater = LayoutInflater.from(activity);
 
-        }
+        //} catch (Exception e) {
+
+        //}
     }
 
     public int getCount() {
-        return lContestant.size();
+        return arrayContestant.size();
+        //return contestants.size();
+    }
+
+    public Structs.Contestant getItem(int position) {
+        return arrayContestant.get(position);
+    }
+
+    public long getItemId(int position) {
+        return position;
     }
 
     public String getU_name(int i) {
-        return lContestant.get(i).u_name;
+        return arrayContestant.get(i).u_name;
     }
 
     public double getPercentage(int i) {
-        return lContestant.get(i).percentage;
+
+        return arrayContestant.get(i).percentage;
     }
 
 
     public static class ViewHolder {
-        public TextView display_name;
-        public TextView percentage;
+        TextView txtDisplay_name;
+        TextView txtPercentage;
 
     }
 
     public View getView(int position, View convertView, ViewGroup parent) {
-        View vi = convertView;
+        //View vi = convertView;
         final ViewHolder holder;
-        try {
+
             if (convertView == null) {
-                vi = inflater.inflate(android.R.layout.simple_list_item_1, null);
+                convertView = inflater.inflate(R.layout.contestantdisplay, null);
                 holder = new ViewHolder();
 
-                //holder.display_name = (TextView) vi.findViewById(R.id.display_name);
-                //holder.percentage = (TextView) vi.findViewById(R.id.percentage);
+                holder.txtDisplay_name = (TextView) convertView.findViewById(R.id.u_name);
+                holder.txtPercentage = (TextView) convertView.findViewById(R.id.percentage);
 
 
-                vi.setTag(holder);
+                convertView.setTag(holder);
             } else {
-                holder = (ViewHolder) vi.getTag();
+                holder = (ViewHolder) convertView.getTag();
             }
 
-            holder.display_name.setText(lContestant.get(position).u_name);
-            holder.percentage.setText(Double.toString(lContestant.get(position).percentage));
+            holder.txtDisplay_name.setText(arrayContestant.get(position).u_name);
+            holder.txtPercentage.setText(Double.toString(arrayContestant.get(position).percentage));
 
-
-        } catch (Exception e) {
-
-
-        }
-        return vi;
+        return convertView;
     }
 }

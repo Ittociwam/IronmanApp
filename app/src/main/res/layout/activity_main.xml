@@ -15,10 +15,6 @@
     android:layout_height="fill_parent"
     android:id="@+id/scrollView">
 
-    <LinearLayout
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:nestedScrollingEnabled="true">
 
         <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
             xmlns:tools="http://schemas.android.com/tools"
@@ -47,6 +43,7 @@
                 android:textSize="42pt" />
 
 
+
             <ProgressBar
                 android:id="@+id/progressBar"
                 style="@android:style/Widget.ProgressBar.Horizontal"
@@ -63,6 +60,7 @@
 
                 android:progressDrawable="@drawable/progressblu"
                 android:secondaryProgress="100" />
+
 
 
             <ImageView
@@ -148,29 +146,10 @@
                 android:layout_marginTop="10dp"
                 android:src="@drawable/bike" />
 
-            <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                android:id="@+id/rankings"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true"
-                android:layout_below="@+id/progressBar3"
-                android:layout_marginTop="39dp"
-                android:orientation="vertical">
 
-                <TextView
-                    android:id="@+id/textView1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Rankings: "
-                    android:textSize="25dp"
-                    android:textStyle="bold" />
-
-
-            </LinearLayout>
 
         </RelativeLayout>
-    </LinearLayout>
+
 
     </ScrollView>
 
@@ -191,5 +170,21 @@
         android:clickable="true"
         android:onClick="add"
         android:src="@drawable/plus" />
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+
+
+        android:clickable="true"
+
+        android:src="@drawable/rankings"
+        android:layout_below="@+id/linearLayout"
+        android:layout_alignLeft="@+id/custom_list"
+        android:layout_alignStart="@+id/custom_list"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="5dp" />
 
 </RelativeLayout>

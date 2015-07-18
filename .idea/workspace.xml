@@ -44,7 +44,11 @@
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Contestant Finisher" />
   </component>
   <component name="ChangeListManager">
+<<<<<<< HEAD
+    <list default="true" id="aeb294f4-7507-426a-9560-f19170d8222e" name="Default" comment="" />
+=======
     <list default="true" id="aeb294f4-7507-426a-9560-f19170d8222e" name="Default" comment="">
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
       <change type="DELETED" beforePath="C:\Users\Jared\AndroidStudioProjects\IronmanApp\.idea\libraries\appcompat_v7_22_1_1.xml" afterPath="" />
@@ -75,12 +79,22 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
 =======
+=======
+>>>>>>> 881e61cf3df6f5508b7892474e0afca087a92a9d
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.2.1/taskArtifacts/cache.properties.lock" afterPath="$PROJECT_DIR$/.gradle/2.2.1/taskArtifacts/cache.properties.lock" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.2.1/taskArtifacts/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/2.2.1/taskArtifacts/fileHashes.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.2.1/taskArtifacts/fileSnapshots.bin" afterPath="$PROJECT_DIR$/.gradle/2.2.1/taskArtifacts/fileSnapshots.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.2.1/taskArtifacts/taskArtifacts.bin" afterPath="$PROJECT_DIR$/.gradle/2.2.1/taskArtifacts/taskArtifacts.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/cs246/ironmanapp/ContestantFinisher.java" afterPath="$PROJECT_DIR$/app/src/main/java/cs246/ironmanapp/ContestantFinisher.java" />
+<<<<<<< HEAD
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.2.1/taskArtifacts/fileSnapshots.bin" afterPath="$PROJECT_DIR$/.gradle/2.2.1/taskArtifacts/fileSnapshots.bin" />
 >>>>>>> b72336a0ac74e85bae961ddc97fe057422d485d1
+=======
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/contestantdisplay.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/contestantdisplay.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+>>>>>>> 881e61cf3df6f5508b7892474e0afca087a92a9d
     </list>
+>>>>>>> 9d48744a8afcf0393d74e163b6bc6f684697eb9c
     <ignored path="IronmanApp.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -107,14 +121,25 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="activity_main.xml" pinned="false" current-in-tab="true">
+      <file leaf-file-name="activity_main.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
           <provider selected="true" editor-type-id="text-editor">
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             <state vertical-scroll-proportion="0.0">
               <caret line="6" column="32" selection-start-line="6" selection-start-column="32" selection-end-line="6" selection-end-column="32" />
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+            <state vertical-scroll-proportion="0.4117647">
+              <caret line="168" column="25" selection-start-line="168" selection-start-column="25" selection-end-line="168" selection-end-column="25" />
+=======
+            <state vertical-scroll-proportion="-3.5172415">
+              <caret line="6" column="32" selection-start-line="6" selection-start-column="32" selection-end-line="6" selection-end-column="32" />
+>>>>>>> 9d48744a8afcf0393d74e163b6bc6f684697eb9c
+>>>>>>> 881e61cf3df6f5508b7892474e0afca087a92a9d
               <folding />
 =======
             <state vertical-scroll-proportion="-2.724138">
@@ -132,6 +157,10 @@
 =======
             <state vertical-scroll-proportion="0.0">
               <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="15" selection-end-column="33" />
+=======
+            <state vertical-scroll-proportion="66.344826">
+              <caret line="26" column="48" selection-start-line="26" selection-start-column="48" selection-end-line="26" selection-end-column="48" />
+>>>>>>> 2b066636dbcc4a41b0670f2a11e270ad34b53f5b
               <folding />
 >>>>>>> b72336a0ac74e85bae961ddc97fe057422d485d1
             </state>
@@ -141,10 +170,26 @@
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
+<<<<<<< HEAD
       <file leaf-file-name="Pop.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/cs246/ironmanapp/Pop.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
+              <caret line="32" column="35" selection-start-line="32" selection-start-column="35" selection-end-line="32" selection-end-column="35" />
+              <folding>
+                <element signature="e#913#1414#0" expanded="true" />
+                <element signature="e#1413#1414#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Pop.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/cs246/ironmanapp/Pop.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
               <caret line="16" column="22" selection-start-line="16" selection-start-column="22" selection-end-line="16" selection-end-column="22" />
@@ -158,6 +203,27 @@
 =======
               <caret line="60" column="56" selection-start-line="60" selection-start-column="56" selection-end-line="60" selection-end-column="56" />
               <folding>
+=======
+              <caret line="75" column="30" selection-start-line="75" selection-start-column="30" selection-end-line="75" selection-end-column="30" />
+              <folding>
+                <element signature="imports" expanded="true" />
+=======
+      <file leaf-file-name="MainActivity.java" pinned="false" current-in-tab="true">
+=======
+      <file leaf-file-name="MainActivity.java" pinned="false" current-in-tab="false">
+>>>>>>> 3d927367c5379266bbcd62f7b1ad15503b13d31d
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/cs246/ironmanapp/MainActivity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="60" column="56" selection-start-line="60" selection-start-column="56" selection-end-line="60" selection-end-column="56" />
+              <folding>
+<<<<<<< HEAD
+                <element signature="e#3432#3452#0" expanded="true" />
+                <element signature="e#9840#10008#0" expanded="true" />
+                <element signature="e#10007#10008#0" expanded="true" />
+>>>>>>> 9d48744a8afcf0393d74e163b6bc6f684697eb9c
+=======
+>>>>>>> 881e61cf3df6f5508b7892474e0afca087a92a9d
                 <element signature="e#2526#2715#0" expanded="false" />
                 <element signature="e#2714#2715#0" expanded="false" />
                 <element signature="e#3903#3923#0" expanded="false" />
@@ -169,6 +235,10 @@
 =======
               <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 881e61cf3df6f5508b7892474e0afca087a92a9d
               <folding>
                 <element signature="imports" expanded="false" />
 >>>>>>> c7bc217e764d36a21c1d7f3d930ec02d5560cb60
@@ -176,17 +246,32 @@
 =======
               <folding />
 >>>>>>> b72336a0ac74e85bae961ddc97fe057422d485d1
+<<<<<<< HEAD
+=======
+=======
+              <folding>
+                <element signature="imports" expanded="false" />
+              </folding>
+>>>>>>> 2b066636dbcc4a41b0670f2a11e270ad34b53f5b
+>>>>>>> 881e61cf3df6f5508b7892474e0afca087a92a9d
             </state>
           </provider>
         </entry>
       </file>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       <file leaf-file-name="contestant_layout.xml" pinned="false" current-in-tab="true">
+=======
+<<<<<<< HEAD
+=======
+      <file leaf-file-name="contestant_layout.xml" pinned="false" current-in-tab="false">
+>>>>>>> 881e61cf3df6f5508b7892474e0afca087a92a9d
         <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/contestant_layout.xml">
           <provider editor-type-id="android-designer">
             <state />
           </provider>
+<<<<<<< HEAD
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.49101797">
               <caret line="12" column="41" selection-start-line="12" selection-start-column="41" selection-end-line="12" selection-end-column="41" />
@@ -195,6 +280,12 @@
       <file leaf-file-name="EntryFinisher.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/cs246/ironmanapp/EntryFinisher.java">
 =======
+=======
+      <file leaf-file-name="EntryFinisher.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/cs246/ironmanapp/EntryFinisher.java">
+>>>>>>> 3d927367c5379266bbcd62f7b1ad15503b13d31d
+>>>>>>> 881e61cf3df6f5508b7892474e0afca087a92a9d
+=======
       <file leaf-file-name="MainActivity.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/cs246/ironmanapp/MainActivity.java">
 >>>>>>> c7bc217e764d36a21c1d7f3d930ec02d5560cb60
@@ -202,21 +293,41 @@
             <state vertical-scroll-proportion="0.0">
               <caret line="322" column="37" selection-start-line="322" selection-start-column="37" selection-end-line="322" selection-end-column="37" />
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 881e61cf3df6f5508b7892474e0afca087a92a9d
               <folding>
                 <element signature="imports" expanded="false" />
                 <element signature="e#2526#2716#0" expanded="false" />
                 <element signature="e#2715#2716#0" expanded="false" />
                 <element signature="e#9719#9720#0" expanded="false" />
                 <element signature="e#9761#9762#0" expanded="false" />
+<<<<<<< HEAD
               </folding>
 >>>>>>> 3d927367c5379266bbcd62f7b1ad15503b13d31d
 =======
               <folding />
 >>>>>>> b72336a0ac74e85bae961ddc97fe057422d485d1
+=======
+                <element signature="e#11509#11677#0" expanded="false" />
+                <element signature="e#11676#11677#0" expanded="false" />
+              </folding>
+>>>>>>> 881e61cf3df6f5508b7892474e0afca087a92a9d
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
+>>>>>>> 9d48744a8afcf0393d74e163b6bc6f684697eb9c
+      <file leaf-file-name="ContestantFinisher.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/cs246/ironmanapp/ContestantFinisher.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+<<<<<<< HEAD
+              <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+=======
+              <caret line="23" column="13" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
+=======
       <file leaf-file-name="NewUserFinisher.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/cs246/ironmanapp/NewUserFinisher.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -247,6 +358,7 @@
 =======
               <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
 <<<<<<< HEAD
+<<<<<<< HEAD
               <folding>
                 <element signature="imports" expanded="false" />
               </folding>
@@ -254,6 +366,21 @@
 =======
               <folding />
 >>>>>>> b72336a0ac74e85bae961ddc97fe057422d485d1
+=======
+<<<<<<< HEAD
+>>>>>>> 3d927367c5379266bbcd62f7b1ad15503b13d31d
+              <folding>
+                <element signature="imports" expanded="false" />
+              </folding>
+=======
+              <folding />
+>>>>>>> b72336a0ac74e85bae961ddc97fe057422d485d1
+=======
+              <folding>
+                <element signature="imports" expanded="false" />
+              </folding>
+>>>>>>> 2b066636dbcc4a41b0670f2a11e270ad34b53f5b
+>>>>>>> 881e61cf3df6f5508b7892474e0afca087a92a9d
             </state>
           </provider>
         </entry>
@@ -263,18 +390,27 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
               <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-              <folding />
+              <folding>
+                <element signature="imports" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ContestantFinisher.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="ContestantFinisher.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/cs246/ironmanapp/ContestantFinisher.java">
           <provider selected="true" editor-type-id="text-editor">
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             <state vertical-scroll-proportion="0.0">
               <caret line="7" column="40" selection-start-line="7" selection-start-column="40" selection-end-line="7" selection-end-column="40" />
+=======
+<<<<<<< HEAD
+            <state vertical-scroll-proportion="-4.1034484">
+              <caret line="7" column="40" selection-start-line="7" selection-start-column="40" selection-end-line="7" selection-end-column="40" />
+>>>>>>> 9d48744a8afcf0393d74e163b6bc6f684697eb9c
+>>>>>>> 881e61cf3df6f5508b7892474e0afca087a92a9d
               <folding />
 =======
             <state vertical-scroll-proportion="0.30751708">
@@ -287,6 +423,14 @@
                 <element signature="e#1784#1792#0" expanded="true" />
               </folding>
 >>>>>>> 3d927367c5379266bbcd62f7b1ad15503b13d31d
+<<<<<<< HEAD
+=======
+=======
+            <state vertical-scroll-proportion="0.60273975">
+              <caret line="44" column="44" selection-start-line="44" selection-start-column="44" selection-end-line="44" selection-end-column="44" />
+              <folding />
+>>>>>>> 2b066636dbcc4a41b0670f2a11e270ad34b53f5b
+>>>>>>> 881e61cf3df6f5508b7892474e0afca087a92a9d
             </state>
           </provider>
         </entry>
@@ -294,8 +438,8 @@
       <file leaf-file-name="contestantdisplay.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/contestantdisplay.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="2" column="38" selection-start-line="2" selection-start-column="38" selection-end-line="2" selection-end-column="38" />
+            <state vertical-scroll-proportion="-4.1034484">
+              <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="19" selection-end-column="39" />
               <folding />
             </state>
           </provider>
@@ -317,6 +461,7 @@
               <caret line="147" column="64" selection-start-line="147" selection-start-column="64" selection-end-line="147" selection-end-column="64" />
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
               <folding />
 >>>>>>> 3d927367c5379266bbcd62f7b1ad15503b13d31d
 =======
@@ -327,6 +472,11 @@
 =======
               <folding />
 >>>>>>> b72336a0ac74e85bae961ddc97fe057422d485d1
+=======
+              <folding>
+                <element signature="imports" expanded="false" />
+              </folding>
+>>>>>>> 881e61cf3df6f5508b7892474e0afca087a92a9d
             </state>
           </provider>
         </entry>
@@ -344,7 +494,10 @@
 =======
               <caret line="20" column="36" selection-start-line="20" selection-start-column="36" selection-end-line="20" selection-end-column="36" />
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> c7bc217e764d36a21c1d7f3d930ec02d5560cb60
+=======
+>>>>>>> 881e61cf3df6f5508b7892474e0afca087a92a9d
               <folding>
                 <element signature="imports" expanded="false" />
                 <element signature="e#985#986#0" expanded="false" />
@@ -354,10 +507,13 @@
                 <element signature="e#1154#1155#0" expanded="false" />
                 <element signature="e#1206#1207#0" expanded="false" />
               </folding>
+<<<<<<< HEAD
 >>>>>>> 3d927367c5379266bbcd62f7b1ad15503b13d31d
 =======
               <folding />
 >>>>>>> b72336a0ac74e85bae961ddc97fe057422d485d1
+=======
+>>>>>>> 881e61cf3df6f5508b7892474e0afca087a92a9d
             </state>
           </provider>
         </entry>
@@ -367,7 +523,9 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
               <caret line="17" column="32" selection-start-line="17" selection-start-column="15" selection-end-line="17" selection-end-column="32" />
-              <folding />
+              <folding>
+                <element signature="imports" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -1693,13 +1851,17 @@
         <option value="$PROJECT_DIR$/app/src/main/java/cs246/ironmanapp/URLReader.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/cs246/ironmanapp/AdapterContestant.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/cs246/ironmanapp/MainActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/contestantdisplay.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/cs246/ironmanapp/ContestantFinisher.java" />
+<<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> 3d927367c5379266bbcd62f7b1ad15503b13d31d
 =======
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" />
 >>>>>>> c7bc217e764d36a21c1d7f3d930ec02d5560cb60
+=======
+>>>>>>> 881e61cf3df6f5508b7892474e0afca087a92a9d
       </list>
     </option>
   </component>
@@ -1738,6 +1900,7 @@
       <sortByType />
     </navigator>
     <panes>
+<<<<<<< HEAD
       <pane id="PackagesPane" />
 <<<<<<< HEAD
 =======
@@ -1748,6 +1911,11 @@
       <pane id="ProjectPane" />
       <pane id="Scratches" />
 >>>>>>> c7bc217e764d36a21c1d7f3d930ec02d5560cb60
+=======
+      <pane id="ProjectPane" />
+      <pane id="Scratches" />
+      <pane id="PackagesPane" />
+>>>>>>> 881e61cf3df6f5508b7892474e0afca087a92a9d
       <pane id="AndroidView">
         <subPane>
           <PATH>
@@ -2046,15 +2214,34 @@
   </component>
   <component name="ToolWindowManager">
 <<<<<<< HEAD
+<<<<<<< HEAD
     <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3339012" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
 =======
-    <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
+<<<<<<< HEAD
+    <frame x="0" y="23" width="1440" height="836" extended-state="6" />
     <editor active="false" />
+=======
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+>>>>>>> 881e61cf3df6f5508b7892474e0afca087a92a9d
+=======
+    <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
+<<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> 3d927367c5379266bbcd62f7b1ad15503b13d31d
+    <editor active="true" />
+>>>>>>> 9d48744a8afcf0393d74e163b6bc6f684697eb9c
+=======
+    <editor active="false" />
+>>>>>>> b72336a0ac74e85bae961ddc97fe057422d485d1
+=======
+    <editor active="true" />
+>>>>>>> 2b066636dbcc4a41b0670f2a11e270ad34b53f5b
     <layout>
+<<<<<<< HEAD
 <<<<<<< HEAD
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.16111112" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -2062,23 +2249,46 @@
 =======
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
 >>>>>>> b72336a0ac74e85bae961ddc97fe057422d485d1
+=======
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.16111112" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+>>>>>>> 881e61cf3df6f5508b7892474e0afca087a92a9d
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Android" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20972222" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32879046" sideWeight="0.5030257" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.059125964" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32879046" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32777777" sideWeight="0.4969743" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Android" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.65694445" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32879046" sideWeight="0.5030257" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.0" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+<<<<<<< HEAD
+<<<<<<< HEAD
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+<<<<<<< HEAD
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23104435" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32879046" sideWeight="0.4969743" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+=======
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.16111112" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+>>>>>>> 9d48744a8afcf0393d74e163b6bc6f684697eb9c
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+<<<<<<< HEAD
       <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.059125964" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
 <<<<<<< HEAD
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32879046" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -2104,21 +2314,37 @@
 >>>>>>> b72336a0ac74e85bae961ddc97fe057422d485d1
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32879046" sideWeight="0.5030257" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26156813" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+=======
+>>>>>>> 881e61cf3df6f5508b7892474e0afca087a92a9d
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+=======
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+>>>>>>> b72336a0ac74e85bae961ddc97fe057422d485d1
+=======
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+>>>>>>> 881e61cf3df6f5508b7892474e0afca087a92a9d
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+<<<<<<< HEAD
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32879046" sideWeight="0.4969743" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
 =======
 >>>>>>> b72336a0ac74e85bae961ddc97fe057422d485d1
+=======
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+>>>>>>> 2b066636dbcc4a41b0670f2a11e270ad34b53f5b
+>>>>>>> 881e61cf3df6f5508b7892474e0afca087a92a9d
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -2137,10 +2363,27 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/cs246/ironmanapp/Structs.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="17" column="32" selection-start-line="17" selection-start-column="15" selection-end-line="17" selection-end-column="32" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/cs246/ironmanapp/TaskCompletion.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="9" column="33" selection-start-line="9" selection-start-column="33" selection-end-line="9" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="15" selection-end-column="33" />
+          <caret line="188" column="23" selection-start-line="188" selection-start-column="23" selection-end-line="188" selection-end-column="23" />
           <folding />
         </state>
       </provider>
@@ -2249,19 +2492,26 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/cs246/ironmanapp/Pop.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/cs246/ironmanapp/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="322" column="37" selection-start-line="322" selection-start-column="37" selection-end-line="322" selection-end-column="37" />
-          <folding />
+          <caret line="60" column="56" selection-start-line="60" selection-start-column="56" selection-end-line="60" selection-end-column="56" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#2526#2716#0" expanded="false" />
+            <element signature="e#2715#2716#0" expanded="false" />
+            <element signature="e#9719#9720#0" expanded="false" />
+            <element signature="e#9761#9762#0" expanded="false" />
+            <element signature="e#11509#11677#0" expanded="false" />
+            <element signature="e#11676#11677#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/cs246/ironmanapp/EntryFinisher.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="36" column="9" selection-start-line="36" selection-start-column="9" selection-end-line="36" selection-end-column="9" />
         </state>
       </provider>
     </entry>
@@ -2269,7 +2519,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -2277,6 +2529,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+<<<<<<< HEAD
 <<<<<<< HEAD
           <folding>
             <element signature="imports" expanded="false" />
@@ -2385,19 +2638,32 @@
 =======
           <folding />
 >>>>>>> b72336a0ac74e85bae961ddc97fe057422d485d1
+=======
+<<<<<<< HEAD
+=======
+>>>>>>> 2b066636dbcc4a41b0670f2a11e270ad34b53f5b
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+>>>>>>> 881e61cf3df6f5508b7892474e0afca087a92a9d
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/cs246/ironmanapp/ContestantFinisher.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="90" column="0" selection-start-line="90" selection-start-column="0" selection-end-line="90" selection-end-column="0" />
+          <caret line="35" column="2" selection-start-line="35" selection-start-column="2" selection-end-line="35" selection-end-column="2" />
+<<<<<<< HEAD
           <folding>
             <element signature="e#1784#1792#0" expanded="true" />
           </folding>
+=======
+          <folding />
+>>>>>>> 2b066636dbcc4a41b0670f2a11e270ad34b53f5b
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
 <<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/app/src/main/java/cs246/ironmanapp/URLReader.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -2443,10 +2709,106 @@
 =======
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/contestantdisplay.xml">
 >>>>>>> b72336a0ac74e85bae961ddc97fe057422d485d1
+=======
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/cs246/ironmanapp/URLReader.java">
+>>>>>>> 881e61cf3df6f5508b7892474e0afca087a92a9d
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="2" column="38" selection-start-line="2" selection-start-column="38" selection-end-line="2" selection-end-column="38" />
+          <caret line="147" column="64" selection-start-line="147" selection-start-column="64" selection-end-line="147" selection-end-column="64" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/cs246/ironmanapp/AdapterContestant.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="70" column="0" selection-start-line="70" selection-start-column="0" selection-end-line="70" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#985#986#0" expanded="false" />
+            <element signature="e#1026#1027#0" expanded="false" />
+            <element signature="e#1064#1065#0" expanded="false" />
+            <element signature="e#1112#1113#0" expanded="false" />
+            <element signature="e#1154#1155#0" expanded="false" />
+            <element signature="e#1206#1207#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/cs246/ironmanapp/Structs.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="17" column="32" selection-start-line="17" selection-start-column="15" selection-end-line="17" selection-end-column="32" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/cs246/ironmanapp/TaskCompletion.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="9" column="33" selection-start-line="9" selection-start-column="33" selection-end-line="9" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
+<<<<<<< HEAD
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="6" column="32" selection-start-line="6" selection-start-column="32" selection-end-line="6" selection-end-column="32" />
+          <folding>
+            <element signature="e#323#358#0" expanded="true" />
+            <element signature="e#384#419#0" expanded="true" />
+            <element signature="e#443#476#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/cs246/ironmanapp/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+            <element signature="imports" expanded="true" />
+=======
+            <element signature="e#3432#3452#0" expanded="true" />
+            <element signature="e#9840#10008#0" expanded="true" />
+            <element signature="e#10007#10008#0" expanded="true" />
+>>>>>>> 9d48744a8afcf0393d74e163b6bc6f684697eb9c
+=======
+            <element signature="e#2526#2715#0" expanded="false" />
+            <element signature="e#2714#2715#0" expanded="false" />
+            <element signature="e#3903#3923#0" expanded="false" />
+            <element signature="e#10185#10186#0" expanded="false" />
+            <element signature="e#10227#10228#0" expanded="false" />
+            <element signature="e#11975#12143#0" expanded="false" />
+            <element signature="e#12142#12143#0" expanded="false" />
+>>>>>>> 3d927367c5379266bbcd62f7b1ad15503b13d31d
+=======
+            <element signature="imports" expanded="false" />
+            <element signature="e#2526#2716#0" expanded="false" />
+            <element signature="e#2715#2716#0" expanded="false" />
+            <element signature="e#9719#9720#0" expanded="false" />
+            <element signature="e#9761#9762#0" expanded="false" />
+>>>>>>> c7bc217e764d36a21c1d7f3d930ec02d5560cb60
+          </folding>
+=======
+=======
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="6" column="32" selection-start-line="6" selection-start-column="32" selection-end-line="6" selection-end-column="32" />
+>>>>>>> 2b066636dbcc4a41b0670f2a11e270ad34b53f5b
           <folding />
+>>>>>>> b72336a0ac74e85bae961ddc97fe057422d485d1
         </state>
       </provider>
 <<<<<<< HEAD
@@ -2464,6 +2826,160 @@
             <element signature="e#7644#7645#0" expanded="false" />
             <element signature="e#9469#9470#0" expanded="false" />
             <element signature="e#9545#9546#0" expanded="false" />
+=======
+            <element signature="e#2526#2715#0" expanded="false" />
+            <element signature="e#2714#2715#0" expanded="false" />
+            <element signature="e#3903#3923#0" expanded="false" />
+            <element signature="e#10185#10186#0" expanded="false" />
+            <element signature="e#10227#10228#0" expanded="false" />
+            <element signature="e#11975#12143#0" expanded="false" />
+            <element signature="e#12142#12143#0" expanded="false" />
+>>>>>>> 3d927367c5379266bbcd62f7b1ad15503b13d31d
+=======
+            <element signature="imports" expanded="false" />
+            <element signature="e#2526#2716#0" expanded="false" />
+            <element signature="e#2715#2716#0" expanded="false" />
+            <element signature="e#9719#9720#0" expanded="false" />
+            <element signature="e#9761#9762#0" expanded="false" />
+>>>>>>> c7bc217e764d36a21c1d7f3d930ec02d5560cb60
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/cs246/ironmanapp/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#2526#2716#0" expanded="false" />
+            <element signature="e#2715#2716#0" expanded="false" />
+            <element signature="e#9719#9720#0" expanded="false" />
+            <element signature="e#9761#9762#0" expanded="false" />
+            <element signature="e#11509#11677#0" expanded="false" />
+            <element signature="e#11676#11677#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/cs246/ironmanapp/ContestantFinisher.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="23" column="13" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/cs246/ironmanapp/URLReader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="53" column="6" selection-start-line="53" selection-start-column="6" selection-end-line="53" selection-end-column="6" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+<<<<<<< HEAD
+=======
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/cs246/ironmanapp/TaskCompletion.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="10" column="75" selection-start-line="10" selection-start-column="75" selection-end-line="10" selection-end-column="75" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
+      <provider editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="165" column="46" selection-start-line="165" selection-start-column="46" selection-end-line="165" selection-end-column="46" />
+          <folding />
+>>>>>>> 881e61cf3df6f5508b7892474e0afca087a92a9d
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/cs246/ironmanapp/EntryFinisher.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+=======
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/cs246/ironmanapp/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="70" column="10" selection-start-line="70" selection-start-column="10" selection-end-line="70" selection-end-column="10" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#2526#2716#0" expanded="false" />
+            <element signature="e#2715#2716#0" expanded="false" />
+            <element signature="e#9719#9720#0" expanded="false" />
+            <element signature="e#9761#9762#0" expanded="false" />
+            <element signature="e#11509#11677#0" expanded="false" />
+            <element signature="e#11676#11677#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/cs246/ironmanapp/URLReader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="53" column="6" selection-start-line="53" selection-start-column="6" selection-end-line="53" selection-end-column="6" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/cs246/ironmanapp/EntryFinisher.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="155" column="56" selection-start-line="155" selection-start-column="56" selection-end-line="155" selection-end-column="56" />
+          <folding />
+        </state>
+      </provider>
+<<<<<<< HEAD
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/cs246/ironmanapp/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="70" column="10" selection-start-line="70" selection-start-column="10" selection-end-line="70" selection-end-column="10" />
+          <folding>
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+            <element signature="imports" expanded="true" />
+=======
+            <element signature="e#3432#3452#0" expanded="true" />
+            <element signature="e#9840#10008#0" expanded="true" />
+            <element signature="e#10007#10008#0" expanded="true" />
+>>>>>>> 9d48744a8afcf0393d74e163b6bc6f684697eb9c
 =======
             <element signature="e#2526#2715#0" expanded="false" />
             <element signature="e#2714#2715#0" expanded="false" />
@@ -2507,6 +3023,7 @@
       </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
+>>>>>>> 881e61cf3df6f5508b7892474e0afca087a92a9d
           <caret line="155" column="56" selection-start-line="155" selection-start-column="56" selection-end-line="155" selection-end-column="56" />
           <folding>
             <element signature="e#323#358#0" expanded="true" />
@@ -2562,12 +3079,22 @@
           <folding>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             <element signature="e#1647#1648#0" expanded="false" />
             <element signature="e#1734#1735#0" expanded="false" />
             <element signature="e#7602#7603#0" expanded="false" />
             <element signature="e#7644#7645#0" expanded="false" />
             <element signature="e#9469#9470#0" expanded="false" />
             <element signature="e#9545#9546#0" expanded="false" />
+=======
+<<<<<<< HEAD
+            <element signature="imports" expanded="true" />
+=======
+            <element signature="e#3432#3452#0" expanded="true" />
+            <element signature="e#9840#10008#0" expanded="true" />
+            <element signature="e#10007#10008#0" expanded="true" />
+>>>>>>> 9d48744a8afcf0393d74e163b6bc6f684697eb9c
+>>>>>>> 881e61cf3df6f5508b7892474e0afca087a92a9d
 =======
             <element signature="e#2526#2715#0" expanded="false" />
             <element signature="e#2714#2715#0" expanded="false" />
@@ -2593,11 +3120,17 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="20" column="24" selection-start-line="20" selection-start-column="24" selection-end-line="20" selection-end-column="24" />
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
           <folding>
             <element signature="imports" expanded="false" />
           </folding>
 >>>>>>> 3d927367c5379266bbcd62f7b1ad15503b13d31d
+=======
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+>>>>>>> 881e61cf3df6f5508b7892474e0afca087a92a9d
         </state>
       </provider>
     </entry>
@@ -2633,12 +3166,22 @@
           <folding>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             <element signature="e#1647#1648#0" expanded="false" />
             <element signature="e#1734#1735#0" expanded="false" />
             <element signature="e#7602#7603#0" expanded="false" />
             <element signature="e#7644#7645#0" expanded="false" />
             <element signature="e#9469#9470#0" expanded="false" />
             <element signature="e#9545#9546#0" expanded="false" />
+=======
+<<<<<<< HEAD
+            <element signature="imports" expanded="true" />
+=======
+            <element signature="e#3432#3452#0" expanded="true" />
+            <element signature="e#9840#10008#0" expanded="true" />
+            <element signature="e#10007#10008#0" expanded="true" />
+>>>>>>> 9d48744a8afcf0393d74e163b6bc6f684697eb9c
+>>>>>>> 881e61cf3df6f5508b7892474e0afca087a92a9d
 =======
             <element signature="e#2526#2715#0" expanded="false" />
             <element signature="e#2714#2715#0" expanded="false" />
@@ -2691,12 +3234,22 @@
           <folding>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             <element signature="e#1647#1648#0" expanded="false" />
             <element signature="e#1734#1735#0" expanded="false" />
             <element signature="e#7602#7603#0" expanded="false" />
             <element signature="e#7644#7645#0" expanded="false" />
             <element signature="e#9469#9470#0" expanded="false" />
             <element signature="e#9545#9546#0" expanded="false" />
+=======
+<<<<<<< HEAD
+            <element signature="imports" expanded="true" />
+=======
+            <element signature="e#3432#3452#0" expanded="true" />
+            <element signature="e#9840#10008#0" expanded="true" />
+            <element signature="e#10007#10008#0" expanded="true" />
+>>>>>>> 9d48744a8afcf0393d74e163b6bc6f684697eb9c
+>>>>>>> 881e61cf3df6f5508b7892474e0afca087a92a9d
 =======
             <element signature="e#2526#2715#0" expanded="false" />
             <element signature="e#2714#2715#0" expanded="false" />
@@ -2728,13 +3281,49 @@
       </provider>
     </entry>
 <<<<<<< HEAD
+=======
+    <entry file="file://$PROJECT_DIR$/local.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-6.8">
+          <caret line="10" column="29" selection-start-line="10" selection-start-column="29" selection-end-line="10" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+>>>>>>> 881e61cf3df6f5508b7892474e0afca087a92a9d
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/app/src/main/java/cs246/ironmanapp/Structs.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="20" column="24" selection-start-line="20" selection-start-column="24" selection-end-line="20" selection-end-column="24" />
+<<<<<<< HEAD
         </state>
       </provider>
     </entry>
+=======
+          <folding />
+        </state>
+      </provider>
+    </entry>
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/cs246/ironmanapp/URLReader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="53" column="6" selection-start-line="53" selection-start-column="6" selection-end-line="53" selection-end-column="6" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/cs246/ironmanapp/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="75" column="30" selection-start-line="75" selection-start-column="30" selection-end-line="75" selection-end-column="30" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+=======
+>>>>>>> 881e61cf3df6f5508b7892474e0afca087a92a9d
 =======
 >>>>>>> 3d927367c5379266bbcd62f7b1ad15503b13d31d
     <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
@@ -2749,6 +3338,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+<<<<<<< HEAD
         </state>
       </provider>
     </entry>
@@ -2766,10 +3356,38 @@
           <folding />
 >>>>>>> 3d927367c5379266bbcd62f7b1ad15503b13d31d
 =======
+<<<<<<< HEAD
+          <folding />
+>>>>>>> 9d48744a8afcf0393d74e163b6bc6f684697eb9c
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/cs246/ironmanapp/ContestantFinisher.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+<<<<<<< HEAD
+          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+=======
+          <caret line="53" column="6" selection-start-line="53" selection-start-column="6" selection-end-line="53" selection-end-column="6" />
+>>>>>>> 9d48744a8afcf0393d74e163b6bc6f684697eb9c
+=======
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/cs246/ironmanapp/TaskCompletion.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="9" column="33" selection-start-line="9" selection-start-column="33" selection-end-line="9" selection-end-column="33" />
+<<<<<<< HEAD
+>>>>>>> 3d927367c5379266bbcd62f7b1ad15503b13d31d
+          <folding />
+>>>>>>> 881e61cf3df6f5508b7892474e0afca087a92a9d
+=======
 >>>>>>> c7bc217e764d36a21c1d7f3d930ec02d5560cb60
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/app/src/main/java/cs246/ironmanapp/EntryFinisher.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -2784,21 +3402,66 @@
           </folding>
 >>>>>>> 3d927367c5379266bbcd62f7b1ad15503b13d31d
 =======
+<<<<<<< HEAD
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/cs246/ironmanapp/Pop.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="32" column="35" selection-start-line="32" selection-start-column="35" selection-end-line="32" selection-end-column="35" />
+          <folding>
+            <element signature="e#913#1414#0" expanded="true" />
+            <element signature="e#1413#1414#0" expanded="true" />
+=======
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/cs246/ironmanapp/TaskCompletion.java">
+=======
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/cs246/ironmanapp/EntryFinisher.java">
+>>>>>>> 3d927367c5379266bbcd62f7b1ad15503b13d31d
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="36" column="9" selection-start-line="36" selection-start-column="9" selection-end-line="36" selection-end-column="9" />
+<<<<<<< HEAD
+          <folding>
+<<<<<<< HEAD
+            <element signature="imports" expanded="true" />
+>>>>>>> 9d48744a8afcf0393d74e163b6bc6f684697eb9c
+=======
+            <element signature="imports" expanded="false" />
+>>>>>>> 3d927367c5379266bbcd62f7b1ad15503b13d31d
+          </folding>
+>>>>>>> 881e61cf3df6f5508b7892474e0afca087a92a9d
+=======
 >>>>>>> c7bc217e764d36a21c1d7f3d930ec02d5560cb60
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/cs246/ironmanapp/Structs.java">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state vertical-scroll-proportion="0.0">
 <<<<<<< HEAD
           <caret line="6" column="32" selection-start-line="6" selection-start-column="32" selection-end-line="6" selection-end-column="32" />
           <folding />
 =======
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+        <state vertical-scroll-proportion="0.4117647">
+          <caret line="168" column="25" selection-start-line="168" selection-start-column="25" selection-end-line="168" selection-end-column="25" />
+=======
+        <state vertical-scroll-proportion="-3.5172415">
+          <caret line="6" column="32" selection-start-line="6" selection-start-column="32" selection-end-line="6" selection-end-column="32" />
+          <folding />
+=======
+        <state vertical-scroll-proportion="0.0">
+>>>>>>> 881e61cf3df6f5508b7892474e0afca087a92a9d
           <caret line="17" column="32" selection-start-line="17" selection-start-column="15" selection-end-line="17" selection-end-column="32" />
           <folding>
             <element signature="imports" expanded="false" />
           </folding>
+<<<<<<< HEAD
+=======
+>>>>>>> 3d927367c5379266bbcd62f7b1ad15503b13d31d
+>>>>>>> 881e61cf3df6f5508b7892474e0afca087a92a9d
         </state>
       </provider>
     </entry>
@@ -2806,7 +3469,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.33333334">
           <caret line="328" column="15" selection-start-line="328" selection-start-column="15" selection-end-line="328" selection-end-column="15" />
+<<<<<<< HEAD
 >>>>>>> 3d927367c5379266bbcd62f7b1ad15503b13d31d
+=======
+>>>>>>> 881e61cf3df6f5508b7892474e0afca087a92a9d
         </state>
       </provider>
     </entry>
@@ -2824,13 +3490,19 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
 <<<<<<< HEAD
+<<<<<<< HEAD
           <caret line="19" column="76" selection-start-line="19" selection-start-column="76" selection-end-line="19" selection-end-column="76" />
 =======
+=======
+>>>>>>> 881e61cf3df6f5508b7892474e0afca087a92a9d
           <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="false" />
           </folding>
+<<<<<<< HEAD
 >>>>>>> 3d927367c5379266bbcd62f7b1ad15503b13d31d
+=======
+>>>>>>> 881e61cf3df6f5508b7892474e0afca087a92a9d
         </state>
       </provider>
 =======
@@ -2839,6 +3511,7 @@
       </provider>
 >>>>>>> b72336a0ac74e85bae961ddc97fe057422d485d1
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/app/src/main/java/cs246/ironmanapp/URLReader.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -2890,6 +3563,49 @@
     <entry file="file://$PROJECT_DIR$/app/src/main/java/cs246/ironmanapp/AdapterContestant.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
+=======
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/cs246/ironmanapp/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="103" column="5" selection-start-line="103" selection-start-column="5" selection-end-line="103" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#2526#2716#0" expanded="false" />
+            <element signature="e#2715#2716#0" expanded="false" />
+            <element signature="e#9719#9720#0" expanded="false" />
+            <element signature="e#9761#9762#0" expanded="false" />
+            <element signature="e#11509#11677#0" expanded="false" />
+            <element signature="e#11676#11677#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/cs246/ironmanapp/URLReader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="47" column="5" selection-start-line="47" selection-start-column="5" selection-end-line="47" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="148" column="50" selection-start-line="148" selection-start-column="50" selection-end-line="148" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/cs246/ironmanapp/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+<<<<<<< HEAD
+>>>>>>> 881e61cf3df6f5508b7892474e0afca087a92a9d
           <caret line="20" column="36" selection-start-line="20" selection-start-column="36" selection-end-line="20" selection-end-column="36" />
 <<<<<<< HEAD
           <folding>
@@ -2900,28 +3616,105 @@
             <element signature="e#1112#1113#0" expanded="false" />
             <element signature="e#1154#1155#0" expanded="false" />
             <element signature="e#1206#1207#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/cs246/ironmanapp/MainActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
 <<<<<<< HEAD
-          <caret line="147" column="64" selection-start-line="147" selection-start-column="64" selection-end-line="147" selection-end-column="64" />
->>>>>>> 3d927367c5379266bbcd62f7b1ad15503b13d31d
 =======
-          <caret line="322" column="37" selection-start-line="322" selection-start-column="37" selection-end-line="322" selection-end-column="37" />
+=======
+          <caret line="47" column="10" selection-start-line="47" selection-start-column="10" selection-end-line="47" selection-end-column="10" />
           <folding>
             <element signature="imports" expanded="false" />
             <element signature="e#2526#2716#0" expanded="false" />
             <element signature="e#2715#2716#0" expanded="false" />
             <element signature="e#9719#9720#0" expanded="false" />
             <element signature="e#9761#9762#0" expanded="false" />
+            <element signature="e#11509#11677#0" expanded="false" />
+            <element signature="e#11676#11677#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/cs246/ironmanapp/Structs.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="20" column="24" selection-start-line="20" selection-start-column="24" selection-end-line="20" selection-end-column="24" />
+          <folding>
+            <element signature="imports" expanded="false" />
+>>>>>>> 881e61cf3df6f5508b7892474e0afca087a92a9d
+          </folding>
+        </state>
+      </provider>
+    </entry>
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/cs246/ironmanapp/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+=======
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/cs246/ironmanapp/URLReader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="47" column="5" selection-start-line="47" selection-start-column="5" selection-end-line="47" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="false" />
+>>>>>>> 2b066636dbcc4a41b0670f2a11e270ad34b53f5b
+          </folding>
+        </state>
+      </provider>
+    </entry>
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/cs246/ironmanapp/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state vertical-scroll-proportion="-7.034483">
+          <caret line="12" column="41" selection-start-line="12" selection-start-column="41" selection-end-line="12" selection-end-column="41" />
+>>>>>>> 9d48744a8afcf0393d74e163b6bc6f684697eb9c
+=======
+>>>>>>> 881e61cf3df6f5508b7892474e0afca087a92a9d
+        <state vertical-scroll-proportion="0.0">
+<<<<<<< HEAD
+          <caret line="147" column="64" selection-start-line="147" selection-start-column="64" selection-end-line="147" selection-end-column="64" />
+>>>>>>> 3d927367c5379266bbcd62f7b1ad15503b13d31d
+=======
+          <caret line="322" column="37" selection-start-line="322" selection-start-column="37" selection-end-line="322" selection-end-column="37" />
+<<<<<<< HEAD
+=======
+=======
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="41" column="45" selection-start-line="41" selection-start-column="45" selection-end-line="41" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/cs246/ironmanapp/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="183" column="5" selection-start-line="183" selection-start-column="5" selection-end-line="183" selection-end-column="5" />
+>>>>>>> 2b066636dbcc4a41b0670f2a11e270ad34b53f5b
+>>>>>>> 881e61cf3df6f5508b7892474e0afca087a92a9d
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#2526#2716#0" expanded="false" />
+            <element signature="e#2715#2716#0" expanded="false" />
+            <element signature="e#9719#9720#0" expanded="false" />
+            <element signature="e#9761#9762#0" expanded="false" />
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+            <element signature="e#11509#11677#0" expanded="false" />
+            <element signature="e#11676#11677#0" expanded="false" />
+>>>>>>> 2b066636dbcc4a41b0670f2a11e270ad34b53f5b
+>>>>>>> 881e61cf3df6f5508b7892474e0afca087a92a9d
+          </folding>
+        </state>
+      </provider>
+    </entry>
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 881e61cf3df6f5508b7892474e0afca087a92a9d
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/contestantdisplay.xml">
       <provider editor-type-id="android-designer">
         <state />
@@ -2932,6 +3725,7 @@
 >>>>>>> c7bc217e764d36a21c1d7f3d930ec02d5560cb60
 =======
 >>>>>>> b72336a0ac74e85bae961ddc97fe057422d485d1
+<<<<<<< HEAD
           <folding />
         </state>
       </provider>
@@ -2975,10 +3769,121 @@
             <element signature="e#1137#1172#0" expanded="true" />
             <element signature="e#1206#1241#0" expanded="true" />
             <element signature="e#1273#1306#0" expanded="true" />
+=======
+=======
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/cs246/ironmanapp/URLReader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="20" column="3" selection-start-line="20" selection-start-column="3" selection-end-line="20" selection-end-column="3" />
+          <folding>
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+>>>>>>> 2b066636dbcc4a41b0670f2a11e270ad34b53f5b
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/cs246/ironmanapp/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#2526#2716#0" expanded="false" />
+            <element signature="e#2715#2716#0" expanded="false" />
+            <element signature="e#9719#9720#0" expanded="false" />
+            <element signature="e#9761#9762#0" expanded="false" />
+            <element signature="e#11509#11677#0" expanded="false" />
+            <element signature="e#11676#11677#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/cs246/ironmanapp/URLReader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="76" column="0" selection-start-line="76" selection-start-column="0" selection-end-line="76" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/local.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-6.8">
+          <caret line="10" column="29" selection-start-line="10" selection-start-column="29" selection-end-line="10" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/cs246/ironmanapp/TaskCompletion.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="9" column="33" selection-start-line="9" selection-start-column="33" selection-end-line="9" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/cs246/ironmanapp/EntryFinisher.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="36" column="9" selection-start-line="36" selection-start-column="9" selection-end-line="36" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/cs246/ironmanapp/Structs.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="17" column="32" selection-start-line="17" selection-start-column="15" selection-end-line="17" selection-end-column="32" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Android/sdk/sources/android-22/android/widget/ArrayAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33333334">
+          <caret line="328" column="15" selection-start-line="328" selection-start-column="15" selection-end-line="328" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/cs246/ironmanapp/SubmitEntryFinisher.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="false" />
+>>>>>>> 881e61cf3df6f5508b7892474e0afca087a92a9d
+          </folding>
+        </state>
+      </provider>
+    </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/app/src/main/java/cs246/ironmanapp/ContestantFinisher.java">
       <provider selected="true" editor-type-id="text-editor">
 <<<<<<< HEAD
@@ -3034,6 +3939,96 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.49101797">
           <caret line="12" column="41" selection-start-line="12" selection-start-column="41" selection-end-line="12" selection-end-column="41" />
+=======
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/cs246/ironmanapp/NewUserFinisher.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/cs246/ironmanapp/URLReader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="147" column="64" selection-start-line="147" selection-start-column="64" selection-end-line="147" selection-end-column="64" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/cs246/ironmanapp/Pop.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/cs246/ironmanapp/AdapterContestant.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="20" column="36" selection-start-line="20" selection-start-column="36" selection-end-line="20" selection-end-column="36" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#985#986#0" expanded="false" />
+            <element signature="e#1026#1027#0" expanded="false" />
+            <element signature="e#1064#1065#0" expanded="false" />
+            <element signature="e#1112#1113#0" expanded="false" />
+            <element signature="e#1154#1155#0" expanded="false" />
+            <element signature="e#1206#1207#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/cs246/ironmanapp/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="322" column="37" selection-start-line="322" selection-start-column="37" selection-end-line="322" selection-end-column="37" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#2526#2716#0" expanded="false" />
+            <element signature="e#2715#2716#0" expanded="false" />
+            <element signature="e#9719#9720#0" expanded="false" />
+            <element signature="e#9761#9762#0" expanded="false" />
+            <element signature="e#11509#11677#0" expanded="false" />
+            <element signature="e#11676#11677#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="66.344826">
+          <caret line="26" column="48" selection-start-line="26" selection-start-column="48" selection-end-line="26" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/contestantdisplay.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-4.1034484">
+          <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="19" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/cs246/ironmanapp/ContestantFinisher.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.60273975">
+          <caret line="44" column="44" selection-start-line="44" selection-start-column="44" selection-end-line="44" selection-end-column="44" />
+>>>>>>> 881e61cf3df6f5508b7892474e0afca087a92a9d
           <folding />
         </state>
       </provider>
