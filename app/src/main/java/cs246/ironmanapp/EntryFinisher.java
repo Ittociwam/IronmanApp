@@ -18,22 +18,23 @@ public class EntryFinisher implements TaskCompletion {
     public static List<Structs.Entry> entries;
     @Override
     public void finish(Activity activity, String json) {
+
         try {
-            Gson gson = new GsonBuilder().setDateFormat("yyyy-MM-dd").create();
+        Gson gson = new GsonBuilder().setDateFormat("yyyy-MM-dd").create();
 
-            Type listType = new TypeToken<List<Structs.Entry>>() {
-            }.getType();
-            entries = gson.fromJson(json, listType);
-            String output = "";
+        Type listType = new TypeToken<List<Structs.Entry>>() {
+        }.getType();
+        entries = gson.fromJson(json, listType);
+        String output = "";
 
-            //This for loop will be replaced by what sends the contestants list to the main activity
-            for (Structs.Entry entry : entries) {
-                output += entry.mode + " " + entry.distance + "%\n";
+        //This for loop will be replaced by what sends the contestants list to the main activity
+        for (Structs.Entry entry : entries) {
+            output += entry.mode + " " + entry.distance + "%\n";
 
-            }
-            Log.v(TAG_ENTRY_FINISHER, output);
-        } catch (Exception e) {
-            Log.e(TAG_ENTRY_FINISHER, "Error with gson or outputting or something", e);
         }
+        Log.v(TAG_ENTRY_FINISHER, output);
+    } catch (Exception e) {
+        Log.e(TAG_ENTRY_FINISHER, "Error with gson or outputting or something", e);
     }
+}
 }

@@ -34,6 +34,7 @@ public class NewUserFinisher implements TaskCompletion {
             // as long as the return code in the new user message was equal to 0
             // store the message value (the 13 digit code) locally for future reference
             // otherwise handle the error and kick out of this function
+            AlertDialog.Builder builderData = new AlertDialog.Builder(activity);
             switch(newUserMessage.code) {
                 case 0:
                     SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(mainActivity.getContext());
@@ -44,7 +45,6 @@ public class NewUserFinisher implements TaskCompletion {
                     break;
                 case -1:
                     Log.e(TAG_NEW_USER_FINISHER, "An error from the database in insert info: " + newUserMessage.message);
-                    AlertDialog.Builder builderData = new AlertDialog.Builder(activity);
                     builderData.setMessage("Look at this dialog!")
                             .setCancelable(false)
                             .setPositiveButton("OK", new DialogInterface.OnClickListener() {
@@ -57,7 +57,15 @@ public class NewUserFinisher implements TaskCompletion {
                     break;
                 case 1:
                     // duplicate
-
+                    builderData.setMessage("Duplicate!")
+                            .setCancelable(false)
+                            .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                                public void onClick(DialogInterface dialog, int id) {
+                                    //do things
+                                }
+                            });
+                    AlertDialog alert2 = builderData.create();
+                    alert2.show();
                     Log.w(TAG_NEW_USER_FINISHER, "this name was a " + newUserMessage.message);
                     break;
                 case 2:

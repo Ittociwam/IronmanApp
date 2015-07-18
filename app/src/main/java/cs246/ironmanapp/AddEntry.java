@@ -1,23 +1,31 @@
 package cs246.ironmanapp;
 
 import android.app.Activity;
+import android.app.DatePickerDialog;
+import android.app.Dialog;
+import android.support.v4.app.DialogFragment;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.support.v4.app.FragmentActivity;
 import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.DatePicker;
+import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+
+import java.util.Calendar;
 
 /**
  * Created by John on 7/6/15.
  */
 
 
-public class AddEntry extends Activity {
+public class AddEntry extends FragmentActivity {
 
     private static final String NEW_ENTRY_URL = "http://robbise.no-ip.info/ironman/newEntry.php";
     private static final String TAG_OUTPUT_ALL_THE_THINGS = "For Debugging";
@@ -25,14 +33,18 @@ public class AddEntry extends Activity {
     public final static String EXTRA_MESSAGE = "com.mycompany.myfirstapp.MESSAGE";
     public Activity mainActivity;
 
+    private static int year = 0;
+    private static int month = 0;
+    private static int day = 0;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
         //THIS CODE IS TO RESET USER_ID FOR TESTING!!!!!
-//        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(MainActivity.context);
-//        SharedPreferences.Editor editor = sharedPreferences.edit();
-//        editor.remove("user_id");
-//        editor.commit();
+        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(MainActivity.context);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.remove("user_id");
+        editor.commit();
 
 
         Intent intent = getIntent();
@@ -40,7 +52,7 @@ public class AddEntry extends Activity {
         mainActivity = (Activity) intent.getSerializableExtra("activity");
         super.onCreate(savedInstanceState);
 
-        setContentView(R.layout.addwindow);
+        setContentView(R.layout.addentry);
 
         DisplayMetrics dm = new DisplayMetrics();
 
@@ -90,6 +102,11 @@ public class AddEntry extends Activity {
 
     }
 
+    public void showDatePickerDialog(View v) {
+        DialogFragment newFragment = new DatePickerFragment();
+        newFragment.show(getSupportFragmentManager(), "datePicker");
+    }
+
     /**
      * This function will be called when a user pushes submit on the newEntry form.
      * It will call 2 additional functions, createNewUser and sendNewEntry. createNewUser will only be
@@ -134,23 +151,81 @@ public class AddEntry extends Activity {
 
         Log.v(TAG_ADD_ENTRY, "In send New entry! yay!!! uuid: " + uuid);
 
-//        // Gets a reference to our radio group
-//// rBtnDigits is the name of our radio group (code not shown)
-//        RadioGroup g = (RadioGroup) findViewById(R.id.RGroup);
-//
-//// Returns an integer which represents the selected radio button's ID
-//        int selected = g.getCheckedRadioButtonId();
-//
-//// Gets a reference to our "selected" radio button
-//        RadioButton b = (RadioButton) findViewById(selected);
-//
-//// Now you can get the text or whatever you want from the "selected" radio button
-//        b.getText();
-//
-//        String mode = null; // get a 1 2 or 3 from form values bike, swim run respectively
-//        String distance = null; // get the distance 2.34 from the form
-//        String date = null; // in SQL format please! 2015-07-03 get from the form
+        // Gets a reference to our radio group
+// rBtnDigits is the name of our radio group (code not shown)
+        RadioGroup g = (RadioGroup) findViewById(R.id.Modes);
 
+        Log.i(TAG_ADD_ENTRY, "Radio group added");
+
+// Returns an integer which represents the selected radio button's ID
+        int selected = g.getCheckedRadioButtonId();
+
+        Log.i(TAG_ADD_ENTRY, "got selected");
+
+// Gets a reference to our "selected" radio button
+        RadioButton b = (RadioButton) findViewById(selected);
+
+// Now you can get the text or whatever you want from the "selected" radio button
+       // b.getText();
+        String mode = b.getText().toString();
+        Log.v(TAG_ADD_ENTRY, "from mode: " + b.getText().toString());
+
+        EditText distanceEditText;
+        distanceEditText  = (EditText)findViewById(R.id.miles);
+        String distance = distanceEditText.getText().toString();
+        Log.i(TAG_ADD_ENTRY, "got distance: " + distance);
+        month += 1;
+        String monthS = Integer.toString(month);
+        String yearS = Integer.toString(year);
+        String dayS = Integer.toString(day);
+        String zero = "0";
+
+        if(month < 10)
+        {
+
+            monthS = zero + monthS;
+        }
+        if(day < 10)
+        {
+
+            dayS = zero + dayS;
+        }
+
+        String date = yearS + "-" + monthS + "-" + dayS;
+
+        Log.i(TAG_ADD_ENTRY, "got date: " + date);
+        String params = "mode=" + mode + "&user=" + uuid + "&date=" + date + "&distance=" + distance;
+
+        Log.i(TAG_ADD_ENTRY, "params sending to new entry: " + params);
+
+        MainActivity.Task t = new MainActivity.Task(NEW_ENTRY_URL, params); // two parameters here because it's a post http request
+
+        t.setTaskCompletion(new SubmitEntryFinisher());
+
+        new Thread(t).start();
+
+    }
+
+    public static class DatePickerFragment extends DialogFragment
+            implements DatePickerDialog.OnDateSetListener {
+
+        @Override
+        public Dialog onCreateDialog(Bundle savedInstanceState) {
+            // Use the current date as the default date in the picker
+            final Calendar c = Calendar.getInstance();
+            int year = c.get(Calendar.YEAR);
+            int month = c.get(Calendar.MONTH);
+            int day = c.get(Calendar.DAY_OF_MONTH);
+
+            // Create a new instance of DatePickerDialog and return it
+            return new DatePickerDialog(getActivity(), this, year, month, day);
+        }
+
+        public void onDateSet(DatePicker view, int year, int month, int day) {
+            AddEntry.year = year;
+            AddEntry.month = month;
+            AddEntry.day = day;
+        }
     }
 
 
