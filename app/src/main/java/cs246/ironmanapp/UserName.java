@@ -7,6 +7,7 @@ import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 
 import cs246.ironmanapp.R;
 
@@ -62,7 +63,7 @@ public class UserName extends Activity {
      */
     private void createNewUser(String username) {
         MainActivity.Task t = new MainActivity.Task(NEW_USER_URL, "username=" + username); // two parameters here because it's a post http request
-        Log.v(TAG_USERNAME, "Create new user is sending " + NEW_USER_URL + username);
+        Log.v(TAG_USERNAME, "Create new user is sending: " + NEW_USER_URL + username);
 
         t.setTaskCompletion(new NewUserFinisher());
 
@@ -77,8 +78,12 @@ public class UserName extends Activity {
      * @return - Returns whatever the user enters into the new username overlay
      */
     private void getUsername() {
-        String username = "billay!";
+        EditText usernameEditText;
+        //String username = "billay!";
+        usernameEditText  = (EditText)findViewById(R.id.username);
        //TODO String username = get username from text input
+        String username = usernameEditText.getText().toString();
+        Log.i(TAG_USERNAME, "about to create a new user: " + username);
         createNewUser(username);
     }
 
