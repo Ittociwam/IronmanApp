@@ -110,7 +110,8 @@
                 android:progressBackgroundTint="#000000"
 
                 android:progressDrawable="@drawable/progresspurp"
-                android:secondaryProgress="100" />
+                android:secondaryProgress="100"
+                android:indeterminate="false" />
 
             <ImageView
                 android:id="@+id/imageView2"

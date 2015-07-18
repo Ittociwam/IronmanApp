@@ -108,6 +108,8 @@ public class MainActivity extends ActionBarActivity implements Serializable {
 
 
 
+        Intent intent = getIntent();
+        //String message = intent.getStringExtra(MainActivity.EXTRA_MESSAGE);
         add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -121,6 +123,7 @@ public class MainActivity extends ActionBarActivity implements Serializable {
         rank.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 startActivity(new Intent(MainActivity.this, Rank.class));
 
 
