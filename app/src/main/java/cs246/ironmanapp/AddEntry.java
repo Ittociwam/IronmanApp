@@ -56,19 +56,21 @@ public class AddEntry extends Activity {
 
         btnBack.setOnClickListener(new View.OnClickListener() {
 
-
+            String m = "blah";
             public void onClick(View v) {
-//                Intent intent = new Intent(AddEntry.this, MainActivity.class);
-                //EditText number = (EditText) findViewById(R.id.number);
-                //String message = "Your favorite number is " + number.getText().toString();
-                //intent.putExtra(EXTRA_MESSAGE, message);
 
-                Intent intent = new Intent(AddEntry.this, UserName.class);
-                //intent.putExtra("activity", AddEntry.this);
-                startActivity(intent);
-                //intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-               // startActivity(intent);
-                finish();
+                if(m.equals("blar")) {
+
+
+                   finish();
+
+                }
+                else {
+
+                    Intent intent = new Intent(AddEntry.this, UserName.class);
+                    m = "blar";
+                    startActivity(intent);
+                }
 
             }
         });
