@@ -4,17 +4,8 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
-import android.text.Layout;
 import android.util.Log;
-import android.view.LayoutInflater;
-import android.view.MotionEvent;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
-import android.widget.LinearLayout;
-import android.widget.ListAdapter;
-import android.widget.ListView;
-import android.widget.TextView;
+
 import android.widget.Toast;
 
 import com.google.gson.Gson;
@@ -59,11 +50,6 @@ public class ContestantFinisher implements  TaskCompletion {
         } catch (Exception e) {
             Log.e(TAG_CONTESTANT_FINISHER, "Error with gson or outputting or something", e);
         }
-
-    }
-
-    public void createContestantList() {
-
 
     }
 
