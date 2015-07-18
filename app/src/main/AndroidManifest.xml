@@ -21,6 +21,9 @@
         <activity android:name=".AddEntry" android:theme ="@style/AppTheme.addTheme">
         </activity>
         <activity android:name=".Rank" android:theme ="@style/AppTheme.addTheme"></activity>
+
+        <activity android:name=".EntryHistory" android:theme ="@style/AppTheme.addTheme"></activity>
+
         <activity android:name=".UserName" android:theme ="@style/AppTheme.addTheme"></activity>
     </application>
     <uses-permission android:name="android.permission.INTERNET" />

@@ -2,31 +2,26 @@ package cs246.ironmanapp;
 
 import android.app.Activity;
 import android.content.Context;
-
-import android.content.SharedPreferences;
-
 import android.content.Intent;
+import android.content.SharedPreferences;
 
 import android.preference.PreferenceManager;
 import android.support.v7.app.ActionBarActivity;
-
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
-
 import android.widget.ImageView;
 
-
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
 import java.io.Serializable;
-
 
 public class MainActivity extends ActionBarActivity implements Serializable {
     private static final String GET_CONTESTANTS_URL = "http://robbise.no-ip.info/ironman/getContestants.php?";
@@ -72,8 +67,46 @@ public class MainActivity extends ActionBarActivity implements Serializable {
         Log.v(TAG_OUTPUT_ALL_THE_THINGS, "Shared preference getting user");
         user = sharedPreferences.getString("user_id", "");
 
+        ProgressBar progress1 = (ProgressBar) findViewById(R.id.progressBar);
+
+        progress1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent(MainActivity.this, EntryHistory.class);
+                intent.putExtra("activity", MainActivity.this);
+                startActivity(intent);
+            }
+        });
+
+        progress1 = (ProgressBar) findViewById(R.id.progressBar2);
+
+        progress1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent(MainActivity.this, EntryHistory.class);
+                intent.putExtra("activity", MainActivity.this);
+                startActivity(intent);
+            }
+        });
+
+        progress1 = (ProgressBar) findViewById(R.id.progressBar3);
+
+        progress1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent(MainActivity.this, EntryHistory.class);
+                intent.putExtra("activity", MainActivity.this);
+                startActivity(intent);
+            }
+        });
+
         ImageView add = (ImageView) findViewById(R.id.imageView3);
         ImageView rank = (ImageView) findViewById(R.id.imageView5);
+
+
 
         Intent intent = getIntent();
         //String message = intent.getStringExtra(MainActivity.EXTRA_MESSAGE);
@@ -110,16 +143,16 @@ public class MainActivity extends ActionBarActivity implements Serializable {
         return context;
     }
 
-    public void testProgress(View view) {
-
-        gprogress = (ProgressBar) findViewById(R.id.progressBar2);
-        bprogress = (ProgressBar) findViewById(R.id.progressBar);
-        pprogress = (ProgressBar) findViewById(R.id.progressBar3);
-        progressStatus += 5;
-        progressStatus = progressStatus % 105;
-        gprogress.setProgress(progressStatus);
-
-    }
+//    public void testProgress(View view) {
+//
+//        gprogress = (ProgressBar) findViewById(R.id.progressBar2);
+//        bprogress = (ProgressBar) findViewById(R.id.progressBar);
+//        pprogress = (ProgressBar) findViewById(R.id.progressBar3);
+//        progressStatus += 5;
+//        progressStatus = progressStatus % 105;
+//        gprogress.setProgress(progressStatus);
+//
+//    }
 
 
     public void getContestants() {

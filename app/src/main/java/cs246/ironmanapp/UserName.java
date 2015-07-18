@@ -9,8 +9,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
-import cs246.ironmanapp.R;
-
 /**
  * Created by John on 7/17/15.
  */
