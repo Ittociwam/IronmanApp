@@ -48,7 +48,7 @@
         android:layout_height="wrap_content"
         android:inputType="numberDecimal"
         android:ems="10"
-        android:id="@+id/editText"
+        android:id="@+id/miles"
         android:layout_below="@+id/distance"
         android:layout_centerHorizontal="true"
         android:gravity="center"

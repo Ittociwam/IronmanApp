@@ -82,6 +82,8 @@ ContestantFinisher contestant;
         ImageView add = (ImageView) findViewById(R.id.imageView3);
         ImageView rank = (ImageView) findViewById(R.id.imageView5);
 
+        Intent intent = getIntent();
+        //String message = intent.getStringExtra(MainActivity.EXTRA_MESSAGE);
         add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -93,6 +95,7 @@ ContestantFinisher contestant;
         rank.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 startActivity(new Intent(MainActivity.this, Rank.class));
 
 

@@ -35,20 +35,14 @@ public class Pop extends Activity {
 
             public void onClick(View v) {
                 Intent intent = new Intent(Pop.this, MainActivity.class);
-                //EditText number = (EditText) findViewById(R.id.number);
-                //String message = "Your favorite number is " + number.getText().toString();
-                //intent.putExtra(EXTRA_MESSAGE, message);
+                EditText number = (EditText) findViewById(R.id.miles);
+                String message = "Your favorite number is " + number.getText().toString();
+                intent.putExtra(EXTRA_MESSAGE, message);
                 intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(intent);
 
             }
         });
-
-
-
-
-
-
 
     }
 }
