@@ -1,15 +1,13 @@
 package cs246.ironmanapp;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
 import android.util.Log;
 
 import com.google.gson.Gson;
-import com.google.gson.reflect.TypeToken;
-
-import java.lang.reflect.Type;
-import java.util.List;
 
 /**
  * Created by Robbie on 7/6/2015.
@@ -42,13 +40,25 @@ public class NewUserFinisher implements TaskCompletion {
                     break;
                 case -1:
                     Log.e(TAG_NEW_USER_FINISHER, "An error from the database in insert info: " + newUserMessage.message);
+                    AlertDialog.Builder builderData = new AlertDialog.Builder(activity);
+                    builderData.setMessage("Look at this dialog!")
+                            .setCancelable(false)
+                            .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                                public void onClick(DialogInterface dialog, int id) {
+                                    //do things
+                                }
+                            });
+                    AlertDialog alert1 = builderData.create();
+                    alert1.show();
                     break;
                 case 1:
                     // duplicate
+
                     Log.w(TAG_NEW_USER_FINISHER, "this name was a " + newUserMessage.message);
                     break;
                 case 2:
                     // no ironman in progress
+
                     Log.w(TAG_NEW_USER_FINISHER, newUserMessage.message);
                     break;
                 default:

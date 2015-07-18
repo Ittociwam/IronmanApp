@@ -4,6 +4,12 @@
     android:layout_height="match_parent"
     android:background="#5c5c5c">
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="RANKINGS               PERCENTAGE"
+        android:textSize="11pt" />
+
     <ListView
 
         android:layout_width="match_parent"

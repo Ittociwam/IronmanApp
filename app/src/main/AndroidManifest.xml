@@ -21,11 +21,10 @@
         <activity android:name=".AddEntry" android:theme ="@style/AppTheme.addTheme">
         </activity>
         <activity android:name=".Rank" android:theme ="@style/AppTheme.addTheme"></activity>
-<<<<<<< HEAD
+
         <activity android:name=".EntryHistory" android:theme ="@style/AppTheme.addTheme"></activity>
-=======
+
         <activity android:name=".UserName" android:theme ="@style/AppTheme.addTheme"></activity>
->>>>>>> 2e1712cd8fcea251fc29df1f6caad4e3bc0eb5a4
     </application>
     <uses-permission android:name="android.permission.INTERNET" />
 

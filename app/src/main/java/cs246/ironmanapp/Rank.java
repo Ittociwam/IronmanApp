@@ -7,12 +7,14 @@ import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.util.DisplayMetrics;
 import android.util.Log;
+import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
 import java.lang.reflect.Type;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 
 /**
@@ -57,15 +59,20 @@ public class Rank extends Activity {
         contestants = gson.fromJson(json, listType);
 
 
-       // contestants = new ArrayList<>();
+        ArrayList<String> userList = new ArrayList<String>();
+        for (Structs.Contestant contestant : contestants) {
+            //output += contestant.u_name;
+            String presicion = new String(contestant.u_name);
+            contestant.u_name.length();
+            Double p = new Double(new DecimalFormat("#0.00").format(contestant.percentage));
 
-        //ArrayList<Structs.Contestant> contestants = new ArrayList<>();
-//        ArrayList<String> userList = new ArrayList<String>();
-//        for (Structs.Contestant contestant : contestants) {
-//            //output += contestant.u_name;
-//            userList.add(contestant.u_name);
-//
-//        }
+            while(presicion.length() > 15) {
+                presicion += presicion.concat(" ");
+            }
+
+            userList.add(presicion  + " " + p * 100);
+
+        }
 
 
         //ArrayList<String> theContestants = getContestants();
@@ -83,65 +90,12 @@ public class Rank extends Activity {
 //        }
 
 
-        //ArrayList<Structs.Contestant> contestants = getContestants();
-
-//        public ArrayList<Structs.Contestant> getContestants(){
-//
-//            ArrayList<Structs.Contestant> listContestant = new ArrayList<Structs.Contestant>();
-//            //ArrayList
-//
-//            ArrayList<String> userList = new ArrayList<String>();
-//            for (Structs.Contestant contestant : contestants) {
-//                //output += contestant.u_name;
-//                userList.add(contestant.u_name);
-//                //listContestant = userList;
-//                //userList.add(contestant.percentage);
-//            }
-//
-//            ArrayList<String> percentageList = new ArrayList<String>();
-//            String stringPercentage = "";
-//            for (Structs.Contestant contestant : contestants) {
-//                //output += contestant.u_name;
-//                stringPercentage += String.valueOf(contestant.percentage);
-//                percentageList.add(stringPercentage);
-//                //userList.add(contestant.percentage);
-//            }
-//
-//        }
-
-        //contestants = getContestants();
-
         listView  = (ListView) findViewById(R.id.rankings);
 
-        //ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,listView, userList);
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1, android.R.id.text1, userList);
 
-        listView.setAdapter(new AdapterContestant(this, R.id.rankings, contestants));
-
-
-        //Button btnBack = (Button) findViewById(R.id.button);
-
-        //btnBack.setOnClickListener(new View.OnClickListener() {
-
+        listView.setAdapter(adapter);
 
     }
-
-    //public ArrayList<Structs.Contestant> getContestants(){
-
-
-//        ArrayList<Structs.Contestant> arrayContestant = new ArrayList<Structs.Contestant>();
-//        SharedPreferences conPreferences = PreferenceManager.getDefaultSharedPreferences(Context);
-//
-//        String contJson = conPreferences.getString("contestants", "Nothing found");
-//        //Log.i("tag Rank", "the JSON is: " + json);
-//
-//        Gson contGson = new Gson();
-//        Type listCont = new TypeToken<ArrayList<Structs.Contestant>>() {
-//        }.getType();
-//        //
-//        arrayContestant = contGson.fromJson(contJson, listCont);
-//
-//        return arrayContestant;
-   // }
-
 
 }

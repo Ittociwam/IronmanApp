@@ -57,9 +57,7 @@ public class AdapterContestant extends ArrayAdapter<Structs.Contestant> {
             //inflater = (LayoutInflater) activity.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             inflater = LayoutInflater.from(activity);
 
-        //} catch (Exception e) {
 
-        //}
     }
 
     public int getCount() {

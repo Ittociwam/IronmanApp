@@ -29,10 +29,10 @@ public class AddEntry extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
 
         //THIS CODE IS TO RESET USER_ID FOR TESTING!!!!!
-        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(MainActivity.context);
-        SharedPreferences.Editor editor = sharedPreferences.edit();
-        editor.remove("user_id");
-        editor.commit();
+//        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(MainActivity.context);
+//        SharedPreferences.Editor editor = sharedPreferences.edit();
+//        editor.remove("user_id");
+//        editor.commit();
 
 
         Intent intent = getIntent();
@@ -69,9 +69,11 @@ public class AddEntry extends Activity {
                     Log.v(TAG_ADD_ENTRY, "user is empty");
                     //getUsername();
 
+
                     Intent intent = new Intent(AddEntry.this, UserName.class);
 
                     Log.v(TAG_ADD_ENTRY, "intent created: " + intent.toString());
+
 
                     startActivity(intent);
 
