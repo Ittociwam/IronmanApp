@@ -1,6 +1,8 @@
 package cs246.ironmanapp;
 
 import android.app.Activity;
+import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
 import android.util.Log;
 
 import com.google.gson.Gson;
@@ -24,6 +26,12 @@ public class EntryFinisher implements TaskCompletion {
             Type listType = new TypeToken<List<Structs.Entry>>() {
             }.getType();
             entries = gson.fromJson(json, listType);
+
+            SharedPreferences sharePreferences = PreferenceManager.getDefaultSharedPreferences(activity.getApplicationContext());
+            SharedPreferences.Editor editor = sharePreferences.edit();
+            editor.putString("entries", json);
+            editor.commit();
+
             String output = "";
 
             //This for loop will be replaced by what sends the contestants list to the main activity
@@ -31,6 +39,7 @@ public class EntryFinisher implements TaskCompletion {
                 output += entry.mode + " " + entry.distance + "%\n";
 
             }
+
             Log.v(TAG_ENTRY_FINISHER, output);
         } catch (Exception e) {
             Log.e(TAG_ENTRY_FINISHER, "Error with gson or outputting or something", e);

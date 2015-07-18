@@ -19,6 +19,7 @@ import java.util.ArrayList;
  * Created by John on 7/8/15.
  */
 public class Rank extends Activity {
+    public final static String TAG_RANK = "Rank";
     public final static String EXTRA_MESSAGE = "com.mycompany.myfirstapp.MESSAGE";
     private int textViewResourceId;
 
@@ -47,13 +48,25 @@ public class Rank extends Activity {
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(context);
 
         String json = preferences.getString("contestants", "Nothing found");
-        Log.i("tag Rank", "the JSON is: " + json);
+        Log.i(TAG_RANK, "the JSON is: " + json);
 
         Gson gson = new Gson();
         Type listType = new TypeToken<ArrayList<Structs.Contestant>>() {
         }.getType();
 
         contestants = gson.fromJson(json, listType);
+
+
+       // contestants = new ArrayList<>();
+
+        //ArrayList<Structs.Contestant> contestants = new ArrayList<>();
+//        ArrayList<String> userList = new ArrayList<String>();
+//        for (Structs.Contestant contestant : contestants) {
+//            //output += contestant.u_name;
+//            userList.add(contestant.u_name);
+//
+//        }
+
 
         //ArrayList<String> theContestants = getContestants();
 
@@ -67,19 +80,6 @@ public class Rank extends Activity {
 //            listContestant.add(stringPercentage);
 //            //listContestant = userList;
 //            //userList.add(contestant.percentage);
-//        }
-
-
-//        ArrayList<Structs.Contestant> listContestant = new ArrayList<Structs.Contestant>();
-//
-//
-//        for (Structs.Contestant contestant: contestants) {
-//
-//            for (: listContestant) {
-//                String stringPercentage = "";
-//                listContestant.add(Structs.Contestant.getU_name());
-//            }
-//
 //        }
 
 

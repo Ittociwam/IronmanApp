@@ -10,18 +10,21 @@
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name" >
+            HttpClient client = new DefaultHttpClient();
+            HttpPost post = new HttpPost("https://www.robbise.no-ip.info");
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Pop" android:theme ="@style/AppTheme.addTheme">
+        <activity android:name=".AddEntry" android:theme ="@style/AppTheme.addTheme">
 
 
 
         </activity>
         <activity android:name=".Rank" android:theme ="@style/AppTheme.addTheme"></activity>
+        <activity android:name=".EntryHistory" android:theme ="@style/AppTheme.addTheme"></activity>
     </application>
     <uses-permission android:name="android.permission.INTERNET" />
 
