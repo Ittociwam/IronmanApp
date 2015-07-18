@@ -3,12 +3,15 @@ package cs246.ironmanapp;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.support.v7.internal.widget.TintImageView;
 import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
@@ -29,10 +32,10 @@ public class AddEntry extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
 
         //THIS CODE IS TO RESET USER_ID FOR TESTING!!!!!
-//        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(MainActivity.context);
-//        SharedPreferences.Editor editor = sharedPreferences.edit();
-//        editor.remove("user_id");
-//        editor.commit();
+        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(MainActivity.context);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.remove("user_id");
+        editor.commit();
 
 
         Intent intent = getIntent();
@@ -53,6 +56,23 @@ public class AddEntry extends Activity {
 
         Log.v(TAG_ADD_ENTRY, "Assigning buton");
         Button submit = (Button) findViewById(R.id.button);
+
+        /**
+         * Just making this stuff look prettier
+         */
+        RadioButton swim = (RadioButton) findViewById(R.id.radioButton);
+        RadioButton bike = (RadioButton) findViewById(R.id.radioButton2);
+        RadioButton run = (RadioButton) findViewById(R.id.radioButton3);
+
+        swim.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                EditText text = (EditText) findViewById(R.id.miles);
+                EditText text2 = (EditText) findViewById(R.id.editText2);
+                text.setBackgroundColor(Color.parseColor("#ff0000"));
+            }
+
+        });
+
 
 
         submit.setOnClickListener(new View.OnClickListener() {

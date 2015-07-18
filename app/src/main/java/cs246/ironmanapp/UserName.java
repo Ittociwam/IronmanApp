@@ -2,6 +2,7 @@ package cs246.ironmanapp;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
 import android.util.Log;
@@ -15,6 +16,7 @@ import cs246.ironmanapp.R;
  * Created by John on 7/17/15.
  */
 public class UserName extends Activity {
+    public final static String EXTRA_MESSAGE = "com.mycompany.myfirstapp.MESSAGE";
     private static final String NEW_USER_URL = "http://robbise.no-ip.info/ironman/newUser.php";
     private static final String TAG_USERNAME = "User Name";
     @Override
@@ -85,6 +87,18 @@ public class UserName extends Activity {
         String username = usernameEditText.getText().toString();
         Log.i(TAG_USERNAME, "about to create a new user: " + username);
         createNewUser(username);
+    }
+
+    public void displayMessage(String message) {
+
+        String dummy = "nothing";
+        Log.i(TAG_USERNAME, "HERE I AM IM WORKING!!!!!!!!!!!!!!");
+
+        Intent intent = new Intent(UserName.this, ErrorMessage.class);
+        Log.i(TAG_USERNAME, "AFTERWARDS");
+        intent.putExtra(EXTRA_MESSAGE, message);
+
+        startActivity(intent);
     }
 
 }
