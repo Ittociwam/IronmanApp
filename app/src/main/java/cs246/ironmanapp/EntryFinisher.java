@@ -27,10 +27,10 @@ public class EntryFinisher implements TaskCompletion {
             }.getType();
             entries = gson.fromJson(json, listType);
 
-            SharedPreferences sharePreferences = PreferenceManager.getDefaultSharedPreferences(activity.getApplicationContext());
-            SharedPreferences.Editor editor = sharePreferences.edit();
-            editor.putString("entries", json);
-            editor.commit();
+//            SharedPreferences sharePreferences = PreferenceManager.getDefaultSharedPreferences(activity.getApplicationContext());
+//            SharedPreferences.Editor editor = sharePreferences.edit();
+//            editor.putString("entries", json);
+//            editor.commit();
 
             String output = "";
 

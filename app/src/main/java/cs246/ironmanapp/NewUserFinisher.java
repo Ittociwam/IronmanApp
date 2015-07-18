@@ -40,14 +40,15 @@ public class NewUserFinisher implements TaskCompletion {
                     editor.commit();
                     Log.v(TAG_NEW_USER_FINISHER, "saved user_id: " + newUserMessage.message);
                     break;
-
                 case -1:
                     Log.e(TAG_NEW_USER_FINISHER, "An error from the database in insert info: " + newUserMessage.message);
                     break;
                 case 1:
+                    // duplicate
                     Log.w(TAG_NEW_USER_FINISHER, "this name was a " + newUserMessage.message);
                     break;
                 case 2:
+                    // no ironman in progress
                     Log.w(TAG_NEW_USER_FINISHER, newUserMessage.message);
                     break;
                 default:
