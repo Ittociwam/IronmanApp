@@ -58,7 +58,7 @@ public class EntryHistory extends Activity {
 
         ArrayList<String> modeList = new ArrayList<String>();
         for (Structs.Entry entry : entries) {
-            modeList.add(entry.mode + "   " + entry.distance);
+            modeList.add("Date: " + entry.entry_date + "                                                            " + "Mode: " + entry.mode + "                                                               " + "Distance: " + entry.distance);
         }
 
         ListView modes = (ListView) findViewById(R.id.entries);

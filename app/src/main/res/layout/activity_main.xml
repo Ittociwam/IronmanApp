@@ -31,14 +31,14 @@
 
 
             <TextView
-                android:id="@+id/textView2"
+                android:id="@+id/completion"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center_horizontal"
-                android:text="28"
+                android:text="0%"
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:textColor="#d3d3d3"
-                android:textSize="42pt"
+                android:textSize="40pt"
                 android:layout_alignParentTop="true"
                 android:layout_centerHorizontal="true" />
 
@@ -130,7 +130,7 @@
                 android:layout_height="50dp"
                 android:layout_alignBottom="@+id/imageView"
                 android:layout_centerHorizontal="true"
-                android:layout_marginBottom="55dp"
+                android:layout_marginBottom="65dp"
                 android:text="Completed"
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:textColor="#d3d3d3"

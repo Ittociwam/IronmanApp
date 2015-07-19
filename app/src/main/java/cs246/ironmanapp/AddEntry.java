@@ -35,7 +35,7 @@ public class AddEntry extends FragmentActivity {
     private static final String TAG_OUTPUT_ALL_THE_THINGS = "For Debugging";
     private static final String TAG_ADD_ENTRY = "Add Entry";
     public final static String EXTRA_MESSAGE = "com.mycompany.myfirstapp.MESSAGE";
-    public Activity mainActivity;
+    public MainActivity mainActivity;
 
     private static int year = 0;
     private static int month = 0;
@@ -53,7 +53,8 @@ public class AddEntry extends FragmentActivity {
 
         Intent intent = getIntent();
 
-        mainActivity = (Activity) intent.getSerializableExtra("activity");
+        mainActivity = (MainActivity) intent.getSerializableExtra("activity");
+
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.addentry);
@@ -111,7 +112,9 @@ public class AddEntry extends FragmentActivity {
                 }
                 else {
                     sendNewEntry(user);
+                    mainActivity.getProgress();
                     finish();
+
                 }
             }
         });
