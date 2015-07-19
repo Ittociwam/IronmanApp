@@ -191,7 +191,7 @@ public class MainActivity extends ActionBarActivity implements Serializable {
             double bikeTotal = 0;
             double swimTotal = 0;
             double runTotal = 0;
-            
+
 
             for(Structs.Total total : progressArray){
                 switch(total.mode){
