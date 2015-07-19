@@ -2,7 +2,6 @@ package cs246.ironmanapp;
 
 import android.app.Activity;
 import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
 import android.util.Log;
@@ -17,11 +16,11 @@ public class UserName extends Activity {
     public final static String EXTRA_MESSAGE = "com.mycompany.myfirstapp.MESSAGE";
     private static final String NEW_USER_URL = "http://robbise.no-ip.info/ironman/newUser.php";
     private static final String TAG_USERNAME = "User Name";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         Log.v(TAG_USERNAME, "in oncreate of UserName");
 
-        Context context = getApplicationContext();
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.username_window);
@@ -36,16 +35,12 @@ public class UserName extends Activity {
         getWindow().setLayout((int) (width), (int) (height * 0.6));
 
         Button submit = (Button) findViewById(R.id.button2);
-
-
         submit.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 getUsername();
                 finish();
             }
         });
-
-
     }
 
     /**
@@ -70,7 +65,6 @@ public class UserName extends Activity {
         new Thread(t).start();
     }
 
-
     /**
      * This function will display a textbox overlay prompting the user to either enter in a new user name
      * or be saved in the database as a random number.
@@ -79,14 +73,9 @@ public class UserName extends Activity {
      */
     private void getUsername() {
         EditText usernameEditText;
-        //String username = "billay!";
-        usernameEditText  = (EditText)findViewById(R.id.username);
-       //TODO String username = get username from text input
+        usernameEditText = (EditText) findViewById(R.id.username);
         String username = usernameEditText.getText().toString();
         Log.i(TAG_USERNAME, "about to create a new user: " + username);
         createNewUser(username);
     }
-
-
-
 }

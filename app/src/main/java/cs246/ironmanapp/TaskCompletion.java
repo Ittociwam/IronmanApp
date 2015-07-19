@@ -6,6 +6,7 @@ import java.util.List;
 
 /**
  * Created by Robbie on 7/1/2015.
+ * Interface for the different http completion tasks
  */
 public interface TaskCompletion {
     public void finish(Activity activity, String json);
