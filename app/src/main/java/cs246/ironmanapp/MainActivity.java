@@ -235,10 +235,14 @@ public class MainActivity extends ActionBarActivity implements Serializable {
 //                            (((bikeTotal) / 336) * 100) +
 //                            (((runTotal * 4.274809) / 336) * 100);
 
-            double generalPercent =
-                    ((((swimTotal * 46.66) / 100) / 336) * 100) +
-                            ((((bikeTotal) / 336)/ 100) * 100) +
-                            ((((runTotal * 4.274809) / 100) / 336) * 100);
+            Log.i(TAG_MAIN_ACTIVITY, "TOTALS: Swim: " + swimTotal + " bike: " + bikeTotal + " run: " + runTotal);
+
+//            double generalPercent =
+//                    ((((swimTotal * 46.66) / 100) / 336) * 100) +
+//                            ((((bikeTotal) / 336)/ 100) * 100) +
+//                            ((((runTotal * 4.274809) / 100) / 336) * 100);
+            
+            double generalPercent = ((swimTotal + bikeTotal + runTotal) / 223) * 100;
 
 
 

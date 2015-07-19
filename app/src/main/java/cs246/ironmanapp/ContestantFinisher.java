@@ -1,18 +1,12 @@
 package cs246.ironmanapp;
 
 import android.app.Activity;
-import android.content.Context;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
 import android.util.Log;
-import android.widget.LinearLayout;
 import android.widget.ListView;
-import android.widget.TextView;
-import android.widget.Toast;
-
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
-
 import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;
@@ -32,22 +26,12 @@ public class ContestantFinisher implements  TaskCompletion {
             Type listType = new TypeToken<List<Structs.Contestant>>() {
             }.getType();
             contestants = gson.fromJson(json, listType);
-
-
             ListView contestantView;
             List<String> names = new ArrayList<String>();
-            //String output = "";
-            //LinearLayout rankings = (LinearLayout)activity.findViewById(R.id.rankings);
-
-
             SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(activity.getApplicationContext());
             SharedPreferences.Editor editor = sharedPreferences.edit();
             editor.putString("contestants", json);
             editor.commit();
-
-
-
-
             Log.v(TAG_CONTESTANT_FINISHER, "The output after conversion to a list: ");
         } catch (Exception e) {
             Log.e(TAG_CONTESTANT_FINISHER, "Error with gson or outputting or something", e);

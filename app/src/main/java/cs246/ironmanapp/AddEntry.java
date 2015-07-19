@@ -1,17 +1,13 @@
 package cs246.ironmanapp;
 
-import android.app.Activity;
 import android.app.DatePickerDialog;
 import android.app.Dialog;
 import android.support.v4.app.DialogFragment;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
-import android.support.v7.internal.widget.TintImageView;
 import android.support.v4.app.FragmentActivity;
-
 import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.View;
@@ -21,14 +17,13 @@ import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
-
 import java.util.Calendar;
 
 /**
- * Created by John on 7/6/15.
+ * Created by John on 7/1/15
+ * ADD AN ENTRY
+ * Adding entries for progression
  */
-
-
 public class AddEntry extends FragmentActivity {
 
     private static final String NEW_ENTRY_URL = "http://robbise.no-ip.info/ironman/newEntry.php";
@@ -41,16 +36,18 @@ public class AddEntry extends FragmentActivity {
     private static int month = 0;
     private static int day = 0;
 
+    /**
+     * On create defines the size of the window and sets some onclick listeners
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
 
         //THIS CODE IS TO RESET USER_ID FOR TESTING!!!!!
         //SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(MainActivity.context);
         //SharedPreferences.Editor editor = sharedPreferences.edit();
         //editor.remove("user_id");
         //editor.commit();
-
 
         Intent intent = getIntent();
 
@@ -72,22 +69,6 @@ public class AddEntry extends FragmentActivity {
         Log.v(TAG_ADD_ENTRY, "Assigning buton");
         Button submit = (Button) findViewById(R.id.button);
 
-        /**
-         * Just making this stuff look prettier
-         */
-        RadioButton swim = (RadioButton) findViewById(R.id.radioButton);
-        RadioButton bike = (RadioButton) findViewById(R.id.radioButton2);
-        RadioButton run = (RadioButton) findViewById(R.id.radioButton3);
-
-        swim.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-
-            }
-
-        });
-
-
-
         submit.setOnClickListener(new View.OnClickListener() {
 
             public void onClick(View v) {
@@ -97,71 +78,26 @@ public class AddEntry extends FragmentActivity {
                 String user = sharedPreferences.getString("user_id", "");
 
                 if (user.isEmpty()) {
-                    //
+
                     // prompt user if they want to have a display name or not and call
                     Log.v(TAG_ADD_ENTRY, "user is empty");
-                    //getUsername();
-
-
                     Intent intent = new Intent(AddEntry.this, UserName.class);
-
                     Log.v(TAG_ADD_ENTRY, "intent created: " + intent.toString());
-
-
                     startActivity(intent);
-
-                }
-                else {
+                } else {
                     sendNewEntry(user);
-
                     Intent intent = new Intent(AddEntry.this, MainActivity.class);
-
                     startActivity(intent);
-                  // mainActivity.getProgress();
-
-
                     finish();
-
                 }
             }
         });
-
-
-
-
     }
 
     public void showDatePickerDialog(View v) {
         DialogFragment newFragment = new DatePickerFragment();
         newFragment.show(getSupportFragmentManager(), "datePicker");
     }
-
-    /**
-     * This function will be called when a user pushes submit on the newEntry form.
-     * It will call 2 additional functions, createNewUser and sendNewEntry. createNewUser will only be
-     * called if there is no userid stored in the system. Insert info will handle any error messages returned
-     * from these 2 functions
-     */
-//    public void insertInfo() {
-//
-//
-//        if (user.isEmpty()) {
-//            //
-//            // prompt user if they want to have a display name or not and call
-//            Log.v(TAG_ADD_ENTRY, "user is empty");
-//            //getUsername();
-//
-//            Intent intent = new Intent(this, UserName.class);
-//
-//            startActivity(intent);
-//
-//        }
-//
-//        else {
-//
-//            sendNewEntry(user);
-//        }
-//    }
 
     /**
      * This function will take a unique identifier for the current user and then send it, along with
@@ -181,26 +117,26 @@ public class AddEntry extends FragmentActivity {
         Log.v(TAG_ADD_ENTRY, "In send New entry! yay!!! uuid: " + uuid);
 
         // Gets a reference to our radio group
-// rBtnDigits is the name of our radio group (code not shown)
+        // rBtnDigits is the name of our radio group (code not shown)
         RadioGroup g = (RadioGroup) findViewById(R.id.Modes);
 
         Log.i(TAG_ADD_ENTRY, "Radio group added");
 
-// Returns an integer which represents the selected radio button's ID
+        // Returns an integer which represents the selected radio button's ID
         int selected = g.getCheckedRadioButtonId();
 
         Log.i(TAG_ADD_ENTRY, "got selected");
 
-// Gets a reference to our "selected" radio button
+        // Gets a reference to our "selected" radio button
         RadioButton b = (RadioButton) findViewById(selected);
 
-// Now you can get the text or whatever you want from the "selected" radio button
-       // b.getText();
+        // Now you can get the text or whatever you want from the "selected" radio button
+        // b.getText();
         String mode = b.getText().toString();
         Log.v(TAG_ADD_ENTRY, "from mode: " + b.getText().toString());
 
         EditText distanceEditText;
-        distanceEditText  = (EditText)findViewById(R.id.miles);
+        distanceEditText = (EditText) findViewById(R.id.miles);
         String distance = distanceEditText.getText().toString();
         Log.i(TAG_ADD_ENTRY, "got distance: " + distance);
         month += 1;
@@ -209,30 +145,21 @@ public class AddEntry extends FragmentActivity {
         String dayS = Integer.toString(day);
         String zero = "0";
 
-        if(month < 10)
-        {
+        if (month < 10) {
 
             monthS = zero + monthS;
         }
-        if(day < 10)
-        {
+        if (day < 10) {
 
             dayS = zero + dayS;
         }
-
         String date = yearS + "-" + monthS + "-" + dayS;
-
         Log.i(TAG_ADD_ENTRY, "got date: " + date);
         String params = "mode=" + mode + "&user=" + uuid + "&date=" + date + "&distance=" + distance;
-
         Log.i(TAG_ADD_ENTRY, "params sending to new entry: " + params);
-
         MainActivity.Task t = new MainActivity.Task(NEW_ENTRY_URL, params); // two parameters here because it's a post http request
-
         t.setTaskCompletion(new SubmitEntryFinisher());
-
         new Thread(t).start();
-
     }
 
     public static class DatePickerFragment extends DialogFragment
@@ -256,6 +183,4 @@ public class AddEntry extends FragmentActivity {
             AddEntry.day = day;
         }
     }
-
-
 }
