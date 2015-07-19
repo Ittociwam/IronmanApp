@@ -21,14 +21,10 @@ public class EntryFinisher implements TaskCompletion {
 
     @Override
     public void finish(Activity activity, String json) {
+
         ArrayList<Structs.Entry> entries = null;
+
         try {
-            Gson gson = new GsonBuilder().setDateFormat("yyyy-MM-dd").create();
-
-            Type listType = new TypeToken<List<Structs.Entry>>() {
-            }.getType();
-            entries = gson.fromJson(json, listType);
-
             SharedPreferences sharePreferences = PreferenceManager.getDefaultSharedPreferences(activity.getApplicationContext());
             SharedPreferences.Editor editor = sharePreferences.edit();
             editor.putString("entries", json);
@@ -45,6 +41,7 @@ public class EntryFinisher implements TaskCompletion {
             Log.v(TAG_ENTRY_FINISHER, output);
         } catch (Exception e) {
             Log.e(TAG_ENTRY_FINISHER, "Error with gson or outputting or something", e);
+
         }
     }
 }

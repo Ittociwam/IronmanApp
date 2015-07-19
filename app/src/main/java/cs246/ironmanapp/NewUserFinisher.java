@@ -37,6 +37,7 @@ public class NewUserFinisher extends Activity implements TaskCompletion {
             // otherwise handle the error and kick out of this function
             String EMessage = "";
             UserName username = new UserName();
+            AlertDialog.Builder builderData = new AlertDialog.Builder(activity);
             switch(newUserMessage.code) {
                 case 0:
                     SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(mainActivity.getContext());
@@ -50,20 +51,18 @@ public class NewUserFinisher extends Activity implements TaskCompletion {
                     EMessage = "We're sorry, but there is an error with our servers. Don't blame yourself. This is our fault.";
                     displayMessage(EMessage, NewUserFinisher.this);
                     break;
+
                 case 1:
                     // duplicate
-                    EMessage = "We're sorry, but this username has already been taken, please try again.";
-                    displayMessage(EMessage, NewUserFinisher.this);
-//                    AlertDialog.Builder builderData = new AlertDialog.Builder(activity);
-//                    builderData.setMessage("We're sorry, but this username has already been taken, please try again.")
-//                            .setCancelable(false)
-//                            .setPositiveButton("OK", new DialogInterface.OnClickListener() {
-//                                public void onClick(DialogInterface dialog, int id) {
-//                                    //do things
-//                                }
-//                            });
-//                    AlertDialog alert1 = builderData.create();
-//                    alert1.show();
+                    builderData.setMessage("Duplicate!")
+                            .setCancelable(false)
+                            .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                                public void onClick(DialogInterface dialog, int id) {
+                                    //do things
+                                }
+                            });
+                    AlertDialog alert2 = builderData.create();
+                    alert2.show();
                     Log.w(TAG_NEW_USER_FINISHER, "this name was a " + newUserMessage.message);
                     break;
                 case 2:
