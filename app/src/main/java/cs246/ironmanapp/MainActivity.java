@@ -21,7 +21,12 @@ import android.widget.ProgressBar;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
+
 import java.io.Serializable;
+import java.lang.reflect.Type;
+import java.util.ArrayList;
 
 public class MainActivity extends ActionBarActivity implements Serializable {
     private static final String GET_CONTESTANTS_URL = "http://robbise.no-ip.info/ironman/getContestants.php?";
@@ -137,6 +142,9 @@ public class MainActivity extends ActionBarActivity implements Serializable {
         Log.v(TAG_OUTPUT_ALL_THE_THINGS, "About to get entries!");
         getEntries();
 
+        Log.v(TAG_OUTPUT_ALL_THE_THINGS, "About to get progress!");
+        getProgress();
+
     }
 
     public static Context getContext() {
@@ -164,12 +172,80 @@ public class MainActivity extends ActionBarActivity implements Serializable {
 
     }
 
+    public void getProgress() {
+        Task t = new Task(GET_CONTESTANTS_URL + "semester=" + getSelectedSemester()+ "&id=" + getContestantID());
+
+        t.setTaskCompletion(new ProgressFinisher());
+
+        Thread progressT = new Thread(t);
+        progressT.start();
+
+        try {
+            progressT.join();
+            Log.v(TAG_OUTPUT_ALL_THE_THINGS, "setting up shared prefs progress");
+            SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(context);
+            Log.v(TAG_OUTPUT_ALL_THE_THINGS, "Getting shared prefs progress");
+            String progress = sharedPreferences.getString("progress", "{}");
+            ArrayList<Structs.Total> progressArray = null;
+
+            Gson gson = new Gson();
+            Type listType = new TypeToken<ArrayList<Structs.Total>>() {
+            }.getType();
+
+            progressArray = gson.fromJson(progress, listType);
+
+
+
+
+            double bikeTotal = 0;
+            double swimTotal = 0;
+            double runTotal = 0;
+
+
+            for(Structs.Total total : progressArray){
+                switch(total.mode){
+                    case "Bike":
+                        bikeTotal = total.distance;
+                        double bikeP = (bikeTotal / 112) * 100;
+                        //update bike;
+                        break;
+                    case "Swim":
+                        swimTotal = total.distance;
+                        double swimP = (swimTotal / 2.4) * 100;
+                        //update swim;
+                        break;
+                    case "Run":
+                        runTotal = total.distance;
+                        double runP = (runTotal / 26.2) * 100;
+                        //update run
+                        break;
+                    default:
+                        Log.wtf(TAG_MAIN_ACTIVITY, "what mode is this??? " + total.mode );
+                }
+            }
+
+            double generalPercent =
+                    (((swimTotal * 46.66) / 336) * 100) +
+                            (((bikeTotal) / 336) * 100) +
+                            (((runTotal * 4.274809) / 336) * 100);
+
+            // update total percentage
+
+
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+    }
+
     public void getEntries() {
         Task t = new Task(GET_ENTRIES_URL + "semester=" + getSelectedSemester() + "&id=" + getContestantID());
 
         t.setTaskCompletion(new EntryFinisher());
 
         new Thread(t).start();
+
+
     }
 
 
@@ -273,7 +349,12 @@ public class MainActivity extends ActionBarActivity implements Serializable {
          */
         private String getContestantID() {
 
-            return "55943eb52b381"; // id for Scooby Doo
+            Log.v(TAG_OUTPUT_ALL_THE_THINGS, "Shared preference stuff");
+            SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(context);
+            Log.v(TAG_OUTPUT_ALL_THE_THINGS, "Shared preference getting user");
+            user = sharedPreferences.getString("user_id", "");
+
+            return user;
         }
 
         @Override
