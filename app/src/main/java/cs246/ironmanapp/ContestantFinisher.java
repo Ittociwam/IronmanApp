@@ -46,11 +46,6 @@ public class ContestantFinisher implements  TaskCompletion {
             editor.commit();
 
 
-            for (Structs.Contestant contestant : contestants) {
-                //output += contestant.u_name;
-                Toast.makeText(activity.getApplicationContext(), contestant.u_name, Toast.LENGTH_LONG ).show();
-
-            }
 
 
             Log.v(TAG_CONTESTANT_FINISHER, "The output after conversion to a list: ");

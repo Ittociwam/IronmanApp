@@ -34,7 +34,7 @@ public class AddEntry extends FragmentActivity {
     private static final String TAG_OUTPUT_ALL_THE_THINGS = "For Debugging";
     private static final String TAG_ADD_ENTRY = "Add Entry";
     public final static String EXTRA_MESSAGE = "com.mycompany.myfirstapp.MESSAGE";
-    public Activity mainActivity;
+    public MainActivity mainActivity;
 
     private static int year = 0;
     private static int month = 0;
@@ -43,16 +43,17 @@ public class AddEntry extends FragmentActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
+
         //THIS CODE IS TO RESET USER_ID FOR TESTING!!!!!
-//        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(MainActivity.context);
-//        SharedPreferences.Editor editor = sharedPreferences.edit();
-//        editor.remove("user_id");
-//        editor.commit();
+        //SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(MainActivity.context);
+        //SharedPreferences.Editor editor = sharedPreferences.edit();
+        //editor.remove("user_id");
+        //editor.commit();
 
 
         Intent intent = getIntent();
 
-        mainActivity = (Activity) intent.getSerializableExtra("activity");
+        mainActivity = (MainActivity) intent.getSerializableExtra("activity");
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.addentry);
@@ -110,6 +111,11 @@ public class AddEntry extends FragmentActivity {
                 }
                 else {
                     sendNewEntry(user);
+                    Intent intent = new Intent(AddEntry.this, MainActivity.class);
+
+                    startActivity(intent);
+                  // mainActivity.getProgress();
+
                     finish();
                 }
             }

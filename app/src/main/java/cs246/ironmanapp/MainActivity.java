@@ -41,9 +41,6 @@ public class MainActivity extends ActionBarActivity implements Serializable {
     public ArrayAdapter<String> adapter;
 
     int progressStatus = 0;
-    ProgressBar gprogress;
-    ProgressBar bprogress;
-    ProgressBar pprogress;
     //EntriesGetter e;
     private final String USER_AGENT = "Mozilla/5.0";
     private static final String TAG_MAIN_ACTIVITY = "Main Activity";
@@ -120,6 +117,7 @@ public class MainActivity extends ActionBarActivity implements Serializable {
                 Intent intent = new Intent(MainActivity.this, AddEntry.class);
                 intent.putExtra("activity", MainActivity.this);
                 startActivity(intent);
+
             }
         });
 
@@ -151,9 +149,7 @@ public class MainActivity extends ActionBarActivity implements Serializable {
 
 //    public void testProgress(View view) {
 //
-//        gprogress = (ProgressBar) findViewById(R.id.progressBar2);
-//        bprogress = (ProgressBar) findViewById(R.id.progressBar);
-//        pprogress = (ProgressBar) findViewById(R.id.progressBar3);
+
 //        progressStatus += 5;
 //        progressStatus = progressStatus % 105;
 //        gprogress.setProgress(progressStatus);
@@ -171,6 +167,9 @@ public class MainActivity extends ActionBarActivity implements Serializable {
     }
 
     public void getProgress() {
+        ProgressBar gprogress = (ProgressBar) this.findViewById(R.id.progressBar2);
+        ProgressBar bprogress = (ProgressBar) this.findViewById(R.id.progressBar);
+        ProgressBar pprogress = (ProgressBar) this.findViewById(R.id.progressBar3);
         Task t = new Task(GET_PROGRESS_URL + "semester=" + getSelectedSemester() + "&id=" + getContestantID());
 
         t.setTaskCompletion(new ProgressFinisher());
@@ -178,8 +177,9 @@ public class MainActivity extends ActionBarActivity implements Serializable {
         Thread progressT = new Thread(t);
         progressT.start();
 
+
         try {
-            progressT.join();
+
             Log.v(TAG_OUTPUT_ALL_THE_THINGS, "setting up shared prefs progress");
             SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(context);
 
@@ -192,33 +192,42 @@ public class MainActivity extends ActionBarActivity implements Serializable {
             double swimTotal = 0;
             double runTotal = 0;
 
+            if (progress != "{}") {
+                Gson gson = new Gson();
+                Type listType = new TypeToken<ArrayList<Structs.Total>>() {
+                }.getType();
 
-            for(Structs.Total total : progressArray){
-                switch(total.mode){
-                    case "Bike":
-                        bikeTotal = total.distance;
-                        double bikeP = (bikeTotal / 112) * 100;
-                        int b = (int) bikeP;
-                        gprogress.setProgress(b);
-                        //update bike;
-                        break;
-                    case "Swim":
-                        swimTotal = total.distance;
-                        double swimP = (swimTotal / 2.4) * 100;
-                        int s = (int) swimP;
-                        gprogress.setProgress(s);
-                        //update swim;
-                        break;
-                    case "Run":
-                        runTotal = total.distance;
-                        double runP = (runTotal / 26.2) * 100;
-                        int r = (int) runP;
-                        gprogress.setProgress(r);
-                        //update run
-                        break;
-                    default:
-                        Log.wtf(TAG_MAIN_ACTIVITY, "what mode is this??? " + total.mode );
-
+                progressArray = gson.fromJson(progress, listType);
+                progressT.join();
+                for (Structs.Total total : progressArray) {
+                    switch (total.mode) {
+                        case "Bike":
+                            bikeTotal = total.distance;
+                            Log.i(TAG_MAIN_ACTIVITY, "This is bike total: " + bikeTotal);
+                            double bikeP = (bikeTotal / 112) * 100;
+                            int b = (int) bikeP;
+                            gprogress.setProgress(b);
+                            //update bike;
+                            break;
+                        case "Swim":
+                            swimTotal = total.distance;
+                            Log.i(TAG_MAIN_ACTIVITY, "This is swim total: " + swimTotal);
+                            double swimP = (swimTotal / 85) * 100;
+                            int s = (int) swimP;
+                            bprogress.setProgress(s);
+                            //update swim;
+                            break;
+                        case "Run":
+                            runTotal = total.distance;
+                            Log.i(TAG_MAIN_ACTIVITY, "This is run total: " + runTotal);
+                            double runP = (runTotal / 26.2) * 100;
+                            int r = (int) runP;
+                            pprogress.setProgress(r);
+                            //update run
+                            break;
+                        default:
+                            Log.wtf(TAG_MAIN_ACTIVITY, "what mode is this??? " + total.mode);
+                    }
                 }
             }
 
@@ -372,5 +381,3 @@ public class MainActivity extends ActionBarActivity implements Serializable {
         return super.onOptionsItemSelected(item);
     }
 }
-
-
