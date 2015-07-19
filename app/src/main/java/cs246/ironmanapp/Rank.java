@@ -70,7 +70,7 @@ public class Rank extends Activity {
                 presicion += presicion.concat(" ");
             }
 
-            userList.add(presicion  + " " + p * 100);
+            userList.add("Contestant: " + presicion  + "                                                                      " + "Percentage: " + p * 100);
 
         }
 

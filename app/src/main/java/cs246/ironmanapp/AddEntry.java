@@ -21,6 +21,7 @@ import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
+
 import java.util.Calendar;
 
 /**
@@ -54,6 +55,7 @@ public class AddEntry extends FragmentActivity {
         Intent intent = getIntent();
 
         mainActivity = (MainActivity) intent.getSerializableExtra("activity");
+
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.addentry);
@@ -111,12 +113,15 @@ public class AddEntry extends FragmentActivity {
                 }
                 else {
                     sendNewEntry(user);
+
                     Intent intent = new Intent(AddEntry.this, MainActivity.class);
 
                     startActivity(intent);
                   // mainActivity.getProgress();
 
+
                     finish();
+
                 }
             }
         });

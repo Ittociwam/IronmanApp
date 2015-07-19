@@ -20,12 +20,14 @@ import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.TextView;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
 import java.io.Serializable;
 import java.lang.reflect.Type;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 
 public class MainActivity extends ActionBarActivity implements Serializable {
@@ -147,14 +149,6 @@ public class MainActivity extends ActionBarActivity implements Serializable {
         return context;
     }
 
-//    public void testProgress(View view) {
-//
-
-//        progressStatus += 5;
-//        progressStatus = progressStatus % 105;
-//        gprogress.setProgress(progressStatus);
-//
-//    }
 
 
     public void getContestants() {
@@ -198,7 +192,9 @@ public class MainActivity extends ActionBarActivity implements Serializable {
                 }.getType();
 
                 progressArray = gson.fromJson(progress, listType);
+
                 progressT.join();
+
                 for (Structs.Total total : progressArray) {
                     switch (total.mode) {
                         case "Bike":
@@ -207,6 +203,7 @@ public class MainActivity extends ActionBarActivity implements Serializable {
                             double bikeP = (bikeTotal / 112) * 100;
                             int b = (int) bikeP;
                             gprogress.setProgress(b);
+
                             //update bike;
                             break;
                         case "Swim":
@@ -215,6 +212,7 @@ public class MainActivity extends ActionBarActivity implements Serializable {
                             double swimP = (swimTotal / 85) * 100;
                             int s = (int) swimP;
                             bprogress.setProgress(s);
+
                             //update swim;
                             break;
                         case "Run":
@@ -223,6 +221,7 @@ public class MainActivity extends ActionBarActivity implements Serializable {
                             double runP = (runTotal / 26.2) * 100;
                             int r = (int) runP;
                             pprogress.setProgress(r);
+
                             //update run
                             break;
                         default:
@@ -231,12 +230,24 @@ public class MainActivity extends ActionBarActivity implements Serializable {
                 }
             }
 
-            double generalPercent =
-                    (((swimTotal * 46.66) / 336) * 100) +
-                            (((bikeTotal) / 336) * 100) +
-                            (((runTotal * 4.274809) / 336) * 100);
+//            double generalPercent =
+//                    (((swimTotal * 46.66) / 336) * 100) +
+//                            (((bikeTotal) / 336) * 100) +
+//                            (((runTotal * 4.274809) / 336) * 100);
 
-            // update total percentage
+            double generalPercent =
+                    ((((swimTotal * 46.66) / 100) / 336) * 100) +
+                            ((((bikeTotal) / 336)/ 100) * 100) +
+                            ((((runTotal * 4.274809) / 100) / 336) * 100);
+
+
+
+            TextView total = (TextView)findViewById(R.id.completion);
+
+            Double percent = new Double(new DecimalFormat("#0").format(generalPercent));
+            String percentage =  Double.toString(percent) + "%";
+
+            total.setText(percentage);
 
 
         } catch (InterruptedException e) {
