@@ -11,6 +11,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
 
 import java.lang.reflect.Type;
@@ -47,11 +48,13 @@ public class EntryHistory extends Activity {
         String json = preferences.getString("entries", "Nothing found");
         Log.i(TAG_ENTRY_HISTORY, "the JSON is: " + json);
 
-        Gson gson = new Gson();
+        Gson gson = new GsonBuilder().setDateFormat("yyyy-MM-dd").create();
         Type listType = new TypeToken<ArrayList<Structs.Entry>>() {
         }.getType();
+        Log.i(TAG_ENTRY_HISTORY, "after gson: " + gson.toString());
 
         entries = gson.fromJson(json, listType);
+        Log.i(TAG_ENTRY_HISTORY, "entries for: " + entries.get(0).u_name);
 
         ArrayList<String> modeList = new ArrayList<String>();
         for (Structs.Entry entry : entries) {
