@@ -12,13 +12,14 @@ import java.util.List;
 
 /**
  * Created by Robbie on 7/1/2015.
+ *
+ * This finisher takes the json message from submitting an entry and handles each case
  */
 public class SubmitEntryFinisher implements TaskCompletion {
     public final static String TAG_SUBMIT_ENTRY_FINISHER = "Submit Entry Finisher";
 
     @Override
     public void finish(Activity activity, String json) {
-        MainActivity mainActivity = (MainActivity) activity;
         Structs.ReturnMessage submitEntryMessage = null;
         try {
             Log.v(TAG_SUBMIT_ENTRY_FINISHER, "Json in submit entry finisher: " + json);

@@ -12,19 +12,16 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
-import javax.net.ssl.HttpsURLConnection;
-
 /**
  * Created by John on 6/22/15.
  */
 
 public class URLReader {
 
-
+    private static final String TAG_URL_READER = "Url Reader";
     private final String USER_AGENT = "Mozilla/5.0";
     private String url;
     private String params;
-    private static final String TAG_URL_READER = "Url Reader";
 
     /**
      * Constructor for a GET request takes only a url
@@ -45,7 +42,6 @@ public class URLReader {
         this.params = params;
     }
 
-
     /**
      * Executes an HTTP POST request
      *
@@ -55,7 +51,6 @@ public class URLReader {
      * @throws Exception
      */
     public static String sendGet(String url) throws Exception {
-
 
         URL obj = new URL(url);
         HttpURLConnection con = (HttpURLConnection) obj.openConnection();
@@ -87,10 +82,7 @@ public class URLReader {
         else
             Log.e(TAG_URL_READER, jsonResponse + " is not valid JSON");
         return "{}";
-
     }
-
-    // HTTP POST request
 
     /**
      * Executes an HTTP post request
@@ -113,7 +105,6 @@ public class URLReader {
         con.setRequestProperty("Accept-Language", "en-US,en;q=0.5");
 
         Log.i(TAG_URL_READER, "headers set OK");
-
 
         // Send post request
         con.setDoOutput(true);
@@ -146,11 +137,9 @@ public class URLReader {
         else
             Log.e(TAG_URL_READER, jsonResponse + " is not valid JSON");
         return "{}";
-
     }
 
     /**
-     *
      * This function determines if a string is valid json or not
      *
      * @param test - A string to validate

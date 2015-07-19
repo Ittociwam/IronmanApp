@@ -11,18 +11,18 @@ import java.util.List;
 /**
  * This structs class contains the Contestant, Contestants, entry, entries, total,
  * new entry message and new user message variables which will be used for all the info
+ *
  * @return
  */
 public class Structs {
-    static class Contestant{
+    static class Contestant {
         String pk_contestants_id;
         String u_name;
         double percentage;
         // register_date
     }
 
-
-    static class Entry{
+    static class Entry {
         int pk_entries_id;
         Date entry_date;
         double distance;
@@ -40,13 +40,13 @@ public class Structs {
         String units;
     }
 
-    static class Total{
+    static class Total {
         String user;
         String mode;
         double distance;
     }
 
-    static class ReturnMessage{
+    static class ReturnMessage {
         int code;
         String message;
 

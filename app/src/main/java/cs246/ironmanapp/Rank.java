@@ -22,7 +22,7 @@ public class Rank extends Activity {
     public final static String TAG_RANK = "Rank";
 
     @Override
-    protected void onCreate (Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) {
         Context context = getApplicationContext();
         super.onCreate(savedInstanceState);
         ListView listView;
@@ -45,13 +45,13 @@ public class Rank extends Activity {
             String presicion = new String(contestant.u_name);
             contestant.u_name.length();
             Double p = new Double(new DecimalFormat("#0.00").format(contestant.percentage));
-            while(presicion.length() > 15) {
+            while (presicion.length() > 15) {
                 presicion += presicion.concat(" ");
             }
-            userList.add("Contestant: " + presicion  + "                                                                      " + "Percentage: " + p * 100);
+            userList.add("Contestant: " + presicion + "                                                                      " + "Percentage: " + p * 100);
         }
-        listView  = (ListView) findViewById(R.id.rankings);
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1, android.R.id.text1, userList);
+        listView = (ListView) findViewById(R.id.rankings);
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, android.R.id.text1, userList);
         listView.setAdapter(adapter);
     }
 }
