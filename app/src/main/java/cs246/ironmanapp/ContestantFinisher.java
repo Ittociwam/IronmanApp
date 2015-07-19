@@ -5,7 +5,9 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
 import android.util.Log;
-
+import android.widget.LinearLayout;
+import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.gson.Gson;
@@ -31,22 +33,27 @@ public class ContestantFinisher implements  TaskCompletion {
             }.getType();
             contestants = gson.fromJson(json, listType);
 
+
+            ListView contestantView;
+            List<String> names = new ArrayList<String>();
+            //String output = "";
+            //LinearLayout rankings = (LinearLayout)activity.findViewById(R.id.rankings);
+
+
             SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(activity.getApplicationContext());
             SharedPreferences.Editor editor = sharedPreferences.edit();
             editor.putString("contestants", json);
             editor.commit();
 
 
-            String output = "";
-
             for (Structs.Contestant contestant : contestants) {
-                output += contestant.u_name;
+                //output += contestant.u_name;
                 Toast.makeText(activity.getApplicationContext(), contestant.u_name, Toast.LENGTH_LONG ).show();
 
             }
 
 
-            Log.v(TAG_CONTESTANT_FINISHER, "The output after conversion to a list: " + output);
+            Log.v(TAG_CONTESTANT_FINISHER, "The output after conversion to a list: ");
         } catch (Exception e) {
             Log.e(TAG_CONTESTANT_FINISHER, "Error with gson or outputting or something", e);
         }

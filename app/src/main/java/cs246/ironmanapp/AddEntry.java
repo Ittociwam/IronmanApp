@@ -68,7 +68,7 @@ public class AddEntry extends Activity {
             public void onClick(View v) {
                 EditText text = (EditText) findViewById(R.id.miles);
                 EditText text2 = (EditText) findViewById(R.id.editText2);
-                text.setBackgroundColor(Color.parseColor("#ff0000"));
+                //text.setBackgroundColor(Color.parseColor("#ff0000"));
             }
 
         });

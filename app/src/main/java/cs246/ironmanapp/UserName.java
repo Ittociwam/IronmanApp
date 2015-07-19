@@ -10,8 +10,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
-import cs246.ironmanapp.R;
-
 /**
  * Created by John on 7/17/15.
  */
@@ -89,16 +87,6 @@ public class UserName extends Activity {
         createNewUser(username);
     }
 
-    public void displayMessage(String message) {
 
-        String dummy = "nothing";
-        Log.i(TAG_USERNAME, "HERE I AM IM WORKING!!!!!!!!!!!!!!");
-
-        Intent intent = new Intent(UserName.this, ErrorMessage.class);
-        Log.i(TAG_USERNAME, "AFTERWARDS");
-        intent.putExtra(EXTRA_MESSAGE, message);
-
-        startActivity(intent);
-    }
 
 }
