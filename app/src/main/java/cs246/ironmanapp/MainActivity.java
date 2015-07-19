@@ -207,19 +207,22 @@ public class MainActivity extends ActionBarActivity implements Serializable {
                     case "Bike":
                         bikeTotal = total.distance;
                         double bikeP = (bikeTotal / 112) * 100;
-                        int i = (int) bikeP;
-                       // Integer bike = bikeP.intValue(); // i becomes 5
-                        gprogress.setProgress(i);
+                        int b = (int) bikeP;
+                        gprogress.setProgress(b);
                         //update bike;
                         break;
                     case "Swim":
                         swimTotal = total.distance;
                         double swimP = (swimTotal / 2.4) * 100;
+                        int s = (int) swimP;
+                        gprogress.setProgress(s);
                         //update swim;
                         break;
                     case "Run":
                         runTotal = total.distance;
                         double runP = (runTotal / 26.2) * 100;
+                        int r = (int) runP;
+                        gprogress.setProgress(r);
                         //update run
                         break;
                     default:
