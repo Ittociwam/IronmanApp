@@ -54,7 +54,7 @@
                 android:layout_marginTop="140dp"
                 android:indeterminate="false"
                 android:indeterminateOnly="false"
-                android:progress="10"
+                android:progress="0"
                 android:progressBackgroundTint="#000000"
 
 
@@ -91,7 +91,7 @@
 
                 android:onClick="testProgress"
 
-                android:progress="80"
+                android:progress="0"
                 android:progressBackgroundTint="#000000"
                 android:progressDrawable="@drawable/progress"
                 android:secondaryProgress="100" />
@@ -104,7 +104,7 @@
                 android:layout_below="@+id/progressBar2"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="15dp"
-                android:progress="40"
+                android:progress="0"
 
 
                 android:progressBackgroundTint="#000000"
@@ -131,7 +131,7 @@
                 android:layout_alignBottom="@+id/imageView"
                 android:layout_centerHorizontal="true"
                 android:layout_marginBottom="55dp"
-                android:text="Days Remaining"
+                android:text="Completed"
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:textColor="#d3d3d3"
                 android:textSize="32sp" />

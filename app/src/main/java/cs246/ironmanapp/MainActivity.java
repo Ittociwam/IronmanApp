@@ -192,33 +192,33 @@ public class MainActivity extends ActionBarActivity implements Serializable {
             double swimTotal = 0;
             double runTotal = 0;
 
-            if (progress != "{}") {
-                Gson gson = new Gson();
-                Type listType = new TypeToken<ArrayList<Structs.Total>>() {
-                }.getType();
 
-                progressArray = gson.fromJson(progress, listType);
+            for(Structs.Total total : progressArray){
+                switch(total.mode){
+                    case "Bike":
+                        bikeTotal = total.distance;
+                        double bikeP = (bikeTotal / 112) * 100;
+                        int b = (int) bikeP;
+                        gprogress.setProgress(b);
+                        //update bike;
+                        break;
+                    case "Swim":
+                        swimTotal = total.distance;
+                        double swimP = (swimTotal / 2.4) * 100;
+                        int s = (int) swimP;
+                        gprogress.setProgress(s);
+                        //update swim;
+                        break;
+                    case "Run":
+                        runTotal = total.distance;
+                        double runP = (runTotal / 26.2) * 100;
+                        int r = (int) runP;
+                        gprogress.setProgress(r);
+                        //update run
+                        break;
+                    default:
+                        Log.wtf(TAG_MAIN_ACTIVITY, "what mode is this??? " + total.mode );
 
-                for (Structs.Total total : progressArray) {
-                    switch (total.mode) {
-                        case "Bike":
-                            bikeTotal = total.distance;
-                            double bikeP = (bikeTotal / 112) * 100;
-                            //update bike;
-                            break;
-                        case "Swim":
-                            swimTotal = total.distance;
-                            double swimP = (swimTotal / 2.4) * 100;
-                            //update swim;
-                            break;
-                        case "Run":
-                            runTotal = total.distance;
-                            double runP = (runTotal / 26.2) * 100;
-                            //update run
-                            break;
-                        default:
-                            Log.wtf(TAG_MAIN_ACTIVITY, "what mode is this??? " + total.mode);
-                    }
                 }
             }
 

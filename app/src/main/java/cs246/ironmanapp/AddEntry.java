@@ -6,9 +6,12 @@ import android.app.Dialog;
 import android.support.v4.app.DialogFragment;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.support.v7.internal.widget.TintImageView;
 import android.support.v4.app.FragmentActivity;
+
 import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.View;
@@ -65,6 +68,21 @@ public class AddEntry extends FragmentActivity {
 
         Log.v(TAG_ADD_ENTRY, "Assigning buton");
         Button submit = (Button) findViewById(R.id.button);
+
+        /**
+         * Just making this stuff look prettier
+         */
+        RadioButton swim = (RadioButton) findViewById(R.id.radioButton);
+        RadioButton bike = (RadioButton) findViewById(R.id.radioButton2);
+        RadioButton run = (RadioButton) findViewById(R.id.radioButton3);
+
+        swim.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+
+            }
+
+        });
+
 
 
         submit.setOnClickListener(new View.OnClickListener() {

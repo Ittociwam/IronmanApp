@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent" android:layout_height="match_parent"
-    android:background="#5c5c5c">
+    android:background="#5c5c5c"
+    android:id="@+id/relative">
 
     <Button
         android:layout_width="150dp"
@@ -75,10 +76,11 @@
             android:layout_below="@+id/mode"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
-            android:layout_marginRight="60dp"
+            android:layout_marginRight="30dp"
             android:buttonTint="#14b6d8"/>
 
         <RadioButton
+
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Bike"
@@ -86,7 +88,7 @@
             android:checked="false"
             android:layout_alignTop="@+id/radioButton"
             android:layout_centerHorizontal="true"
-            android:layout_marginRight="60dp"
+            android:layout_marginRight="40dp"
             android:buttonTint="#52d900"/>
 
         <RadioButton
@@ -99,9 +101,7 @@
             android:layout_alignBottom="@+id/distance"
             android:layout_alignRight="@+id/button"
             android:layout_alignEnd="@+id/button"
-            android:layout_marginEnd="15dp"
-            android:layout_marginLeft="10dp"
-            android:buttonTint="#9e43d8"/>
+            android:buttonTint="#9e43d8" />
 
     </RadioGroup>
     <!--<EditText-->
