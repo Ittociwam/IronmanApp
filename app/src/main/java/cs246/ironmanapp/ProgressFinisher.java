@@ -12,6 +12,7 @@ public class ProgressFinisher implements TaskCompletion {
     private static final String TAG_PROGRESS_FINISHER = "Progress Finisher";
     @Override
     public void finish(Activity activity, String json) {
+        Log.v(TAG_PROGRESS_FINISHER, "The Json in progress finsiher: " + json);
 
         try {
             SharedPreferences sharePreferences = PreferenceManager.getDefaultSharedPreferences(activity.getApplicationContext());

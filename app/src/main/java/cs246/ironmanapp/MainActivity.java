@@ -31,9 +31,9 @@ import java.util.ArrayList;
 public class MainActivity extends ActionBarActivity implements Serializable {
     private static final String GET_CONTESTANTS_URL = "http://robbise.no-ip.info/ironman/getContestants.php?";
     private static final String GET_ENTRIES_URL = "http://robbise.no-ip.info/ironman/getEntries.php?";
+    private static final String GET_PROGRESS_URL = "http://robbise.no-ip.info/ironman/getProgress.php?";
     private static android.os.Handler handler;
     public ListView lView;
-
 
 
     public static Context context;
@@ -67,8 +67,7 @@ public class MainActivity extends ActionBarActivity implements Serializable {
         Log.v(TAG_OUTPUT_ALL_THE_THINGS, "Creating Handler");
         handler = new android.os.Handler();
 
-        Log.v(TAG_OUTPUT_ALL_THE_THINGS, "Shared preference stuff");
-       SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(context);
+        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(context);
         Log.v(TAG_OUTPUT_ALL_THE_THINGS, "Shared preference getting user");
         user = sharedPreferences.getString("user_id", "");
 
@@ -110,7 +109,6 @@ public class MainActivity extends ActionBarActivity implements Serializable {
 
         ImageView add = (ImageView) findViewById(R.id.imageView3);
         ImageView rank = (ImageView) findViewById(R.id.imageView5);
-
 
 
         Intent intent = getIntent();
@@ -173,7 +171,7 @@ public class MainActivity extends ActionBarActivity implements Serializable {
     }
 
     public void getProgress() {
-        Task t = new Task(GET_CONTESTANTS_URL + "semester=" + getSelectedSemester()+ "&id=" + getContestantID());
+        Task t = new Task(GET_PROGRESS_URL + "semester=" + getSelectedSemester() + "&id=" + getContestantID());
 
         t.setTaskCompletion(new ProgressFinisher());
 
@@ -184,43 +182,43 @@ public class MainActivity extends ActionBarActivity implements Serializable {
             progressT.join();
             Log.v(TAG_OUTPUT_ALL_THE_THINGS, "setting up shared prefs progress");
             SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(context);
-            Log.v(TAG_OUTPUT_ALL_THE_THINGS, "Getting shared prefs progress");
+
+
             String progress = sharedPreferences.getString("progress", "{}");
+            Log.v(TAG_OUTPUT_ALL_THE_THINGS, "FROM SHARED PREFS IN PROGRESS: " + progress);
             ArrayList<Structs.Total> progressArray = null;
-
-            Gson gson = new Gson();
-            Type listType = new TypeToken<ArrayList<Structs.Total>>() {
-            }.getType();
-
-            progressArray = gson.fromJson(progress, listType);
-
-
-
 
             double bikeTotal = 0;
             double swimTotal = 0;
             double runTotal = 0;
 
+            if (progress != "{}") {
+                Gson gson = new Gson();
+                Type listType = new TypeToken<ArrayList<Structs.Total>>() {
+                }.getType();
 
-            for(Structs.Total total : progressArray){
-                switch(total.mode){
-                    case "Bike":
-                        bikeTotal = total.distance;
-                        double bikeP = (bikeTotal / 112) * 100;
-                        //update bike;
-                        break;
-                    case "Swim":
-                        swimTotal = total.distance;
-                        double swimP = (swimTotal / 2.4) * 100;
-                        //update swim;
-                        break;
-                    case "Run":
-                        runTotal = total.distance;
-                        double runP = (runTotal / 26.2) * 100;
-                        //update run
-                        break;
-                    default:
-                        Log.wtf(TAG_MAIN_ACTIVITY, "what mode is this??? " + total.mode );
+                progressArray = gson.fromJson(progress, listType);
+
+                for (Structs.Total total : progressArray) {
+                    switch (total.mode) {
+                        case "Bike":
+                            bikeTotal = total.distance;
+                            double bikeP = (bikeTotal / 112) * 100;
+                            //update bike;
+                            break;
+                        case "Swim":
+                            swimTotal = total.distance;
+                            double swimP = (swimTotal / 2.4) * 100;
+                            //update swim;
+                            break;
+                        case "Run":
+                            runTotal = total.distance;
+                            double runP = (runTotal / 26.2) * 100;
+                            //update run
+                            break;
+                        default:
+                            Log.wtf(TAG_MAIN_ACTIVITY, "what mode is this??? " + total.mode);
+                    }
                 }
             }
 
@@ -249,8 +247,6 @@ public class MainActivity extends ActionBarActivity implements Serializable {
     }
 
 
-
-
     public static class Task implements Runnable {
         public String json;
         private String url;
@@ -267,7 +263,7 @@ public class MainActivity extends ActionBarActivity implements Serializable {
          *
          * @param url
          */
-        public  Task(String url) {
+        public Task(String url) {
             this.url = url;
             this.params = "";
             isPost = false;
@@ -290,7 +286,7 @@ public class MainActivity extends ActionBarActivity implements Serializable {
                 isPost = false;
             } else
                 Log.v(TAG_MAIN_ACTIVITY, "params not empty! it really is a post request");
-                isPost = true;
+            isPost = true;
         }
 
 
@@ -327,57 +323,54 @@ public class MainActivity extends ActionBarActivity implements Serializable {
     }
 
 
+    /**
+     * this method will need to get the semester from a select
+     * drop down menu on activity_main.xml and return it.
+     *
+     * @return a string that is the selected semester
+     */
+    private String getSelectedSemester() {
+
+        return "FALL2015"; // a default value for testing
+    }
+
+    /**
+     * this method will need to get the ID from a locally stored ID number
+     * and return it.
+     *
+     * @return a string that is the ID of the current user
+     */
+    private String getContestantID() {
 
 
+        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(context);
+        user = sharedPreferences.getString("user_id", "");
+        Log.v(TAG_OUTPUT_ALL_THE_THINGS, " user from shared preffs CONTESTANDID: " + user);
 
-        /**
-         * this method will need to get the semester from a select
-         * drop down menu on activity_main.xml and return it.
-         *
-         * @return a string that is the selected semester
-         */
-        private String getSelectedSemester() {
+        return user;
+    }
 
-            return "FALL2015"; // a default value for testing
-        }
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.menu_main, menu);
+        return true;
+    }
 
-        /**
-         * this method will need to get the ID from a locally stored ID number
-         * and return it.
-         *
-         * @return a string that is the ID of the current user
-         */
-        private String getContestantID() {
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+        int id = item.getItemId();
 
-            Log.v(TAG_OUTPUT_ALL_THE_THINGS, "Shared preference stuff");
-            SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(context);
-            Log.v(TAG_OUTPUT_ALL_THE_THINGS, "Shared preference getting user");
-            user = sharedPreferences.getString("user_id", "");
-
-            return user;
-        }
-
-        @Override
-        public boolean onCreateOptionsMenu(Menu menu) {
-            // Inflate the menu; this adds items to the action bar if it is present.
-            getMenuInflater().inflate(R.menu.menu_main, menu);
+        //noinspection SimplifiableIfStatement
+        if (id == R.id.action_settings) {
             return true;
         }
 
-        @Override
-        public boolean onOptionsItemSelected(MenuItem item) {
-            // Handle action bar item clicks here. The action bar will
-            // automatically handle clicks on the Home/Up button, so long
-            // as you specify a parent activity in AndroidManifest.xml.
-            int id = item.getItemId();
-
-            //noinspection SimplifiableIfStatement
-            if (id == R.id.action_settings) {
-                return true;
-            }
-
-            return super.onOptionsItemSelected(item);
-        }
+        return super.onOptionsItemSelected(item);
     }
+}
 
 
